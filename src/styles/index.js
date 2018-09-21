@@ -60,6 +60,10 @@ injectGlobal`
         border-color: ${theme.colors.secondaryGreen};
     }
 
+    a.primary.white {
+        border: 2px solid ${theme.colors.secondaryWhite};
+    }
+
     a.secondary {
         color: ${theme.colors.primaryGreen};
         font-weight: 600;

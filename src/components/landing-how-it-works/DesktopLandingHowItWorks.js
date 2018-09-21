@@ -57,6 +57,12 @@ const StyledStayInTheKnow = styled.img`
   width: 300px;
 `;
 
+const StyledCenterDiv = styled.div`
+  margin: auto;
+  width: 45%;
+  padding-bottom: 2rem;
+`;
+
 //
 // --- Desktop Landing How It Works ---
 class DesktopLandingHowItWorks extends React.Component {
@@ -174,6 +180,9 @@ class DesktopLandingHowItWorks extends React.Component {
             width="300px"
           />
         </StyledHowItWorksSectionContainer>
+        <StyledCenterDiv>
+          <a className="primary">Schedule Your Free Consultation</a>
+        </StyledCenterDiv>
       </StyledDesktopLandingHowItWorks>
     );
   }

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import HideBreakPoint from "../layout/HideBreakPoint";
-import Text from "../text/Text";
 import DesktopLandingHowItWorks from "./DesktopLandingHowItWorks";
 
 //
