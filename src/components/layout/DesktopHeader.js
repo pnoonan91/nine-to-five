@@ -43,10 +43,10 @@ const DesktopHeader = props => (
         nine to five
       </Text.h1>
       <StyledNavItem fontSize={3}>
-        <a>About Us</a>
+        <a>How It Works</a>
       </StyledNavItem>
       <StyledNavItem fontSize={3}>
-        <a>Contact</a>
+        <a>About Us</a>
       </StyledNavItem>
       <StyledNavItem fontSize={3}>
         <a>Blog</a>

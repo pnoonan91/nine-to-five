@@ -10,7 +10,10 @@ import MobileHeader from "./MobileHeader";
 const StyledHeader = styled.header`
   background-color: ${props => props.theme.colors.standardWhite};
   color: ${props => props.theme.colors.makoGray};
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 `;
 
 //

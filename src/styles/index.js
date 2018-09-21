@@ -60,6 +60,18 @@ injectGlobal`
         border-color: ${theme.colors.secondaryGreen};
     }
 
+    a.secondary {
+        color: ${theme.colors.primaryGreen};
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 100%;
+    }
+
+    a.secondary:hover {
+        color: ${theme.colors.secondaryGreen};
+    }
+
     .shadow {
         text-shadow: 1px 1px 1px rgba(0,0,0,.25);
     }

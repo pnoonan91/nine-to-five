@@ -12,6 +12,7 @@ const StyledMobileLandingImageContainer = styled.div`
   background-image: url("/images/landing-image-small.jpg");
   background-position: center;
   height: 250px;
+  margin-top: 55px;
 `;
 
 const StyledDesktopLandingImageText = styled(Flex)`

@@ -13,7 +13,7 @@ const NamedColors = {
   standardWhite: "#ffffff",
   primaryBlue: "#1c5d99",
   secondaryGreen: "#46885f",
-  secondaryBlue: "#bbcde5",
+  secondaryBlue: "#c7d8ef",
   primaryGreen: "#559a70"
 };
 

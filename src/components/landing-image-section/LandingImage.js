@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import HideBreakPoint from "../layout/HideBreakPoint";
 import DesktopLandingImage from "./DesktopLandingImage";
 import MobileLandingImage from "./MobileLandingImage";

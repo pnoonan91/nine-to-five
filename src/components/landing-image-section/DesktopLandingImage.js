@@ -10,11 +10,12 @@ import { colors } from "../../styles/colors";
 const StyledDesktopLandingImageContainer = styled.div`
   background-image: url("/images/landing-image-large.jpg");
   background-position: center;
-  height: 550px;
+  height: 480px;
+  margin-top: 67px;
 `;
 
 const StyledDesktopLandingImageText = styled(Flex)`
-  height: 550px;
+  height: 480px;
   flex-direction: column;
 `;
 
@@ -79,7 +80,7 @@ class DesktopLandingImage extends Component {
                 .
               </Text.h1>
             </Box>
-            <Box width={0.5} mt={6}>
+            <Box width={0.6} mt={6}>
               <a className="primary">Schedule Your Free Consultation Now!</a>
             </Box>
           </Box>

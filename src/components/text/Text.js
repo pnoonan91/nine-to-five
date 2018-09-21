@@ -216,7 +216,8 @@ Text.h4.defaultProps = {
   caps: true,
   fontFamily: "heading",
   fontSize: 4,
-  fontWeight: 400
+  fontWeight: 400,
+  m: 0
 };
 
 Text.h5.defaultProps = {

@@ -11,12 +11,16 @@ const StyledDesktopOverviewIconContainer = styled(Box)`
   max-width: 350px;
 `;
 
+const StyledDesktopOverviewIconImage = styled.img`
+  width: 85px;
+`;
+
 const DesktopOverviewIcon = props => {
   return (
     <StyledDesktopOverviewIconContainer>
-      <img src={props.imageSource} />
-      <Text.h3>{props.title}</Text.h3>
-      <Text.p>{props.description}</Text.p>
+      <StyledDesktopOverviewIconImage src={props.imageSource} />
+      <Text.h5 m={"1rem"}>{props.title}</Text.h5>
+      <Text.small>{props.description}</Text.small>
     </StyledDesktopOverviewIconContainer>
   );
 };
