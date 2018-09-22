@@ -9,6 +9,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/landing";
 import Text from "./components/text/Text";
+import HowItWorks from "./components/howitworks";
 
 //
 // --- Styled Components ---
@@ -163,6 +164,13 @@ class App extends Component {
             path="/"
             component={() => (
               <Landing onModalClick={() => this.toggleModal()} />
+            )}
+          />
+          <Route
+            exact
+            path="/how-it-works"
+            component={() => (
+              <HowItWorks onModalClick={() => this.toggleModal()} />
             )}
           />
         </Switch>

@@ -48,7 +48,7 @@ const DesktopHeader = props => (
         </Text.h1>
       </Link>
       <StyledNavItem fontSize={3}>
-        <a>How It Works</a>
+        <Link to="/how-it-works">How It Works</Link>
       </StyledNavItem>
       <StyledNavItem fontSize={3}>
         <a>About Us</a>

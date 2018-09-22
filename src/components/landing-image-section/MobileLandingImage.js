@@ -10,6 +10,7 @@ import { verbs } from "./DesktopLandingImage";
 // --- Styled Components ---
 const StyledMobileLandingImageContainer = styled.div`
   background-image: url("/images/landing-image-small.jpg");
+  background-size: 100%;
   background-position: center;
   height: 250px;
   margin-top: 55px;

@@ -9,6 +9,7 @@ import { colors } from "../../styles/colors";
 // --- Styled Components ---
 const StyledDesktopLandingImageContainer = styled.div`
   background-image: url("/images/landing-image-large.jpg");
+  background-size: 100%;
   background-position: center;
   height: 480px;
   margin-top: 67px;
