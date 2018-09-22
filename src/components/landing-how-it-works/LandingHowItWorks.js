@@ -13,7 +13,7 @@ const StyledLandingHowItWorksContainer = styled.div``;
 const LandingHowItWorksComponent = props => (
   <StyledLandingHowItWorksContainer>
     <HideBreakPoint xs sm>
-      <DesktopLandingHowItWorks />
+      <DesktopLandingHowItWorks onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledLandingHowItWorksContainer>
 );

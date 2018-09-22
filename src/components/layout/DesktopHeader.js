@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box } from "grid-styled";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Text from "../text/Text";
 import { colors } from "../../styles/colors";
@@ -38,10 +39,14 @@ const StyledNavItem = styled(Box)`
 const DesktopHeader = props => (
   <StyledDesktopHeader>
     <Flex alignItems="center">
-      <img width="40px" height="40px" margin="auto" src="/icons/clock.png" />
-      <Text.h1 ml={3} color={colors.primaryBlue}>
-        nine to five
-      </Text.h1>
+      <Link to="/">
+        <img width="40px" height="40px" margin="auto" src="/icons/clock.jpg" />
+      </Link>
+      <Link to="/">
+        <Text.h1 ml={3} color={colors.primaryBlue}>
+          nine to five
+        </Text.h1>
+      </Link>
       <StyledNavItem fontSize={3}>
         <a>How It Works</a>
       </StyledNavItem>
@@ -53,7 +58,9 @@ const DesktopHeader = props => (
       </StyledNavItem>
     </Flex>
     <Box>
-      <a className="primary">Free Consultation</a>
+      <a onClick={props.onModalClick} className="primary">
+        Free Consultation
+      </a>
     </Box>
   </StyledDesktopHeader>
 );

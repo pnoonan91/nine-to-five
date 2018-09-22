@@ -14,7 +14,8 @@ const NamedColors = {
   primaryBlue: "#1c5d99",
   secondaryGreen: "#46885f",
   secondaryBlue: "#c7d8ef",
-  primaryGreen: "#559a70"
+  primaryGreen: "#559a70",
+  lightGray: "#fafbfc"
 };
 
 const BrandColors = {

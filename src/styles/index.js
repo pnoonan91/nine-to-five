@@ -27,7 +27,8 @@ injectGlobal`
     a {
         color: ${theme.colors.tunaGray};
         margin: 0,
-        vertical-align: baseline
+        vertical-align: baseline;
+        text-decoration: none;
     }
 
     a.primary {
@@ -78,6 +79,10 @@ injectGlobal`
 
     .shadow {
         text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+    }
+
+    .ReactModal__Overlay {
+        z-index: 100;
     }
 
     :focus {

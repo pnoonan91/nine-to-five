@@ -16,10 +16,10 @@ const StyledLandingImageComponent = styled.div`
 const LandingImageComponent = props => (
   <StyledLandingImageComponent>
     <HideBreakPoint xs sm>
-      <DesktopLandingImage />
+      <DesktopLandingImage onModalClick={props.onModalClick} />
     </HideBreakPoint>
     <HideBreakPoint md lg>
-      <MobileLandingImage />
+      <MobileLandingImage onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledLandingImageComponent>
 );

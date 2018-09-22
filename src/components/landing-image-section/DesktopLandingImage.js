@@ -81,7 +81,9 @@ class DesktopLandingImage extends Component {
               </Text.h1>
             </Box>
             <Box width={0.6} mt={6}>
-              <a className="primary">Schedule Your Free Consultation Now!</a>
+              <a onClick={this.props.onModalClick} className="primary">
+                Schedule Your Free Consultation Now!
+              </a>
             </Box>
           </Box>
         </StyledDesktopLandingImageText>

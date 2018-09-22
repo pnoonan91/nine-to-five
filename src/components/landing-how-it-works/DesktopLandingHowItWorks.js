@@ -29,13 +29,6 @@ const StyledHowItWorksTextContainer = styled(Flex)`
   width: 40%;
 `;
 
-const StyledTestDiv = styled.div`
-  height: 400px;
-  width: 500px;
-  background-color: gray;
-  transform: translateY(0px);
-`;
-
 const StyledLinkedinIcon = styled.img`
   position: absolute;
   right: 5%;
@@ -181,7 +174,9 @@ class DesktopLandingHowItWorks extends React.Component {
           />
         </StyledHowItWorksSectionContainer>
         <StyledCenterDiv>
-          <a className="primary">Schedule Your Free Consultation</a>
+          <a onClick={this.props.onModalClick} className="primary">
+            Schedule Your Free Consultation
+          </a>
         </StyledCenterDiv>
       </StyledDesktopLandingHowItWorks>
     );

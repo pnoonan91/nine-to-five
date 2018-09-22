@@ -12,7 +12,7 @@ const StyledLandingSubscriptionComponent = styled.div``;
 const LandingSubscriptionComponent = props => (
   <StyledLandingSubscriptionComponent>
     <HideBreakPoint xs sm>
-      <DesktopLandingSubscription />
+      <DesktopLandingSubscription onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledLandingSubscriptionComponent>
 );

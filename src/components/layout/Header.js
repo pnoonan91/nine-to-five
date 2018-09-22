@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 2;
 `;
 
 //
@@ -21,10 +21,10 @@ const StyledHeader = styled.header`
 const Header = props => (
   <StyledHeader>
     <HideBreakPoint xs sm md>
-      <DesktopHeader />
+      <DesktopHeader onModalClick={props.onModalClick} />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileHeader />
+      <MobileHeader onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledHeader>
 );

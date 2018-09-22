@@ -28,7 +28,11 @@ const DesktopLandingSubscription = props => (
       you find the job you love
     </Text.h4>
     <br />
-    <a className="primary white" style={{ width: "180px", padding: "1rem;" }}>
+    <a
+      onClick={props.onModalClick}
+      className="primary white"
+      style={{ width: "180px", padding: "1rem;" }}
+    >
       Let's Chat
     </a>
   </StyledDesktopLandingSubscriptionContainer>

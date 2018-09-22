@@ -21,6 +21,7 @@ const StyledTestimonial = styled(Flex)`
   align-items: center;
   text-align: center;
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  border: 1px solid ${props => props.theme.colors.lightGray};
   padding: 1rem;
   margin: 2rem;
 `;

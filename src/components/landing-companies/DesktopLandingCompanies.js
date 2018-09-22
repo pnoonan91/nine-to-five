@@ -30,7 +30,7 @@ const DesktopLandingCompanies = props => (
     </Text.h2>
     <StyledCompaniesImage width="70%" src="/images/companies.png" />
     <StyledLandYourDreamJobButton>
-      <a className="primary">Land Your Dream Job</a>
+      <a className="primary">See How It Works</a>
     </StyledLandYourDreamJobButton>
   </StyledDesktopLandingCompaniesContainer>
 );
