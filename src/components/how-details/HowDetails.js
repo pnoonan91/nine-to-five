@@ -17,7 +17,7 @@ const StyledHowItWorksDetails = styled(Flex)`
 const HowDetailsComponent = props => (
   <StyledHowItWorksDetails>
     <HideBreakPoint xs sm md>
-      <DesktopHowDetailsComponent />
+      <DesktopHowDetailsComponent onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledHowItWorksDetails>
 );

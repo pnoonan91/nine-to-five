@@ -1,7 +1,11 @@
 import createHistory from "history/createBrowserHistory";
-import createMemoryHistory from "history/createMemoryHistory";
 
-const history =
-  process.env.NODE_ENV === "test" ? createMemoryHistory() : createHistory();
+const history = createHistory();
+
+history.listen((location, action) => {
+  if (!location.hash) {
+    window.scrollTo(0, 0);
+  }
+});
 
 export default history;

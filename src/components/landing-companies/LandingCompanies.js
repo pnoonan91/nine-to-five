@@ -13,7 +13,7 @@ const StyledLandingCompaniesContainer = styled.div``;
 const LandingCompaniesComponent = props => (
   <StyledLandingCompaniesContainer>
     <HideBreakPoint xs sm>
-      <DesktopLandingCompanies />
+      <DesktopLandingCompanies hideButton={props.hideButton} />
     </HideBreakPoint>
   </StyledLandingCompaniesContainer>
 );

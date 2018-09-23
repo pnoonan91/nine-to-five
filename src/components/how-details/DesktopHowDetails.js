@@ -42,7 +42,11 @@ const DesktopHowDetailsComponent = props => (
         interests, your resume, cover letter, and the potential challenges you
         are facing during your job/internship search.
       </Text.p>
-      <a style={{ margin: "2rem 0", width: "80%" }} className="primary">
+      <a
+        onClick={props.onModalClick}
+        style={{ margin: "2rem 0", width: "80%" }}
+        className="primary"
+      >
         Sign Up For a Free Consultation
       </a>
       <img
@@ -55,7 +59,7 @@ const DesktopHowDetailsComponent = props => (
         src="/images/how-it-works/how-it-works-consult.jpg"
       />
     </StyledHowToSectionLeft>
-    <StyledHowToSectionRight>
+    <StyledHowToSectionRight id="#brand">
       <Text.h3 m={0} lightbold>
         Build your brand
       </Text.h3>
@@ -66,27 +70,81 @@ const DesktopHowDetailsComponent = props => (
         Additionally, you will have access to our Interview Coaching Guide
         crafted by HR industry professionals.
       </Text.p>
-      <a style={{ margin: "2rem 0", width: "80%" }} className="primary">
+      <a
+        onClick={props.onModalClick}
+        style={{ margin: "2rem 0", width: "80%" }}
+        className="primary"
+      >
         Let's build your brand!
       </a>
-      <img style={{position: 'absolute', width: '500px', right: '57%', transform: 'translateY(-1rem)'}} src="/images/how-it-works/how-it-works-building-brand.jpg" />
-      <img style={{position: 'absolute', width: '150px', right:'65%', transform: 'translateY(16rem)'}} src="/icons/linkedin-large.png" />
+      <img
+        style={{
+          position: "absolute",
+          width: "500px",
+          right: "57%",
+          transform: "translateY(-1rem)"
+        }}
+        src="/images/how-it-works/how-it-works-building-brand.jpg"
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: "150px",
+          right: "65%",
+          transform: "translateY(16rem)"
+        }}
+        src="/icons/linkedin-large.png"
+      />
     </StyledHowToSectionRight>
-    <StyledHowToSectionLeft>
-    <Text.h3 m={0} lightbold>
-    Job Searching
+    <StyledHowToSectionLeft id="#jobsearch">
+      <Text.h3 m={0} lightbold>
+        Job Searching
       </Text.h3>
       <Text.p style={{ minHeight: "100px", paddingRight: "2rem" }}>
-      Sit back and let the jobs roll in, right to your phone. Nine to Five will send new
-opportunities every week for you to review and apply. If preferred, Nine to Five will
-apply for you! Additionally, we will provide updates on past applications &amp; interviews
-that you have scheduled.
+        Sit back and let the jobs roll in, right to your phone. Nine to Five
+        will send new opportunities every week for you to review and apply. If
+        preferred, Nine to Five will apply for you! Additionally, we will
+        provide updates on past applications &amp; interviews that you have
+        scheduled.
       </Text.p>
-      <a style={{ margin: "2rem 0", width: "80%" }} className="primary">
+      <a
+        onClick={props.onModalClick}
+        style={{ margin: "2rem 0", width: "80%" }}
+        className="primary"
+      >
         Leave the job search to us
       </a>
-      <img style={{position: 'absolute', left: '55%', width: '450px', transform: 'translateY(-0.8rem)'}} src="/images/how-it-works/phone-stuff.png"/>
+      <img
+        style={{
+          position: "absolute",
+          left: "55%",
+          width: "450px",
+          transform: "translateY(-0.8rem)"
+        }}
+        src="/images/how-it-works/phone-stuff.png"
+      />
     </StyledHowToSectionLeft>
+    <StyledHowToSectionRight id="#support">
+      <Text.h3 m={0} lightbold>
+        Weekly Touchpoints & Continued Support
+      </Text.h3>
+      <Text.p style={{ minHeight: "100px", paddingRight: "2rem" }}>
+        Every week, Nine to Five will schedule a call with you to discuss
+        opportunities and offer ongoing coaching/support/interview advice to
+        keep your job searching on track!
+      </Text.p>
+      <a
+        onClick={props.onModalClick}
+        style={{ margin: "2rem 0", width: "80%" }}
+        className="primary"
+      >
+        Lets work together
+      </a>
+      <img
+        style={{ position: "absolute", width: "400px", right: "58%" }}
+        src="/images/how-it-works/go-for-it.jpg"
+      />
+    </StyledHowToSectionRight>
   </StyledDetailSection>
 );
 

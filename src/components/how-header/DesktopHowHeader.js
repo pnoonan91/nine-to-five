@@ -53,7 +53,11 @@ const HowItWorksSummaryStep = props => (
         {props.stepTitle}
       </Text.h5>
       <Text.p style={{ minHeight: "50px" }}>{props.stepContent}</Text.p>
-      <a href={props.linkTarget} className="secondary">
+      <a
+        onClick={props.onLinkClick}
+        href={props.linkTarget}
+        className="secondary"
+      >
         {props.linkName}
         <br />
         <i class="fas fa-chevron-down" />
@@ -73,6 +77,7 @@ const DesktopHowHeader = props => (
         stepContent="Let's get to know each other!"
         linkName="About the consultation"
         linkTarget="#consultation"
+        onLinkClick={props.onLinkClick}
       />
       <HowItWorksSummaryStep
         stepNumber={2}
@@ -80,6 +85,7 @@ const DesktopHowHeader = props => (
         stepContent="We help you build your job searching brand."
         linkName="How we build a brand"
         linkTarget="#brand"
+        onLinkClick={props.onLinkClick}
       />
       <HowItWorksSummaryStep
         stepNumber={3}
@@ -87,6 +93,7 @@ const DesktopHowHeader = props => (
         stepContent="We search for and apply to jobs for you."
         linkName="How we search"
         linkTarget="#jobsearch"
+        onLinkClick={props.onLinkClick}
       />
       <HowItWorksSummaryStep
         stepNumber={4}
@@ -94,6 +101,7 @@ const DesktopHowHeader = props => (
         stepContent="We provide continual support and weekly touch points."
         linkName="How we support"
         linkTarget="#support"
+        onLinkClick={props.onLinkClick}
       />
       <HowItWorksSummaryStep
         stepNumber={5}

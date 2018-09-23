@@ -18,7 +18,7 @@ const StyledHowItWorksHeader = styled(Flex)`
 const HowHeaderComponent = props => (
   <StyledHowItWorksHeader>
     <HideBreakPoint xs sm md>
-      <DesktopHowHeader />
+      <DesktopHowHeader onLinkClick={props.onLinkClick} />
     </HideBreakPoint>
   </StyledHowItWorksHeader>
 );

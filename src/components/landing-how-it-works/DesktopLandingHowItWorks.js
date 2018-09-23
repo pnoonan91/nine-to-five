@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Flex, Box } from "grid-styled";
+import { Link } from "react-router-dom";
 
 import Text from "../text/Text";
+import { scrollOnClick } from "../howitworks";
 
 //
 // --- Styled Components ---
@@ -111,7 +113,9 @@ class DesktopLandingHowItWorks extends React.Component {
                 social media presence which help to open doors to new
                 opportunities.
               </Text.p>
-              <a className="secondary">How It Works ></a>
+              <Link to="/how-it-works" className="secondary">
+                How It Works >
+              </Link>
             </span>
           </StyledHowItWorksTextContainer>
           <img
@@ -145,7 +149,13 @@ class DesktopLandingHowItWorks extends React.Component {
                 right jobs to submitting the applications to creating
                 connections, we’ve got you covered.
               </Text.p>
-              <a className="secondary">Where Our Clients Get Hired ></a>
+              <a
+                onClick={scrollOnClick}
+                href="#companies"
+                className="secondary"
+              >
+                Where Our Clients Get Hired >
+              </a>
             </span>
           </StyledHowItWorksTextContainer>
         </StyledHowItWorksSectionContainer>
