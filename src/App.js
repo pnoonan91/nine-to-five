@@ -3,6 +3,7 @@ import { Flex } from "grid-styled";
 import Modal from "react-modal";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 import "./App.css";
 import Header from "./components/layout/Header";
@@ -49,6 +50,15 @@ const StyledStepContent = styled(Flex)`
   margin-top: 0.5rem;
 `;
 
+const StyledLoadingDiv = styled(Flex)`
+  margin-top: 67px;
+  min-height: 50vh;
+  padding: 6rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 //
 // --- How It Works Generators ---
 const HowItWorksStep = props => (
@@ -69,8 +79,16 @@ const HowItWorksStep = props => (
 
 class App extends Component {
   state = {
+    appLoading: true,
     modalIsOpen: false
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ appLoading: false });
+      window.scrollTo(0, 0);
+    }, 2000);
+  }
 
   toggleModal = () => {
     this.setState({ modalIsOpen: !this.state.modalIsOpen });
@@ -158,22 +176,36 @@ class App extends Component {
           </StyledModalSection>
         </Modal>
         <Header onModalClick={() => this.toggleModal()} />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            component={() => (
-              <Landing onModalClick={() => this.toggleModal()} />
-            )}
-          />
-          <Route
-            exact
-            path="/how-it-works"
-            component={() => (
-              <HowItWorks onModalClick={() => this.toggleModal()} />
-            )}
-          />
-        </Switch>
+        {this.state.appLoading ? (
+          <StyledLoadingDiv>
+            <ReactLoading
+              type="spin"
+              color="#1c5d99"
+              height="200px"
+              width="200px"
+            />
+            <Text.h5 lightbold style={{ marginTop: "2rem" }}>
+              App Loading...
+            </Text.h5>
+          </StyledLoadingDiv>
+        ) : (
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => (
+                <Landing onModalClick={() => this.toggleModal()} />
+              )}
+            />
+            <Route
+              exact
+              path="/how-it-works"
+              component={() => (
+                <HowItWorks onModalClick={() => this.toggleModal()} />
+              )}
+            />
+          </Switch>
+        )}
 
         <Footer />
       </div>
