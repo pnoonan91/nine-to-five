@@ -51,10 +51,10 @@ const DesktopHeader = props => (
         <Link to="/how-it-works">How It Works</Link>
       </StyledNavItem>
       <StyledNavItem fontSize={3}>
-        <a>About Us</a>
+        <Link to="/about">About Us</Link>
       </StyledNavItem>
       <StyledNavItem fontSize={3}>
-        <a>Blog</a>
+        <Link to="/blog">Blog</Link>
       </StyledNavItem>
     </Flex>
     <Box>

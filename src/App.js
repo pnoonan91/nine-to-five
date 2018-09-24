@@ -11,6 +11,8 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/landing";
 import Text from "./components/text/Text";
 import HowItWorks from "./components/howitworks";
+import About from "./components/about";
+import Blog from "./components/blog";
 
 //
 // --- Styled Components ---
@@ -99,7 +101,7 @@ class App extends Component {
       <div>
         <div
           class="calendly-inline-widget"
-          data-url="https://calendly.com/patricknoonan"
+          data-url="https://calendly.com/helloninetofive"
           style={{ minWidth: "320px", height: "580px", display: "none" }}
         />
         <Modal
@@ -111,7 +113,7 @@ class App extends Component {
               <StyledCalendlySection>
                 <div
                   class="calendly-inline-widget"
-                  data-url="https://calendly.com/patricknoonan"
+                  data-url="https://calendly.com/helloninetofive"
                   style={{ minWidth: "320px", height: "580px" }}
                 />
               </StyledCalendlySection>
@@ -203,6 +205,18 @@ class App extends Component {
               component={() => (
                 <HowItWorks onModalClick={() => this.toggleModal()} />
               )}
+            />
+            <Route
+              exact
+              path="/about"
+              component={() => (
+                <About onModalClick={() => this.toggleModal()} />
+              )}
+            />
+            <Route
+              exact
+              path="/blog"
+              component={() => <Blog onModalClick={() => this.toggleModal()} />}
             />
           </Switch>
         )}

@@ -168,7 +168,7 @@ class DesktopLandingHowItWorks extends React.Component {
                 applications have been sent and who wants to schedule an
                 interview with you.
               </Text.p>
-              <a className="secondary">Learn About Our Professionals ></a>
+              <Link to="/about" className="secondary">Learn About Our Professionals ></Link>
             </span>
           </StyledHowItWorksTextContainer>
 
