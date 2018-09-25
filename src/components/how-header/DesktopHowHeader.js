@@ -70,6 +70,9 @@ const HowItWorksSummaryStep = props => (
 // --- How It Works Desktop Header ---
 const DesktopHowHeader = props => (
   <StyledDesktopHowHeader>
+    <Text.h3 underline lightbold>
+      How It Works
+    </Text.h3>
     <StyledStepsContainer>
       <HowItWorksSummaryStep
         stepNumber={1}
@@ -107,7 +110,7 @@ const DesktopHowHeader = props => (
         stepNumber={5}
         stepTitle="Land the job!"
         stepContent="Try not to act surprised when you get multiple offers!"
-        linkName="Free Consultation"
+        linkName="Let's get started"
       />
     </StyledStepsContainer>
   </StyledDesktopHowHeader>

@@ -9,7 +9,7 @@ import Text from "../text/Text";
 const StyledDesktopHowImageContainer = styled(Flex)`
   background-image: url("/images/how-it-works/how-it-works-landing.jpg");
   background-size: 100%;
-  background-position: center;
+  background-position: bottom;
   margin-top: 67px;
   height: 480px;
   text-align: center;
@@ -24,9 +24,13 @@ const DesktopHowImage = props => (
     <Text.h1
       color="white"
       className="shadow"
-      style={{ margin: "auto", fontSize: "3.5rem" }}
+      style={{
+        margin: "auto",
+        fontSize: "3.5rem",
+        transform: "translateY(-2rem)"
+      }}
     >
-      How It Works
+      Dream Job, Landed
     </Text.h1>
   </StyledDesktopHowImageContainer>
 );

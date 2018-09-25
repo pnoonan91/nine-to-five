@@ -245,15 +245,15 @@ Text.xsmall.defaultProps = {
 };
 
 Text.primaryHeader.defaultProps = {
-  fontFamily: "Bitter",
-  fontSize: 8,
+  fontFamily: "Shadows Into Light, cursive",
+  fontSize: "55px",
   fontWeight: 500,
   m: 0,
   color: colors.primaryBlue
 };
 
 Text.primaryHeaderMobile.defaultProps = {
-  fontFamily: "Bitter",
+  fontFamily: "Shadows Into Light, cursive",
   fontSize: 6,
   fontWeight: 400,
   m: 0,

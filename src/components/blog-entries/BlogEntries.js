@@ -5,8 +5,9 @@ import DesktopBlogEntries from "./DesktopBlogEntries";
 //
 // --- Styled Components ---
 const StyledBlogEntriesContainer = styled.div`
-  margin-top: 67px;
   postition: relative;
+  background-color: ${props => props.theme.colors.secondaryBlue};
+  padding: 2rem;
 `;
 
 //

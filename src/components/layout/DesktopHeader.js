@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Flex, Box } from "grid-styled";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -32,37 +32,101 @@ const StyledNavItem = styled(Box)`
     cursor: pointer;
     border-color: ${props => props.theme.colors.makoGray};
   }
+
+  &.activeNavLink {
+    color: ${props => props.theme.colors.primaryGreen};
+    border-bottom: 3px solid ${props => props.theme.colors.primaryGreen};
+  }
 `;
 
 //
 // --- Desktop Header Component --
-const DesktopHeader = props => (
-  <StyledDesktopHeader>
-    <Flex alignItems="center">
-      <Link to="/">
-        <img width="40px" height="40px" margin="auto" src="/icons/clock.jpg" />
-      </Link>
-      <Link to="/">
-        <Text.h1 ml={3} color={colors.primaryBlue}>
-          nine to five
-        </Text.h1>
-      </Link>
-      <StyledNavItem fontSize={3}>
-        <Link to="/how-it-works">How It Works</Link>
-      </StyledNavItem>
-      <StyledNavItem fontSize={3}>
-        <Link to="/about">About Us</Link>
-      </StyledNavItem>
-      <StyledNavItem fontSize={3}>
-        <Link to="/blog">Blog</Link>
-      </StyledNavItem>
-    </Flex>
-    <Box>
-      <a onClick={props.onModalClick} className="primary">
-        Free Consultation
-      </a>
-    </Box>
-  </StyledDesktopHeader>
-);
+class DesktopHeader extends Component {
+  state = {
+    activeLink: undefined
+  };
+
+  componentDidMount() {
+    this.updateActiveLink(window.location.pathname.slice(1));
+  }
+
+  componentDidUpdate() {
+    if (this.state.activeLink !== window.location.pathname.slice(1)) {
+      this.updateActiveLink(window.location.pathname.slice(1));
+    }
+  }
+
+  updateActiveLink = id => {
+    let element = document.getElementById(id);
+
+    if (this.state.activeLink) {
+      document
+        .getElementById(this.state.activeLink)
+        .classList.remove("activeNavLink");
+    }
+
+    if (element) {
+      element.classList.add("activeNavLink");
+    }
+
+    this.setState({
+      activeLink: id
+    });
+  };
+
+  render() {
+    return (
+      <StyledDesktopHeader>
+        <Flex alignItems="center">
+          <Link to="/">
+            <img
+              width="40px"
+              height="40px"
+              margin="auto"
+              src="/icons/clock.jpg"
+            />
+          </Link>
+          <Link to="/" onClick={() => this.updateActiveLink()}>
+            <Text.h1 ml={3} color={colors.primaryBlue}>
+              nine to five
+            </Text.h1>
+          </Link>
+          <Link to="/how-it-works">
+            <StyledNavItem
+              fontSize={3}
+              id="how-it-works"
+              onClick={() => this.updateActiveLink("how-it-works")}
+            >
+              How It Works
+            </StyledNavItem>
+          </Link>
+          <Link to="/about">
+            <StyledNavItem
+              fontSize={3}
+              id="about"
+              onClick={() => this.updateActiveLink("about")}
+            >
+              About Us
+            </StyledNavItem>
+          </Link>
+          <Link to="/blog">
+            <StyledNavItem
+              fontSize={3}
+              id="blog"
+              onClick={() => this.updateActiveLink("blog")}
+            >
+              Blog
+            </StyledNavItem>
+          </Link>
+        </Flex>
+        <Box>
+          <a onClick={this.props.onModalClick} className="primary">
+            Free Consultation
+          </a>
+        </Box>
+      </StyledDesktopHeader>
+    );
+  }
+}
 
 export default DesktopHeader;

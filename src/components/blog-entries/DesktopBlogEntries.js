@@ -13,8 +13,12 @@ const StyledDesktopBlogEntriesContainer = styled(Flex)`
 
 const StyledArticleContainer = styled(Flex)`
   padding: 2rem;
-  border-bottom: 1px solid ${props => props.theme.colors.tunaGray};
   justify-content: space-around;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  border: 1px solid ${props => props.theme.colors.lightGray};
 `;
 
 const StyledThumbnail = styled.div`

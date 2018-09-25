@@ -29,7 +29,7 @@ const LandingOverviewIcons = props => {
           <DesktopOverviewIcon
             imageSource="/icons/coach.png"
             title="Career Consulting"
-            description="Our experienced Acquisition Specialists will help you figure out where you want to go in your career and how to get there."
+            description="Our experienced consultants will help you figure out where you want to go in your career and how to get there."
           />
           <DesktopOverviewIcon
             imageSource="/icons/search.png"
@@ -39,7 +39,7 @@ const LandingOverviewIcons = props => {
           <DesktopOverviewIcon
             imageSource="/icons/resume.png"
             title="Resume Building"
-            description="You'll receive an actionable resume that will stand out and get you noticed. We'll take your resume from drab to fab."
+            description="You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
           />
         </StyledLandingOverviewIcons>
       </HideBreakPoint>
@@ -53,12 +53,12 @@ const LandingOverviewIcons = props => {
           <MobileOverviewIcon
             imageSource="/icons/coach.png"
             title="Career Consulting"
-            description="Our experienced Acquisition Specialists will help you figure out where you want to go in your career and how to get there."
+            description="Our experienced consultants will help you figure out where you want to go in your career and how to get there."
           />
           <MobileOverviewIcon
             imageSource="/icons/resume.png"
             title="Resume Building"
-            description="You'll receive an actionable resume that will stand out and get you noticed. We'll take your resume from drab to fab."
+            description="You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
           />
         </StyledLandingOverviewIcons>
       </HideBreakPoint>

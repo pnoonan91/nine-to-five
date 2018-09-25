@@ -39,10 +39,10 @@ const StyledLinkedinIcon = styled.img`
 `;
 
 const StyledIphoneMock = styled.img`
-  position: absolute;
   left: 20%;
   transform: translateY(0px);
-  width: 600px;
+  height: 650px;
+  z-index: 1;
 `;
 
 const StyledStayInTheKnow = styled.img`
@@ -129,11 +129,6 @@ class DesktopLandingHowItWorks extends React.Component {
           />
         </StyledHowItWorksSectionContainer>
         <StyledHowItWorksSectionContainer>
-          <img
-            src="/images/landing-about-us/user-on-phone.jpg"
-            height="300px"
-            className="about-image"
-          />
           <StyledIphoneMock
             className="about-mock"
             src="/images/landing-about-us/mockup.png"
@@ -168,19 +163,16 @@ class DesktopLandingHowItWorks extends React.Component {
                 applications have been sent and who wants to schedule an
                 interview with you.
               </Text.p>
-              <Link to="/about" className="secondary">Learn About Our Professionals ></Link>
+              <Link to="/about" className="secondary">
+                Learn About Our Professionals >
+              </Link>
             </span>
           </StyledHowItWorksTextContainer>
 
           <img
             src="/images/landing-about-us/weekly-updates.jpg"
             className="about-image"
-            height="300px"
-          />
-          <StyledStayInTheKnow
-            src="/images/landing-about-us/stay-in-the-know.jpg"
-            className="about-icon"
-            width="300px"
+            height="350px"
           />
         </StyledHowItWorksSectionContainer>
         <StyledCenterDiv>

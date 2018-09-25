@@ -6,7 +6,7 @@ import Text from "../text/Text";
 //
 // --- Styled Components ---
 const StyledDesktopAboutMissionContainer = styled(Flex)`
-  background-color: ${props => props.theme.colors.primaryBlue};
+  background-color: #fafbfc;
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
@@ -17,7 +17,7 @@ const StyledDesktopAboutMissionContainer = styled(Flex)`
 // --- Desktop About Us Mission Component ---
 const DesktopAboutMission = props => (
   <StyledDesktopAboutMissionContainer>
-    <Text.p lightbold className="shadow" color="white">
+    <Text.p lightbold>
       We are a group of talent acquisition professionals who have worked as
       recruiters, headhunters, and HR professionals who are passionate about
       improving the job searching process. The truth is, the job searching

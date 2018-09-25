@@ -29,7 +29,7 @@ const DesktopLandingCompanies = props => (
     <Text.h2 id="#companies" m={0} pt={"50px"} semibold>
       Our Clients Get Hired At Awesome Companies
     </Text.h2>
-    <StyledCompaniesImage width="70%" src="/images/companies.png" />
+    <StyledCompaniesImage width="90%" src="/images/companies.png" />
     <StyledLandYourDreamJobButton>
       {!props.hideButton && (
         <a onClick={() => history.push("/how-it-works")} className="primary">

@@ -141,7 +141,7 @@ const DesktopHowDetailsComponent = props => (
         Lets work together
       </a>
       <img
-        style={{ position: "absolute", width: "400px", right: "58%" }}
+        style={{ position: "absolute", width: "450px", right: "58%" }}
         src="/images/how-it-works/go-for-it.jpg"
       />
     </StyledHowToSectionRight>

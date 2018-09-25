@@ -22,13 +22,6 @@ const StyledDesktopAboutImageComponent = styled(Flex)`
 const DesktopAboutImage = props => (
   <StyledDesktopAboutImageComponent>
     <Box>
-      <Text.h1
-        color="white"
-        className="shadow"
-        style={{ margin: "auto", fontSize: "3.5rem" }}
-      >
-        About Us
-      </Text.h1>
       <Text.h5
         lightbold
         className="shadow"
@@ -38,7 +31,9 @@ const DesktopAboutImage = props => (
       </Text.h5>
     </Box>
     <Box m={"2rem"}>
-      <a onClick={props.onModalClick} className="primary">Let's Chat</a>
+      <a onClick={props.onModalClick} className="primary">
+        Let's Chat
+      </a>
     </Box>
   </StyledDesktopAboutImageComponent>
 );

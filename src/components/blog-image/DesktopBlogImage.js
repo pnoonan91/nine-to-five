@@ -22,7 +22,7 @@ const StyledDesktopBlogImageComponent = styled(Flex)`
 const DesktopBlogImage = props => (
   <StyledDesktopBlogImageComponent>
     <Text.h1 color="white" className="shadow">
-      Career Insights
+      The happiest of hours
     </Text.h1>
   </StyledDesktopBlogImageComponent>
 );
