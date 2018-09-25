@@ -18,8 +18,7 @@ const StyledMobileHeader = styled(Flex)`
 `;
 
 const StyledMobileLogoContainer = styled(Box)`
-  background-color: ${props => props.theme.colors.primaryBlue};
-  padding: 10px;
+  padding: 5px;
 `;
 
 //
@@ -28,12 +27,14 @@ const MobileHeader = props => (
   <StyledMobileHeader>
     <Flex alignItems="center">
       <StyledMobileLogoContainer>
-        <img src="/icons/clock_white_sm.png" />
+        <img style={{ width: "40px" }} src="/icons/clock.jpg" />
       </StyledMobileLogoContainer>
       <Text.h5 ml={1}>nine to five</Text.h5>
     </Flex>
     <Box>
-      <a className="primary">Free Consultation</a>
+      <a onClick={props.onModalClick} className="primary">
+        Free Consultation
+      </a>
     </Box>
   </StyledMobileHeader>
 );

@@ -102,7 +102,7 @@ class App extends Component {
         <div
           class="calendly-inline-widget"
           data-url="https://calendly.com/helloninetofive"
-          style={{ minWidth: "320px", height: "580px", display: "none" }}
+          style={{ maxWidth: "1px", maxHeight: "1px", display: "none" }}
         />
         <Modal
           isOpen={this.state.modalIsOpen}

@@ -13,7 +13,7 @@ const StyledMobileLandingImageContainer = styled.div`
   background-size: 100%;
   background-position: center;
   height: 250px;
-  margin-top: 55px;
+  margin-top: 52px;
 `;
 
 const StyledDesktopLandingImageText = styled(Flex)`
@@ -76,7 +76,10 @@ class MobileLandingImage extends Component {
           </StyledAlternatingWordContainerMobile>
         </StyledDesktopLandingImageText>
         <Box width={0.75}>
-          <StyledMobileConsultationButton className="primary">
+          <StyledMobileConsultationButton
+            onClick={() => this.props.onModalClick()}
+            className="primary"
+          >
             Schedule Your Free Consultation Now!
           </StyledMobileConsultationButton>
         </Box>

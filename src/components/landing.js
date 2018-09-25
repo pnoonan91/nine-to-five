@@ -10,7 +10,7 @@ import LandingCompaniesComponent from "./landing-companies/LandingCompanies";
 class Landing extends Component {
   render() {
     return (
-      <div>
+      <div style={{ width: "100%" }}>
         <LandingImageComponent onModalClick={this.props.onModalClick} />
         <LandingOverviewIcons />
         <LandingHowItWorksComponent onModalClick={this.props.onModalClick} />
