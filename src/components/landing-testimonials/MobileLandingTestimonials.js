@@ -99,7 +99,7 @@ const MobileLandingTestimonials = props => (
     </Flex>
     <div>
       <Slider
-        arrows
+        arrows={false}
         dots
         infinite
         slidesToShow={1}
