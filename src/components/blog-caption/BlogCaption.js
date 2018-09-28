@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HideBreakPoint from "../layout/HideBreakPoint";
 import DesktopBlogCaption from "./DesktopBlogCaption";
+import MobileBlogCaption from "./MobileBlogCaption";
 
 //
 // --- Styled Components ---
@@ -15,6 +16,9 @@ const BlogCaptionComponent = props => (
   <StyledBlogCaptionComponent>
     <HideBreakPoint xs sm md>
       <DesktopBlogCaption />
+    </HideBreakPoint>
+    <HideBreakPoint lg>
+      <MobileBlogCaption />
     </HideBreakPoint>
   </StyledBlogCaptionComponent>
 );

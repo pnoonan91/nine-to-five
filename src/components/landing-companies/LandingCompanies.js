@@ -17,7 +17,7 @@ const LandingCompaniesComponent = props => (
       <DesktopLandingCompanies hideButton={props.hideButton} />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileLandingCompanies />
+      <MobileLandingCompanies hideButton={props.hideButton} />
     </HideBreakPoint>
   </StyledLandingCompaniesContainer>
 );

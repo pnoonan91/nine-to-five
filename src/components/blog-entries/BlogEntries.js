@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+
 import DesktopBlogEntries from "./DesktopBlogEntries";
+import HideBreakPoint from "../layout/HideBreakPoint";
+import MobileBlogEntries from "./MobileBlogEntries";
 
 //
 // --- Styled Components ---
 const StyledBlogEntriesContainer = styled.div`
   postition: relative;
   background-color: ${props => props.theme.colors.secondaryBlue};
-  padding: 2rem;
+  padding: 1rem;
 `;
 
 //
@@ -21,7 +24,7 @@ class BlogEntries extends Component {
   componentDidMount() {
     window
       .fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40patnoonan"
+        "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fnine-to-five"
       )
       .then(result => result.json())
       .then(articles => {
@@ -39,7 +42,14 @@ class BlogEntries extends Component {
         {this.state.isLoading ? (
           "Articles loading..."
         ) : (
-          <DesktopBlogEntries stories={this.state.stories} />
+          <div>
+            <HideBreakPoint xs sm md>
+              <DesktopBlogEntries stories={this.state.stories} />
+            </HideBreakPoint>
+            <HideBreakPoint lg>
+              <MobileBlogEntries stories={this.state.stories} />
+            </HideBreakPoint>
+          </div>
         )}
       </StyledBlogEntriesContainer>
     );

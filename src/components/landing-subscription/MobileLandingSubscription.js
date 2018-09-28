@@ -9,7 +9,7 @@ const StyledMobileLandingSubscriptionContainer = styled(Flex)`
     background-color: ${props => props.theme.colors.primaryGreen}
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem 1rem;
     text-align: center
 `;
 

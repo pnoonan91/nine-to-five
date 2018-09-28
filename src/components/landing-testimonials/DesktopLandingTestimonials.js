@@ -87,7 +87,7 @@ advance their career."
       <Testimonial
         image="/images/landing-testimonials/krystyn.jpeg"
         name="Krystyn A."
-        testimonial="text to come..."
+        testimonial="I would recommend Nine to Five to anyone who is struggling to find a career that truly fits their personality and lifestyle.  Kyle is genuinely interested in helping each and every person that comes to him.  He took the time to understand all the factors that I am considering when looking for a career.  He's professional, organized, easy to talk to, and is willing to help throughout the entire process.  Never once did I feel discouraged because Kyle was always there to give me the advice I needed to succeed!"
         occupation="Merchandiser"
         company="Chloe and Isabel"
         linkedIn="https://www.linkedin.com/in/krystyn-abbate-a698168b/"

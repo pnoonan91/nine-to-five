@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import HideBreakPoint from "../layout/HideBreakPoint";
 import DesktopHowImage from "./DesktopHowImage";
+import MobileHowImage from "./MobileHowImage";
 
 //
 // --- Styled Components ---
@@ -16,6 +17,9 @@ const HowImageComponent = props => (
   <StyledHowImageComponent>
     <HideBreakPoint xs sm md>
       <DesktopHowImage />
+    </HideBreakPoint>
+    <HideBreakPoint lg>
+      <MobileHowImage />
     </HideBreakPoint>
   </StyledHowImageComponent>
 );

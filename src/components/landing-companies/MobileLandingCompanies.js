@@ -10,23 +10,21 @@ const StyledMobileLandingCompaniesContainer = styled(Flex)`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: 2rem 0;
 `;
 
 const StyledLandYourDreamJobButton = styled.div`
   width: 45%;
   margin: auto;
-  padding-bottom: 2rem;
 `;
 
-const StyledCompaniesImage = styled.img`
-  margin-bottom: 1rem;
-`;
+const StyledCompaniesImage = styled.img``;
 
 //
 // --- Mobile Landing Companies Component ---
 const MobileLandingCompanies = props => (
   <StyledMobileLandingCompaniesContainer>
-    <Text.h5 id="#companies" m={0} pt={"50px"} semibold>
+    <Text.h5 id="#companies" m={0} semibold>
       Our Clients Get Hired At Awesome Companies
     </Text.h5>
     <StyledCompaniesImage width="90%" src="/images/companies-mobile.png" />

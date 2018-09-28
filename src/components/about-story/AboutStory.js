@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HideBreakPoint from "../layout/HideBreakPoint";
 import DesktopAboutStory from "./DesktopAboutStory";
+import MobileAboutStory from "./MobileAboutStory";
 
 //
 // --- Styled Components ---
@@ -15,6 +16,9 @@ const AboutStoryComponent = props => (
   <StyledAboutStoryComponent>
     <HideBreakPoint xs sm md>
       <DesktopAboutStory onModalClick={props.onModalClick} />
+    </HideBreakPoint>
+    <HideBreakPoint lg>
+      <MobileAboutStory onModalClick={props.onModalClick} />
     </HideBreakPoint>
   </StyledAboutStoryComponent>
 );
