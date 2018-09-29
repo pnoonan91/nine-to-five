@@ -134,7 +134,7 @@ class MobileLandingHowItWorks extends React.Component {
               </Text.p>
               <a
                 onClick={scrollOnClick}
-                href="#companies"
+                href="#mobileCompanies"
                 className="secondary"
               >
                 Where Our Clients Get Hired >

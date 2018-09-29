@@ -19,10 +19,16 @@ const StyledHowItWorksHeader = styled(Flex)`
 const HowHeaderComponent = props => (
   <StyledHowItWorksHeader>
     <HideBreakPoint xs sm md>
-      <DesktopHowHeader onLinkClick={props.onLinkClick} />
+      <DesktopHowHeader
+        onLinkClick={props.onLinkClick}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileHowHeader onLinkClick={props.onLinkClick} />
+      <MobileHowHeader
+        onLinkClick={props.onLinkClick}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
   </StyledHowItWorksHeader>
 );

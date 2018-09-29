@@ -44,7 +44,10 @@ export const scrollOnClick = element => {
 const HowItWorks = props => (
   <div>
     <HowImageComponent />
-    <HowHeaderComponent onLinkClick={scrollOnClick} />
+    <HowHeaderComponent
+      onLinkClick={scrollOnClick}
+      onModalClick={props.onModalClick}
+    />
     <HowDetailsComponent onModalClick={props.onModalClick} />
     <LandingSubscriptionComponent onModalClick={props.onModalClick} />
     <LandingCompaniesComponent hideButton />

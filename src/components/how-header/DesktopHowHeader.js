@@ -109,6 +109,7 @@ const DesktopHowHeader = props => (
         stepTitle="Land the job!"
         stepContent="Try not to act surprised when you get multiple offers!"
         linkName="Let's get started"
+        onLinkClick={props.onModalClick}
       />
     </StyledStepsContainer>
   </StyledDesktopHowHeader>

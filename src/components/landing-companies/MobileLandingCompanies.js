@@ -24,7 +24,7 @@ const StyledCompaniesImage = styled.img``;
 // --- Mobile Landing Companies Component ---
 const MobileLandingCompanies = props => (
   <StyledMobileLandingCompaniesContainer>
-    <Text.h5 id="#companies" m={0} semibold>
+    <Text.h5 id="#mobileCompanies" m={0} semibold>
       Our Clients Get Hired At Awesome Companies
     </Text.h5>
     <StyledCompaniesImage width="90%" src="/images/companies-mobile.png" />
