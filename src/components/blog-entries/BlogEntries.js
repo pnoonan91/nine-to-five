@@ -28,7 +28,6 @@ class BlogEntries extends Component {
       )
       .then(result => result.json())
       .then(articles => {
-        console.log(JSON.stringify(articles));
         this.setState({
           feed: articles.feed,
           stories: articles.items,

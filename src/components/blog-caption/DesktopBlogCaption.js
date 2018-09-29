@@ -11,16 +11,20 @@ const StyledDesktopBlogCaptionContainer = styled(Flex)`
   align-items: center;
   padding: 1rem 2rem;
   text-align: center;
+  flex-direction: column;
 `;
 
 //
 // --- Desktop Blog Caption ---
 const DesktopBlogCaption = props => (
   <StyledDesktopBlogCaptionContainer>
+    <Text.h3 lightbold style={{ margin: "0" }}>
+      Blog
+    </Text.h3>
     <Text.p lightbold>
-      Saturday’s are for the blog. Every Saturday, we’ll share nightmare
-      interview stories (because we have a lot), offer up some advice, customer
-      success stories, and talk about anything else job searching related.
+      Every Saturday, we’ll share nightmare interview stories (because we have a
+      lot), offer up some advice, customer success stories, and talk about
+      anything else job searching related.
     </Text.p>
   </StyledDesktopBlogCaptionContainer>
 );

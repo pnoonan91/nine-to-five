@@ -11,7 +11,7 @@ const StyledDesktopHowImageContainer = styled(Flex)`
   background-size: 100%;
   background-position: bottom;
   margin-top: 67px;
-  height: 480px;
+  height: 350px;
   text-align: center;
   flex-direction: column;
   align-items: center;

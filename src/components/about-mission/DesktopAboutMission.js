@@ -11,12 +11,16 @@ const StyledDesktopAboutMissionContainer = styled(Flex)`
   align-items: center;
   padding: 1rem 2rem;
   text-align: center;
+  flex-direction: column;
 `;
 
 //
 // --- Desktop About Us Mission Component ---
 const DesktopAboutMission = props => (
   <StyledDesktopAboutMissionContainer>
+    <Text.h3 lightbold style={{ margin: "0" }}>
+      About Us
+    </Text.h3>
     <Text.p lightbold>
       We are a group of talent acquisition professionals who have worked as
       recruiters, headhunters, and HR professionals who are passionate about

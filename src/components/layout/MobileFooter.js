@@ -10,7 +10,9 @@ import Text from "../text/Text";
 const StyledMobileFooter = styled(Flex)`
   flex-direction: column;
   border-top: 1px solid ${props => props.theme.colors.silverGray};
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   justify-content: space-between;
   background-color: ${props => props.theme.colors.lightGray};
   box-shadow: inset 0 1px 0 0 #eceef2;
@@ -60,6 +62,25 @@ const FooterRight = styled(StyledMobileFooterSection)`
   border-bottom: 1px solid ${props => props.theme.colors.silverGray};
 `;
 
+const StyledBlogContainer = styled(Flex)`
+  text-align: left;
+`;
+
+const StyledThumbnail = styled.div`
+  height: 60px;
+  min-width: 60px;
+  background-image: url(${props =>
+    props.thumbnail || "images/landing-about-us/user-on-phone.jpg"});
+  overflow: hidden;
+  background-position: center;
+  background-size: 100px;
+  border-radius: 50px;
+  margin-right: 1rem;
+  border: 1px solid ${props => props.theme.colors.lightGray};
+  box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  margin-top: 0.5rem;
+`;
+
 //
 // --- Mobile Footer Component ---
 const MobileFooter = props => (
@@ -70,26 +91,27 @@ const MobileFooter = props => (
           <Text.h5>Follow Us</Text.h5>
         </StyledFooterSectionHeader>
         <StyledFooterSectionContent>
-          <i
-            style={{ fontSize: "25px", paddingLeft: "1rem" }}
-            class="fab fa-linkedin"
-          />
-          <i
-            style={{ fontSize: "25px", paddingLeft: "1rem" }}
-            class="fab fa-facebook"
-          />
-          <i
-            style={{ fontSize: "25px", paddingLeft: "1rem" }}
-            class="fab fa-instagram"
-          />
-          <i
-            style={{ fontSize: "25px", paddingLeft: "1rem" }}
-            class="fab fa-twitter-square"
-          />
-          <i
-            style={{ fontSize: "25px", paddingLeft: "1rem" }}
-            class="fab fa-youtube"
-          />
+          <a
+            href="https://www.linkedin.com/company/hello-nine-to-five/"
+            target="_blank"
+          >
+            <i
+              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+              class="fab fa-linkedin"
+            />
+          </a>
+          <a href="https://www.facebook.com/helloninetofive" target="_blank">
+            <i
+              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+              class="fab fa-facebook"
+            />
+          </a>
+          <a href="https://www.instagram.com/hello_ninetofive/" target="_blank">
+            <i
+              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+              class="fab fa-instagram"
+            />
+          </a>
         </StyledFooterSectionContent>
       </FooterLeft>
       <FooterRight>
@@ -97,8 +119,23 @@ const MobileFooter = props => (
           <Text.h5>From The Blog</Text.h5>
         </StyledFooterSectionHeader>
         <StyledFooterSectionContent>
-          <Text.p m={0}>Sample Blog Title</Text.p>
-          <Text.small m={0}>Sample Excerpt from blog</Text.small>
+          <StyledBlogContainer>
+            <a href={props.blog.link} target="_blank">
+              <StyledThumbnail thumbnail={props.blog.image} />
+            </a>
+            <dvi>
+              <a href={props.blog.link} target="_blank">
+                <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
+                <Text.small m={0}>
+                  {props.blog.description.slice(
+                    props.blog.description.indexOf("<p>") + 3,
+                    props.blog.description.indexOf("<p>") + 150
+                  )}
+                  ...
+                </Text.small>
+              </a>
+            </dvi>
+          </StyledBlogContainer>
         </StyledFooterSectionContent>
       </FooterRight>
       <FooterCenter>
@@ -106,7 +143,10 @@ const MobileFooter = props => (
           <Text.h5>Send Us A line</Text.h5>
         </StyledFooterSectionHeader>
         <StyledFooterSectionContent>
-          <i class="fas fa-envelope" /> <a>hello@ninetofive.com</a>
+          <i class="fas fa-envelope" />{" "}
+          <a href="mailto:hellonine25@gmail.com" className="email-link">
+            hellonine25@gmail.com
+          </a>
         </StyledFooterSectionContent>
       </FooterCenter>
     </StyledMobileFooter>

@@ -77,6 +77,14 @@ injectGlobal`
         color: ${theme.colors.secondaryGreen};
     }
 
+    a.email-link {
+        text-decoration: none;
+    }
+
+    a.email-link:hover {
+        text-decoration: underline;
+    }
+
     .shadow {
         text-shadow: 1px 1px 1px rgba(0,0,0,.25);
     }

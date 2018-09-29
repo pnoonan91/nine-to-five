@@ -137,11 +137,11 @@ advance their career."
         />
         <Testimonial
           image="/images/landing-testimonials/gabby.jpeg"
-          name="Gaby P."
+          name="Samantha M."
           testimonial="text to come..."
-          occupation="Sales Assosciate"
-          company="Lilly Pulitzer"
-          linkedIn="https://www.linkedin.com/in/gabriellapullano/"
+          occupation="Content & Advertising Manager"
+          company="Guerrero Media Group"
+          linkedIn="https://www.linkedin.com/in/samanthamcqueen/"
         />
       </Slider>
     </div>

@@ -11,12 +11,14 @@ const StyledMobileAboutMissionContainer = styled(Flex)`
   align-items: center;
   padding: 1rem 2rem;
   text-align: center;
+  flex-direction: column;
 `;
 
 //
 // --- Mobile About Us Mission Component ---
 const MobileAboutMission = props => (
   <StyledMobileAboutMissionContainer>
+    <Text.h4 lightbold>About Us</Text.h4>
     <Text.p lightbold>
       We are a group of talent acquisition professionals who have worked as
       recruiters, headhunters, and HR professionals who are passionate about

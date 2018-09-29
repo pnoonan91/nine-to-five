@@ -7,6 +7,7 @@
     "moment": "^2.22.2",
     "polished": "^2.0.3",
     "react": "^16.4.2",
+    "react-burger-menu": "^2.5.3",
     "react-dom": "^16.4.2",
     "react-loading": "^2.0.3",
     "react-modal": "^3.5.1",

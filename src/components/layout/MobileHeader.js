@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { Flex, Box } from "grid-styled";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { fallDown as Menu } from "react-burger-menu";
 
-import { colors } from "../../styles/colors";
 import Text from "../text/Text";
+import history from "../../history";
 
 //
 // --- Styled Components ---
@@ -21,22 +23,95 @@ const StyledMobileLogoContainer = styled(Box)`
   padding: 5px;
 `;
 
+const StyledMenuLink = styled.div`
+  background-color: white;
+  color: ${props => props.theme.colors.primaryBlue};
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid ${props => props.theme.colors.primaryBlue};
+  opacity: 0.9;
+`;
+
+const StyledMenuLinkCloseButton = styled.div`
+  background-color: white;
+  color: ${props => props.theme.colors.primaryBlue};
+  text-align: right;
+  opacity: 0.9;
+  padding: 1rem;
+  border-bottom: 1px solid ${props => props.theme.colors.primaryBlue};
+`;
+
 //
 // --- Mobile Header Component ---
-const MobileHeader = props => (
-  <StyledMobileHeader>
-    <Flex alignItems="center">
-      <StyledMobileLogoContainer>
-        <img style={{ width: "40px" }} src="/icons/clock.jpg" />
-      </StyledMobileLogoContainer>
-      <Text.h5 ml={1}>nine to five</Text.h5>
-    </Flex>
-    <Box>
-      <a onClick={props.onModalClick} className="primary">
-        Free Consultation
-      </a>
-    </Box>
-  </StyledMobileHeader>
-);
+class MobileHeader extends Component {
+  state = {
+    isMenuOpen: false
+  };
+
+  toggleMenu = () => {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen
+    });
+  };
+
+  handleNavigation = path => {
+    this.setState({ isMenuOpen: false }, () => {
+      history.push(path);
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Menu isOpen={this.state.isMenuOpen} width="100%">
+          <StyledMenuLinkCloseButton onClick={() => this.toggleMenu()}>
+            <Text.p style={{ margin: 0 }} color="#1c5d99">
+              <i class="fas fa-chevron-up" /> Close
+            </Text.p>
+          </StyledMenuLinkCloseButton>
+          <StyledMenuLink onClick={() => this.handleNavigation("/")}>
+            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+              Home
+            </Text.h4>
+          </StyledMenuLink>
+          <StyledMenuLink
+            onClick={() => this.handleNavigation("/how-it-works")}
+          >
+            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+              How It Works
+            </Text.h4>
+          </StyledMenuLink>
+          <StyledMenuLink onClick={() => this.handleNavigation("/about")}>
+            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+              About Us
+            </Text.h4>
+          </StyledMenuLink>
+          <StyledMenuLink onClick={() => this.handleNavigation("/blog")}>
+            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+              Blog
+            </Text.h4>
+          </StyledMenuLink>
+        </Menu>
+        <StyledMobileHeader>
+          <Flex alignItems="center">
+            <StyledMobileLogoContainer>
+              <Link to="/">
+                <img style={{ width: "40px" }} src="/icons/clock.jpg" />
+              </Link>
+            </StyledMobileLogoContainer>
+            <Text.h5 ml={1} onClick={this.toggleMenu}>
+              nine to five <i class="fas fa-chevron-down" />
+            </Text.h5>
+          </Flex>
+          <Box>
+            <a onClick={this.props.onModalClick} className="primary">
+              Free Consultation
+            </a>
+          </Box>
+        </StyledMobileHeader>
+      </div>
+    );
+  }
+}
 
 export default MobileHeader;
