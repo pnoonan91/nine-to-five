@@ -12,12 +12,15 @@ const StyledDesktopLandingImageContainer = styled.div`
   background-size: 100%;
   background-position: center;
   height: 480px;
-  margin-top: 67px;
+  margin-top: 64px;
 `;
 
-const StyledDesktopLandingImageText = styled(Flex)`
+const StyledDesktopLandingImageText = styled.div`
+  display: flex;
   height: 480px;
   flex-direction: column;
+  align-items: flex-end;
+  margin-right: 4rem;d
 `;
 
 const StyledAlternatingWordContainer = styled.div`
@@ -66,11 +69,11 @@ class DesktopLandingImage extends Component {
     return (
       <StyledDesktopLandingImageContainer>
         <StyledDesktopLandingImageText width={0.6} ml="auto">
-          <Box m={"auto 0"}>
+          <div style={{ margin: "auto 0" }}>
             <Text.h1 className="shadow" color={colors.standardWhite}>
               Spend less time searching,
             </Text.h1>
-            <Box mt={3}>
+            <div style={{ marginTop: "2rem" }}>
               <Text.h1 className="shadow" color={colors.standardWhite}>
                 and more time{" "}
                 <StyledAlternatingWordContainer>
@@ -80,13 +83,13 @@ class DesktopLandingImage extends Component {
                 </StyledAlternatingWordContainer>{" "}
                 .
               </Text.h1>
-            </Box>
-            <Box width={0.6} mt={6}>
+            </div>
+            <div style={{ marginTop: "2rem" }}>
               <a onClick={this.props.onModalClick} className="primary">
                 Schedule Your Free Consultation Now!
               </a>
-            </Box>
-          </Box>
+            </div>
+          </div>
         </StyledDesktopLandingImageText>
       </StyledDesktopLandingImageContainer>
     );
