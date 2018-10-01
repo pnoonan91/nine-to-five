@@ -9,7 +9,8 @@ import HideBreakPoint from "../layout/HideBreakPoint";
 
 //
 // --- Styled Components ---
-const StyledLandingOverviewIcons = styled(Flex)`
+const StyledLandingOverviewIcons = styled.div`
+    display: flex;
     background-color: ${props => props.theme.colors.standardWhite}
     padding: 20px;
     flex-direction: column;
@@ -24,7 +25,7 @@ const StyledLandingOverviewIcons = styled(Flex)`
 const LandingOverviewIcons = props => {
   return (
     <div>
-      <HideBreakPoint xs sm>
+      <HideBreakPoint xs sm md>
         <StyledLandingOverviewIcons>
           <DesktopOverviewIcon
             imageSource="/icons/coach.png"
@@ -43,7 +44,7 @@ const LandingOverviewIcons = props => {
           />
         </StyledLandingOverviewIcons>
       </HideBreakPoint>
-      <HideBreakPoint md lg>
+      <HideBreakPoint lg>
         <StyledLandingOverviewIcons>
           <MobileOverviewIcon
             imageSource="/icons/search.png"

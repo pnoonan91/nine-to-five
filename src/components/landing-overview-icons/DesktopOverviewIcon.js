@@ -6,9 +6,9 @@ import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopOverviewIconContainer = styled(Box)`
+const StyledDesktopOverviewIconContainer = styled.div`
   text-align: center;
-  max-width: 350px;
+  width: 350px;
 `;
 
 const StyledDesktopOverviewIconImage = styled.img`
