@@ -17,6 +17,14 @@ const StyledDesktopHeader = styled(Flex)`
   padding-top: ${props => props.theme.space[3]}px;
   justify-content: space-between;
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 `;
 
 const StyledNavItem = styled(Box)`
