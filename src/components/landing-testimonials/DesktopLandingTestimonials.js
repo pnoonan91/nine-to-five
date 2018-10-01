@@ -103,7 +103,7 @@ advance their career."
       <Testimonial
         image="/images/landing-testimonials/gabby.jpeg"
         name="Samantha M."
-        testimonial="text to come..."
+        testimonial="I absolutely loved working with Nine to Five and everything they have done for my career! I have gotten SO many compliments on my resume. Kyle was great to work with, my mom even ended up using him as she was looking to get back into the workplace. Working with a professional like Kyle was such a great experience as I did not learn these valuable interview and job searching skills while in college. Loved doing business with them and cannot say enough positive things!"
         occupation="Content & Advertising Manager"
         company="Guerrero Media Group"
         linkedIn="https://www.linkedin.com/in/samanthamcqueen/"
