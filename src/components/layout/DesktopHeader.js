@@ -8,7 +8,9 @@ import { colors } from "../../styles/colors";
 
 //
 // --- Styled Components ---
-const StyledDesktopHeader = styled(Flex)`
+const StyledDesktopHeader = styled.div`
+  display: flex;
+  align-items: center;
   background-color: ${props => props.theme.colors.standardWhite};
   color: ${props => props.theme.colors.makoGray};
   position: relative;
@@ -17,17 +19,9 @@ const StyledDesktopHeader = styled(Flex)`
   padding-top: ${props => props.theme.space[3]}px;
   justify-content: space-between;
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 `;
 
-const StyledNavItem = styled(Box)`
+const StyledNavItem = styled.div`
   color: ${props => props.theme.colors.makoGray};
   padding: 16px 0px;
   text-transform: uppercase;
@@ -85,7 +79,7 @@ class DesktopHeader extends Component {
   render() {
     return (
       <StyledDesktopHeader>
-        <Flex alignItems="center">
+        <div style={{ display: "flex" }}>
           <Link to="/">
             <img
               width="40px"
@@ -126,7 +120,7 @@ class DesktopHeader extends Component {
               Blog
             </StyledNavItem>
           </Link>
-        </Flex>
+        </div>
         <Box>
           <a onClick={this.props.onModalClick} className="primary">
             Free Consultation
