@@ -40,6 +40,7 @@ const StyledLinkedInLink = styled.a`
 `;
 
 const StyledTestimonialTextContainer = styled.div`
+  width: 100%;
   min-height: 336px;
 `;
 
