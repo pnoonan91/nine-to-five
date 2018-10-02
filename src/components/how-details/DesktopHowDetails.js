@@ -60,7 +60,7 @@ const DesktopHowDetailsComponent = props => (
         style={{
           position: "absolute",
           left: "55%",
-          transform: "translateY(-2rem)"
+          top: "850px"
         }}
       >
         <img
