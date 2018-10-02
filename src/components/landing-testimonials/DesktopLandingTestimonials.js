@@ -22,7 +22,7 @@ const StyledTestimonial = styled.div`
   align-items: center;
   text-align: center;
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
-  border: 1px solid ${props => props.theme.colors.lightGray};
+  border: 1px solid "#dedede";
   padding: 1rem;
   margin: 2rem;
 `;
@@ -57,11 +57,13 @@ const Testimonial = props => (
         {props.testimonial}
       </Text.p>
     </StyledTestimonialTextContainer>
-    <Text.h5 lightbold>{props.occupation}</Text.h5>
-    <Text.small>{props.company}</Text.small>
-    <StyledLinkedInLink className="secondary" href={props.linkedIn}>
-      LinkedIn
-    </StyledLinkedInLink>
+    <div style={{ width: "100%" }}>
+      <Text.h5 lightbold>{props.occupation}</Text.h5>
+      <Text.small>{props.company}</Text.small>
+      <StyledLinkedInLink className="secondary" href={props.linkedIn}>
+        LinkedIn
+      </StyledLinkedInLink>
+    </div>
   </StyledTestimonial>
 );
 
