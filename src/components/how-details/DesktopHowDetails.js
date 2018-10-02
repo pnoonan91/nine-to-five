@@ -38,31 +38,38 @@ const StyledHowToSectionRight = styled.div`
 const DesktopHowDetailsComponent = props => (
   <StyledDetailSection>
     <StyledHowToSectionLeft id="#consultation">
-      <Text.h3 m={0} lightbold>
-        Sign up for your free consultation
-      </Text.h3>
-      <Text.p style={{ minHeight: "100px", paddingRight: "2rem" }}>
-        During this introductory call, we will discuss how Nine to Five can
-        personalize the process to fit your needs. We will discuss your career
-        interests, your resume, cover letter, and the potential challenges you
-        are facing during your job/internship search.
-      </Text.p>
-      <a
-        onClick={props.onModalClick}
-        style={{ margin: "2rem 0", width: "80%" }}
-        className="primary"
-      >
-        Sign Up For a Free Consultation
-      </a>
-      <img
+      <div>
+        <Text.h3 m={0} lightbold>
+          Sign up for your free consultation
+        </Text.h3>
+        <Text.p style={{ minHeight: "100px", paddingRight: "2rem" }}>
+          During this introductory call, we will discuss how Nine to Five can
+          personalize the process to fit your needs. We will discuss your career
+          interests, your resume, cover letter, and the potential challenges you
+          are facing during your job/internship search.
+        </Text.p>
+        <a
+          onClick={props.onModalClick}
+          style={{ margin: "2rem 0", width: "80%" }}
+          className="primary"
+        >
+          Sign Up For a Free Consultation
+        </a>
+      </div>
+      <div
         style={{
           position: "absolute",
-          width: "500px",
           left: "55%",
           transform: "translateY(-2rem)"
         }}
-        src="/images/how-it-works/how-it-works-consult.jpg"
-      />
+      >
+        <img
+          style={{
+            width: "500px"
+          }}
+          src="/images/how-it-works/how-it-works-consult.jpg"
+        />
+      </div>
     </StyledHowToSectionLeft>
     <StyledHowToSectionRight id="#brand">
       <Text.h3 m={0} lightbold>

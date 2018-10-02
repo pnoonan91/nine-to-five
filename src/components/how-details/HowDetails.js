@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 import HideBreakPoint from "../layout/HideBreakPoint";
 import DesktopHowDetailsComponent from "./DesktopHowDetails";
 import MobileHowDetailsComponent from "./MobileHowDetails";
