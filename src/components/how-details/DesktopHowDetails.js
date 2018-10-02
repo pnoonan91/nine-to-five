@@ -94,7 +94,7 @@ const DesktopHowDetailsComponent = props => (
           position: "absolute",
           width: "500px",
           right: "57%",
-          transform: "translateY(-1rem)"
+          top: "1350px"
         }}
         src="/images/how-it-works/how-it-works-building-brand.jpg"
       />
@@ -103,7 +103,7 @@ const DesktopHowDetailsComponent = props => (
           position: "absolute",
           width: "150px",
           right: "65%",
-          transform: "translateY(16rem)"
+          top: "1630px"
         }}
         src="/icons/linkedin-large.png"
       />
@@ -131,7 +131,7 @@ const DesktopHowDetailsComponent = props => (
           position: "absolute",
           left: "55%",
           width: "450px",
-          transform: "translateY(-0.8rem)"
+          top: "1835px"
         }}
         src="/images/how-it-works/phone-stuff.png"
       />
@@ -153,7 +153,12 @@ const DesktopHowDetailsComponent = props => (
         Lets work together
       </a>
       <img
-        style={{ position: "absolute", width: "450px", right: "58%" }}
+        style={{
+          position: "absolute",
+          width: "450px",
+          right: "58%",
+          top: "2355px"
+        }}
         src="/images/how-it-works/go-for-it.jpg"
       />
     </StyledHowToSectionRight>
