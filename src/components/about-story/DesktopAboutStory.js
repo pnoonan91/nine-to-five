@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex, Box } from "grid-styled";
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopAboutContainer = styled(Flex)`
+const StyledDesktopAboutContainer = styled.div`
+  display: flex;
   justify-content: space-between;
   padding: 2rem;
   background-color: ${props => props.theme.colors.secondaryBlue};
@@ -15,7 +15,7 @@ const StyledDesktopAboutContainer = styled(Flex)`
 // --- Desktop About Us Story ---
 const DesktopAboutStory = props => (
   <StyledDesktopAboutContainer>
-    <Box style={{ marginTop: "auto", marginBottom: "auto" }}>
+    <div style={{ marginTop: "auto", marginBottom: "auto" }}>
       <Text.h4 semibold m={0}>
         Our Story
       </Text.h4>
@@ -37,7 +37,7 @@ const DesktopAboutStory = props => (
         of “Can you help me like you helped her?” And that is how Nine to Five
         was born.
       </Text.p>
-      <Flex justifyContent="space-between">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <a
           onClick={props.onModalClick}
           style={{ width: "50%", marginTop: "2rem", height: "15px" }}
@@ -45,7 +45,13 @@ const DesktopAboutStory = props => (
         >
           Let us help you find your dream job!
         </a>
-        <Flex flexDirection="column" style={{ transform: "translateY(3rem)" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            transform: "translateY(3rem)"
+          }}
+        >
           <Text.primaryHeader
             className="shadow"
             style={{
@@ -62,22 +68,12 @@ const DesktopAboutStory = props => (
             }}
             src="/images/about-us/arrow.png"
           />
-        </Flex>
-      </Flex>
-    </Box>
-    <Box style={{ marginRight: "4rem", marginLeft: "4rem" }}>
+        </div>
+      </div>
+    </div>
+    <div style={{ marginRight: "4rem", marginLeft: "4rem" }}>
       <img width="400px" src="/images/about-us/gaby.jpg" />
-      <div
-        style={{
-          width: "400px",
-          height: "533px",
-          backgroundColor: "white",
-          position: "absolute",
-          transform: "translateY(-500px) translateX(2rem)",
-          zIndex: "-2"
-        }}
-      />
-    </Box>
+    </div>
   </StyledDesktopAboutContainer>
 );
 

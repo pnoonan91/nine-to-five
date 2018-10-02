@@ -5,7 +5,9 @@ import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopAboutImageComponent = styled(Flex)`
+const StyledDesktopAboutImageComponent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-image: url("/images/about-us/about-us-header.jpg");
   background-size: 100%;
   background-position: center;
@@ -21,7 +23,7 @@ const StyledDesktopAboutImageComponent = styled(Flex)`
 // --- Desktop About Us Image ---
 const DesktopAboutImage = props => (
   <StyledDesktopAboutImageComponent>
-    <Box>
+    <div>
       <Text.h5
         lightbold
         className="shadow"
@@ -29,12 +31,12 @@ const DesktopAboutImage = props => (
       >
         At Nine to Five, we believe there is a better way to job search.
       </Text.h5>
-    </Box>
-    <Box m={"2rem"}>
+    </div>
+    <div style={{ margin: "2rem" }}>
       <a onClick={props.onModalClick} className="primary">
         Let's Chat
       </a>
-    </Box>
+    </div>
   </StyledDesktopAboutImageComponent>
 );
 
