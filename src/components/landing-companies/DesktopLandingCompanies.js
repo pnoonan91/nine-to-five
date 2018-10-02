@@ -6,7 +6,8 @@ import history from "../../history";
 
 //
 // --- Styled Components ---
-const StyledDesktopLandingCompaniesContainer = styled(Flex)`
+const StyledDesktopLandingCompaniesContainer = styled.div`
+  display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;

@@ -10,21 +10,22 @@ import { scrollOnClick } from "../howitworks";
 // --- Styled Components ---
 const StyledDesktopLandingHowItWorks = styled.div`
   background-color: ${props => props.theme.colors.secondaryBlue};
-  min-height: 300px;
 `;
 
 const StyledHowItWorksHeader = styled.div`
   text-align: center;
 `;
 
-const StyledHowItWorksSectionContainer = styled(Flex)`
+const StyledHowItWorksSectionContainer = styled.div`
+  display: flex;
   margin: auto;
   justify-content: space-between;
   width: 75%;
   min-height: 500px;
 `;
 
-const StyledHowItWorksTextContainer = styled(Flex)`
+const StyledHowItWorksTextContainer = styled.div`
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex-align: center;
@@ -43,13 +44,6 @@ const StyledIphoneMock = styled.img`
   transform: translateY(0px);
   height: 650px;
   z-index: 1;
-`;
-
-const StyledStayInTheKnow = styled.img`
-  position: absolute;
-  right: 5%;
-  transform: translateY(100px);
-  width: 300px;
 `;
 
 const StyledCenterDiv = styled.div`

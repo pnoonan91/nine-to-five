@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 
 import Text from "../text/Text";
 
@@ -10,11 +9,13 @@ const StyledDesktopLandingTestimonialsContainer = styled.div`
   text-align: center;
 `;
 
-const StyledTestimonialContainer = styled(Flex)`
+const StyledTestimonialContainer = styled.div`
+  display: flex;
   justify-content: space-around;
 `;
 
-const StyledTestimonial = styled(Flex)`
+const StyledTestimonial = styled.div`
+  display: flex;
   width: 25%;
   flex-direction: column;
   justify-content: space-between;

@@ -121,11 +121,11 @@ class DesktopHeader extends Component {
             </StyledNavItem>
           </Link>
         </div>
-        <Box>
+        <div style={{ borderBottom: "0.5rem" }}>
           <a onClick={this.props.onModalClick} className="primary">
             Free Consultation
           </a>
-        </Box>
+        </div>
       </StyledDesktopHeader>
     );
   }

@@ -5,9 +5,9 @@ import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopLandingSubscriptionContainer = styled(Flex)`
+const StyledDesktopLandingSubscriptionContainer = styled.div`
+    display: flex;
     background-color: ${props => props.theme.colors.primaryGreen}
-    min-heigh: 300px;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
