@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopHowImageContainer = styled(Flex)`
+const StyledDesktopHowImageContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-image: url("/images/how-it-works/how-it-works-landing.jpg");
   background-size: 100%;
   background-position: bottom;
-  margin-top: 67px;
+  margin-top: 64px;
   height: 350px;
   text-align: center;
   flex-direction: column;

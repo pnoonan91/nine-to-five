@@ -1,31 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDetailSection = styled(Flex)`
+const StyledDetailSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   padding: 4rem;
   flex-direction: column;
   background-color: ${props => props.theme.colors.secondaryBlue};
 `;
 
-const StyledHowToSectionLeft = styled(Flex)`
+const StyledHowToSectionLeft = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-color: white;
   flex-direction: column;
   padding: 4rem;
   margin-bottom: 6rem;
-  width: 60%;
+  width: 50%;
 `;
 
-const StyledHowToSectionRight = styled(Flex)`
+const StyledHowToSectionRight = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-color: white;
   flex-direction: column;
   padding: 4rem;
   margin-left: 40%;
   margin-bottom: 6rem;
-  width: 60%;
+  width: 50%;
 `;
 
 //
