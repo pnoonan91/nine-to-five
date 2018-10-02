@@ -1,28 +1,35 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopHowHeader = styled(Flex)`
+const StyledDesktopHowHeader = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
 `;
 
-const StyledStepsContainer = styled(Flex)`
+const StyledStepsContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
     width: 100%
   justify-content: space-around;
 `;
 
-const StyledStepFlexContainer = styled(Flex)`
+const StyledStepFlexContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   width: 18%;
   flex-direction: column;
   text-align: center;
 `;
 
-const StyledNumber = styled(Flex)`
+const StyledNumber = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-color: ${props => props.theme.colors.primaryGreen};
   color: white;
   height: 60px;
