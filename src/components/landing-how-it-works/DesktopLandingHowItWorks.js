@@ -102,7 +102,7 @@ class DesktopLandingHowItWorks extends React.Component {
         </StyledHowItWorksHeader>
         <StyledHowItWorksSectionContainer>
           <StyledHowItWorksTextContainer>
-            <span>
+            <div style={{ width: "100%" }}>
               <Text.h4 semibold>Build Your Brand</Text.h4>
               <Text.p>
                 You benefit from a professionally built resume and a fine-tuned
@@ -112,7 +112,7 @@ class DesktopLandingHowItWorks extends React.Component {
               <Link to="/how-it-works" className="secondary">
                 How It Works >
               </Link>
-            </span>
+            </div>
           </StyledHowItWorksTextContainer>
           <img
             src="/images/landing-about-us/patrick-linkedin-header.png"
@@ -131,7 +131,7 @@ class DesktopLandingHowItWorks extends React.Component {
           />
 
           <StyledHowItWorksTextContainer style={{ height: "650px" }}>
-            <span>
+            <div style={{ width: "100%" }}>
               <Text.h4 semibold>
                 The Whole Package, Right From Your Phone
               </Text.h4>
@@ -147,12 +147,12 @@ class DesktopLandingHowItWorks extends React.Component {
               >
                 Where Our Clients Get Hired >
               </a>
-            </span>
+            </div>
           </StyledHowItWorksTextContainer>
         </StyledHowItWorksSectionContainer>
         <StyledHowItWorksSectionContainer>
           <StyledHowItWorksTextContainer>
-            <span>
+            <div style={{ width: "100%" }}>
               <Text.h4 semibold>Stay In The Know</Text.h4>
               <Text.p>
                 Each week, your coach will provide you a summary of where
@@ -162,7 +162,7 @@ class DesktopLandingHowItWorks extends React.Component {
               <Link to="/about" className="secondary">
                 Learn About Our Professionals >
               </Link>
-            </span>
+            </div>
           </StyledHowItWorksTextContainer>
 
           <img
