@@ -19,7 +19,7 @@ const StyledDesktopLandingImageText = styled.div`
   height: 480px;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 8rem;
+  margin-right: 12%;
 `;
 
 const StyledAlternatingWordContainer = styled.div`

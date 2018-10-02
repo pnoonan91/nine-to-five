@@ -11,6 +11,7 @@ const StyledDesktopLandingCompaniesContainer = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  width: 100%;
 `;
 
 const StyledLandYourDreamJobButton = styled.div`

@@ -7,7 +7,9 @@ import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopFooter = styled(Flex)`
+const StyledDesktopFooter = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   border-top: 1px solid ${props => props.theme.colors.silverGray};
   padding: 1rem;
   justify-content: space-between;
@@ -15,7 +17,9 @@ const StyledDesktopFooter = styled(Flex)`
   box-shadow: inset 0 1px 0 0 #eceef2;
 `;
 
-const StyledDesktopLinks = styled(Flex)`
+const StyledDesktopLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   min-height: 100px;
   background-color: ${props => props.theme.colors.primaryBlue};
   color: ${props => props.theme.colors.secondaryBlue};
@@ -24,20 +28,23 @@ const StyledDesktopLinks = styled(Flex)`
   align-items: center;
 `;
 
-const StyledLinkSection = styled(Flex)`
+const StyledLinkSection = styled.div`
+  display: flex;
   justify-content: space-between;
   text-align: right;
 `;
 
-const StyledDesktopFooterSection = styled(Flex)`
+const StyledDesktopFooterSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
   padding: 0.5rem;
 `;
 
-const StyledFooterSectionHeader = styled(Box)``;
+const StyledFooterSectionHeader = styled.div``;
 
-const StyledFooterSectionContent = styled(Box)`
+const StyledFooterSectionContent = styled.div`
   padding-top: 1rem;
 `;
 
@@ -57,7 +64,9 @@ const FooterRight = styled(StyledDesktopFooterSection)`
   width: 25%;
 `;
 
-const StyledBlogContainer = styled(Flex)`
+const StyledBlogContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   text-align: left;
 `;
 
@@ -124,25 +133,26 @@ const DesktopFooter = props => (
         <StyledFooterSectionHeader>
           <Text.h5>From The Blog</Text.h5>
         </StyledFooterSectionHeader>
-        <StyledFooterSectionContent>
-          <StyledBlogContainer>
+
+        <StyledBlogContainer>
+          <div>
             <a href={props.blog.link} target="_blank">
               <StyledThumbnail thumbnail={props.blog.image} />
             </a>
-            <dvi>
-              <a href={props.blog.link} target="_blank">
-                <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
-                <Text.small m={0}>
-                  {props.blog.description.slice(
-                    props.blog.description.indexOf("<p>") + 3,
-                    props.blog.description.indexOf("<p>") + 150
-                  )}
-                  ...
-                </Text.small>
-              </a>
-            </dvi>
-          </StyledBlogContainer>
-        </StyledFooterSectionContent>
+          </div>
+          <div style={{ width: "75%" }}>
+            <a href={props.blog.link} target="_blank">
+              <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
+              <Text.small m={0}>
+                {props.blog.description.slice(
+                  props.blog.description.indexOf("<p>") + 3,
+                  props.blog.description.indexOf("<p>") + 150
+                )}
+                ...
+              </Text.small>
+            </a>
+          </div>
+        </StyledBlogContainer>
       </FooterRight>
     </StyledDesktopFooter>
     <StyledDesktopLinks>
