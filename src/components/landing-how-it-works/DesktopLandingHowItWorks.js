@@ -18,14 +18,16 @@ const StyledHowItWorksHeader = styled.div`
 
 const StyledHowItWorksSectionContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   justify-content: space-between;
   width: 75%;
-  min-height: 500px;
+  height: 500px;
 `;
 
 const StyledHowItWorksTextContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   flex-align: center;
@@ -128,7 +130,7 @@ class DesktopLandingHowItWorks extends React.Component {
             src="/images/landing-about-us/mockup.png"
           />
 
-          <StyledHowItWorksTextContainer>
+          <StyledHowItWorksTextContainer style={{ height: "650px" }}>
             <span>
               <Text.h4 semibold>
                 The Whole Package, Right From Your Phone
