@@ -32,7 +32,7 @@ const DesktopLandingCompanies = props => (
       Our Clients Get Hired At Awesome Companies
     </Text.h2>
     <StyledCompaniesImage
-      style={{ width: "90%" }}
+      style={{ width: "90%", height: "100%" }}
       src="/images/companies.png"
     />
     <StyledLandYourDreamJobButton>

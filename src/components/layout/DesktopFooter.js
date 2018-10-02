@@ -20,7 +20,6 @@ const StyledDesktopFooter = styled.div`
 const StyledDesktopLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
-  min-height: 100px;
   background-color: ${props => props.theme.colors.primaryBlue};
   color: ${props => props.theme.colors.secondaryBlue};
   padding: 2rem;
