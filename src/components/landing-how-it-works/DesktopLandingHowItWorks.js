@@ -124,13 +124,13 @@ class DesktopLandingHowItWorks extends React.Component {
             className="about-icon"
           />
         </StyledHowItWorksSectionContainer>
-        <StyledHowItWorksSectionContainer>
+        <StyledHowItWorksSectionContainer style={{ height: "650px" }}>
           <StyledIphoneMock
             className="about-mock"
             src="/images/landing-about-us/mockup.png"
           />
 
-          <StyledHowItWorksTextContainer style={{ height: "650px" }}>
+          <StyledHowItWorksTextContainer>
             <div style={{ width: "100%" }}>
               <Text.h4 semibold>
                 The Whole Package, Right From Your Phone
