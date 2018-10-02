@@ -18,7 +18,9 @@ import history from "./history";
 
 //
 // --- Styled Components ---
-const StyledModalSection = styled(Flex)`
+const StyledModalSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 `;
 
@@ -39,9 +41,12 @@ const StyledTextSection = styled(Flex)`
   width: 55%;
 `;
 
-const StyledHowItWorksStepContainer = styled(Flex)``;
+const StyledHowItWorksStepContainer = styled.div`
+  display: flex;
+`;
 
-const StyledNumber = styled(Flex)`
+const StyledNumber = styled.div`
+  display: flex;
   background-color: ${props => props.theme.colors.primaryGreen};
   color: white;
   min-height: 80px;
@@ -53,14 +58,16 @@ const StyledNumber = styled(Flex)`
   margin-bottom: 1.5rem;
 `;
 
-const StyledStepContent = styled(Flex)`
+const StyledStepContent = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: top;
   height: 100%;
   margin-top: 0.5rem;
 `;
 
-const StyledLoadingDiv = styled(Flex)`
+const StyledLoadingDiv = styled.div`
+  display: flex;
   margin-top: 67px;
   min-height: 50vh;
   padding: 6rem;
@@ -118,7 +125,13 @@ class App extends Component {
         >
           <HideBreakPoint xs sm md>
             <StyledModalSection>
-              <Flex justifyContent="space-between" mb={"1rem"}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginBottom: "1rem"
+                }}
+              >
                 <StyledCalendlySection>
                   <div
                     class="calendly-inline-widget"
@@ -127,7 +140,9 @@ class App extends Component {
                   />
                 </StyledCalendlySection>
                 <StyledTextSection>
-                  <Flex justifyContent="space-between">
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
                     <Text.h3 lightbold m={0}>
                       Schedule your free consultation
                     </Text.h3>
@@ -140,8 +155,8 @@ class App extends Component {
                       onClick={() => this.toggleModal()}
                       class="far fa-window-close"
                     />
-                  </Flex>
-                  <Flex flexDirection="column">
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
                     <Text.p>
                       Use the form to your left to find a date and time that
                       works for you. We can't wait to help you find the job of
@@ -181,9 +196,9 @@ class App extends Component {
                       stepTitle="Land the job!"
                       stepContent="Just do us a favor and act surprised when you get the offer."
                     />
-                  </Flex>
+                  </div>
                 </StyledTextSection>
-              </Flex>
+              </div>
             </StyledModalSection>
           </HideBreakPoint>
           <HideBreakPoint lg>

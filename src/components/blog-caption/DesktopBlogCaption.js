@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopBlogCaptionContainer = styled(Flex)`
+const StyledDesktopBlogCaptionContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-color: #fafbfc;
   justify-content: center;
   align-items: center;

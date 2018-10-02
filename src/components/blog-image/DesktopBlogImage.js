@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
+
 import Text from "../text/Text";
 
 //
 // --- Styled Components ---
-const StyledDesktopBlogImageComponent = styled(Flex)`
+const StyledDesktopBlogImageComponent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   background-image: url("/images/blog/blog.jpg");
   background-size: 100%;
   background-position: center;
-  margin-top: 67px;
+  margin-top: 64px;
   height: 350px;
   text-align: center;
   flex-direction: column;

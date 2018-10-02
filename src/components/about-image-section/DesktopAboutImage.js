@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex, Box } from "grid-styled";
 import Text from "../text/Text";
 
 //
@@ -11,7 +10,7 @@ const StyledDesktopAboutImageComponent = styled.div`
   background-image: url("/images/about-us/about-us-header.jpg");
   background-size: 100%;
   background-position: center;
-  margin-top: 67px;
+  margin-top: 64px;
   height: 350px;
   text-align: center;
   flex-direction: column;

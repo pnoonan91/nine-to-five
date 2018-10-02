@@ -1,17 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "grid-styled";
 import Text from "../text/Text";
 import moment from "moment";
 
 //
 // --- Styled Components ---
-const StyledDesktopBlogEntriesContainer = styled(Flex)`
+const StyledDesktopBlogEntriesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   margin: 2rem;
   flex-direction: column;
 `;
 
-const StyledArticleContainer = styled(Flex)`
+const StyledArticleContainer = styled.div`
+  display: flex;
   padding: 2rem;
   justify-content: space-around;
   background-color: white;
@@ -35,7 +37,9 @@ const StyledThumbnail = styled.div`
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
 `;
 
-const StyledArticleInfo = styled(Flex)`
+const StyledArticleInfo = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 `;
 
