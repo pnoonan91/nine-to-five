@@ -7,7 +7,9 @@ import MobileHowDetailsComponent from "./MobileHowDetails";
 
 //
 // --- Styled Components ---
-const StyledHowItWorksDetails = styled(Flex)`
+const StyledHowItWorksDetails = styled.div`
+display: flex;
+flex-wrap: wrap;
     background-color: ${props => props.theme.colors.secondaryBlue}
     padding: 1rem;
     flex-direction: column;
