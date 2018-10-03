@@ -22,7 +22,7 @@ const DesktopBlogCaption = props => (
     <Text.h3 lightbold style={{ margin: "0" }}>
       Blog
     </Text.h3>
-    <Text.p lightbold>
+    <Text.p style={{ flexWrap: "wrap" }} lightbold>
       Every Saturday, we’ll share nightmare interview stories (because we have a
       lot), offer up some advice, customer success stories, and talk about
       anything else job searching related.
