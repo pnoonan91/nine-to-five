@@ -41,7 +41,7 @@ class BlogEntries extends Component {
         {this.state.isLoading ? (
           "Articles loading..."
         ) : (
-          <div>
+          <div style={{ widht: "100%" }}>
             <HideBreakPoint xs sm md>
               <DesktopBlogEntries stories={this.state.stories} />
             </HideBreakPoint>

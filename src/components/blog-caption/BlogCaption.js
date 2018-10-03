@@ -8,6 +8,7 @@ import MobileBlogCaption from "./MobileBlogCaption";
 // --- Styled Components ---
 const StyledBlogCaptionComponent = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 //
