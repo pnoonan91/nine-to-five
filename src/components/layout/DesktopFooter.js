@@ -144,8 +144,8 @@ const DesktopFooter = props => (
               <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
               <Text.small m={0}>
                 {props.blog.description.slice(
-                  props.blog.description.indexOf("<p>") + 3,
-                  props.blog.description.indexOf("<p>") + 150
+                  props.blog.description.indexOf("</figure>") + 12,
+                  props.blog.description.indexOf("</figure>") + 172
                 )}
                 ...
               </Text.small>

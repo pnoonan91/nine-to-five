@@ -46,34 +46,37 @@ const StyledArticleInfo = styled.div`
 
 //
 // --- Article Generator ---
-const Article = props => (
-  <StyledArticleContainer>
-    <a
-      style={{ minWidth: "100px", marginRight: "2rem" }}
-      href={props.link}
-      target="_blank"
-    >
-      <StyledThumbnail thumbnail={props.thumbnail} />
-    </a>
-    <StyledArticleInfo>
-      <a href={props.link} target="_blank">
-        <Text.h5 lightbold color="#1c5d99">
-          {props.title}
-        </Text.h5>
+const Article = props => {
+  console.log(props.description);
+  return (
+    <StyledArticleContainer>
+      <a
+        style={{ minWidth: "100px", marginRight: "2rem" }}
+        href={props.link}
+        target="_blank"
+      >
+        <StyledThumbnail thumbnail={props.thumbnail} />
       </a>
-      <Text.p m={0} style={{ flexWrap: "wrap" }}>
-        {props.description.slice(
-          props.description.indexOf("<p>") + 3,
-          props.description.indexOf("<p>") + 200
-        )}
-        ...
-      </Text.p>
-      <Text.p m={0}>
-        Published on {moment(props.date).format("MMM D, YYYY")}
-      </Text.p>
-    </StyledArticleInfo>
-  </StyledArticleContainer>
-);
+      <StyledArticleInfo>
+        <a href={props.link} target="_blank">
+          <Text.h5 lightbold color="#1c5d99">
+            {props.title}
+          </Text.h5>
+        </a>
+        <Text.p m={0} style={{ flexWrap: "wrap" }}>
+          {props.description.slice(
+            props.description.indexOf("</figure>") + 12,
+            props.description.indexOf("</figure>") + 212
+          )}
+          ...
+        </Text.p>
+        <Text.p m={0}>
+          Published on {moment(props.date).format("MMM D, YYYY")}
+        </Text.p>
+      </StyledArticleInfo>
+    </StyledArticleContainer>
+  );
+};
 
 //
 // --- Desktop Blog Entries Component ---

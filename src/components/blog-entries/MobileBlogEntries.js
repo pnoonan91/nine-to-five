@@ -63,8 +63,8 @@ const Article = props => (
       <a href={props.link} target="_blank">
         <Text.p m={0}>
           {props.description.slice(
-            props.description.indexOf("<p>") + 3,
-            props.description.indexOf("<p>") + 200
+            props.description.indexOf("</figure>") + 12,
+            props.description.indexOf("</figure>") + 212
           )}
           ...
         </Text.p>
