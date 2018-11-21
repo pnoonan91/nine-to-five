@@ -81,6 +81,11 @@ class MobileHeader extends Component {
               How It Works
             </Text.h4>
           </StyledMenuLink>
+          <StyledMenuLink onClick={() => this.handleNavigation("/resumes")}>
+            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+              Resumes
+            </Text.h4>
+          </StyledMenuLink>
           <StyledMenuLink onClick={() => this.handleNavigation("/about")}>
             <Text.h4 style={{ margin: 0 }} color="#1c5d99">
               About Us

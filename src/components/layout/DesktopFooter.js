@@ -162,6 +162,9 @@ const DesktopFooter = props => (
         <Link to="/how-it-works" style={{ color: "#c7d8ef" }}>
           <Text.h5>How It Works</Text.h5>
         </Link>
+        <Link to="/resumes" style={{ color: "#c7d8ef" }}>
+          <Text.h5>Resumes</Text.h5>
+        </Link>
         <Link to="/about" style={{ color: "#c7d8ef" }}>
           <Text.h5>About Us</Text.h5>
         </Link>

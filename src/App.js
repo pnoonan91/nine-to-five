@@ -13,6 +13,7 @@ import Text from "./components/text/Text";
 import HowItWorks from "./components/howitworks";
 import About from "./components/about";
 import Blog from "./components/blog";
+import Resumes from "./components/resumes";
 import HideBreakPoint from "./components/layout/HideBreakPoint";
 import history from "./history";
 
@@ -261,6 +262,13 @@ class App extends Component {
               path="/how-it-works"
               component={() => (
                 <HowItWorks onModalClick={() => this.toggleModal()} />
+              )}
+            />
+            <Route
+              exact
+              path="/resumes"
+              component={() => (
+                <Resumes onModalClick={() => this.toggleModal()} />
               )}
             />
             <Route

@@ -152,16 +152,22 @@ const MobileFooter = props => (
     </StyledMobileFooter>
     <StyledMobileLinks>
       <StyledLinkSection>
-        <Link to="/" style={{ color: "#c7d8ef" }}>
+        <Link to="/" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
           <Text.h6>Home</Text.h6>
         </Link>
-        <Link to="/how-it-works" style={{ color: "#c7d8ef" }}>
+        <Link
+          to="/how-it-works"
+          style={{ color: "#c7d8ef", padding: "0.2rem" }}
+        >
           <Text.h6>How It Works</Text.h6>
         </Link>
-        <Link to="/about" style={{ color: "#c7d8ef" }}>
+        <Link to="/resumes" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+          <Text.h6>Resumes</Text.h6>
+        </Link>
+        <Link to="/about" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
           <Text.h6>About Us</Text.h6>
         </Link>
-        <Link to="/blog" style={{ color: "#c7d8ef" }}>
+        <Link to="/blog" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
           <Text.h6>Blog</Text.h6>
         </Link>
       </StyledLinkSection>

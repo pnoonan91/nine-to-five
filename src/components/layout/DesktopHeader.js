@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import Text from "../text/Text";
 import { colors } from "../../styles/colors";
+import { fontSizes } from "../../styles/sizes";
 
 //
 // --- Styled Components ---
@@ -100,6 +101,15 @@ class DesktopHeader extends Component {
               onClick={() => this.updateActiveLink("how-it-works")}
             >
               How It Works
+            </StyledNavItem>
+          </Link>
+          <Link to="/resumes">
+            <StyledNavItem
+              fontSize={3}
+              id="resumes"
+              onClick={() => this.updateActiveLink("resumes")}
+            >
+              Resumes
             </StyledNavItem>
           </Link>
           <Link to="/about">

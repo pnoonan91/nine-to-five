@@ -13,10 +13,16 @@ const StyledLandingSubscriptionComponent = styled.div``;
 const LandingSubscriptionComponent = props => (
   <StyledLandingSubscriptionComponent>
     <HideBreakPoint xs sm md>
-      <DesktopLandingSubscription onModalClick={props.onModalClick} />
+      <DesktopLandingSubscription
+        isResumePage={props.isResumePage}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileLandingSubscription onModalClick={props.onModalClick} />
+      <MobileLandingSubscription
+        isResumePage={props.isResumePage}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
   </StyledLandingSubscriptionComponent>
 );

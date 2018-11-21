@@ -17,22 +17,42 @@ const StyledMobileLandingSubscriptionContainer = styled(Flex)`
 // --- Mobile Landing Subscription Component ---
 const MobileLandingSubscription = props => (
   <StyledMobileLandingSubscriptionContainer>
-    <Text.h2 m={1} fontSize={6} color="white" className="shadow">
-      $99/month
-    </Text.h2>
-    <Text.h6 m={0} lightbold color="white" className="shadow">
-      we work hard so that
-    </Text.h6>
-    <Text.h6 m={1} lightbold color="white" className="shadow">
-      you find the job you love
-    </Text.h6>
-    <a
-      onClick={props.onModalClick}
-      className="primary white"
-      style={{ width: "200px", padding: "0.5rem;" }}
-    >
-      Let's Chat
-    </a>
+    {!props.isResumePage ? (
+      <div>
+        <Text.h2 m={1} fontSize={6} color="white" className="shadow">
+          $99/month
+        </Text.h2>
+        <Text.h6 m={0} lightbold color="white" className="shadow">
+          we work hard so that
+        </Text.h6>
+        <Text.h6 m={1} lightbold color="white" className="shadow">
+          you find the job you love
+        </Text.h6>
+        <a
+          onClick={props.onModalClick}
+          className="primary white"
+          style={{ width: "200px", padding: "0.5rem;" }}
+        >
+          Let's Chat
+        </a>
+      </div>
+    ) : (
+      <div>
+        <Text.h6 m={0} lightbold color="white" className="shadow">
+          Resumes starting at
+        </Text.h6>
+        <Text.h2 m={1} fontSize={6} color="white" className="shadow">
+          $75
+        </Text.h2>
+        <a
+          onClick={props.onModalClick}
+          className="primary white"
+          style={{ width: "200px", padding: "0.5rem;" }}
+        >
+          Let's Chat
+        </a>
+      </div>
+    )}
   </StyledMobileLandingSubscriptionContainer>
 );
 
