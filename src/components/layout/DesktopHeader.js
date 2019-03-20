@@ -42,6 +42,24 @@ const StyledNavItem = styled.div`
   }
 `;
 
+const StyledSecondaryLink = styled.div`
+  color: ${props => props.theme.colors.primaryBlue};
+  padding: 16px 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: ${props => props.theme.space[3]}px;
+  transition: all 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    color: ${props => props.theme.colors.darkBlue};
+  }
+`;
+
+const StyledRightSection = styled.div`
+  display: flex;
+`;
+
 //
 // --- Desktop Header Component --
 class DesktopHeader extends Component {
@@ -63,9 +81,10 @@ class DesktopHeader extends Component {
     let element = document.getElementById(id);
 
     if (this.state.activeLink) {
-      document
-        .getElementById(this.state.activeLink)
-        .classList.remove("activeNavLink");
+      const activeLink = document.getElementById(this.state.activeLink);
+      if (activeLink) {
+        activeLink.classList.remove("activeNavLink");
+      }
     }
 
     if (element) {
@@ -86,7 +105,7 @@ class DesktopHeader extends Component {
               width="40px"
               height="40px"
               margin="auto"
-              src="/icons/clock.jpg"
+              src="/icons/new_logo.png"
             />
           </Link>
           <Link to="/" onClick={() => this.updateActiveLink()}>
@@ -131,11 +150,20 @@ class DesktopHeader extends Component {
             </StyledNavItem>
           </Link>
         </div>
-        <div style={{ borderBottom: "0.5rem" }}>
+        <StyledRightSection style={{ borderBottom: "0.5rem" }}>
+          <Link to="/hire">
+            <StyledSecondaryLink
+              fontSize={3}
+              id="blog"
+              onClick={() => this.updateActiveLink("hire")}
+            >
+              Looking to hire talent?
+            </StyledSecondaryLink>
+          </Link>
           <a onClick={this.props.onModalClick} className="primary">
             Free Consultation
           </a>
-        </div>
+        </StyledRightSection>
       </StyledDesktopHeader>
     );
   }

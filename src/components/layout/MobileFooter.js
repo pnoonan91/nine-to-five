@@ -152,7 +152,7 @@ const MobileFooter = props => (
     </StyledMobileFooter>
     <StyledMobileLinks>
       <StyledLinkSection>
-        <Link to="/" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+        <Link to="/search" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
           <Text.h6>Home</Text.h6>
         </Link>
         <Link

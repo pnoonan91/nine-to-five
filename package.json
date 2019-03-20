@@ -1,11 +1,22 @@
 {
+  "proxy": {
+    "/form-submission": {
+      "target": "https://localhost:5000/",
+      "changeOrigin": true,
+      "secure": false
+    }
+  },
   "name": "nine-to-five-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
+    "formik": "^1.5.1",
     "gh-pages": "^2.0.0",
     "grid-styled": "^5.0.2",
     "moment": "^2.22.2",
+    "nodemailer": "^5.1.1",
+    "path": "^0.12.7",
     "polished": "^2.0.3",
     "react": "^16.4.2",
     "react-burger-menu": "^2.5.3",
@@ -23,7 +34,8 @@
     "redux-saga": "^0.16.0",
     "styled-components": "^3.4.5",
     "styled-normalize": "^8.0.0",
-    "styled-system": "^3.0.2"
+    "styled-system": "^3.0.2",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -156,7 +156,7 @@ const DesktopFooter = props => (
     </StyledDesktopFooter>
     <StyledDesktopLinks>
       <StyledLinkSection style={{ width: "40%" }}>
-        <Link to="/" style={{ color: "#c7d8ef" }}>
+        <Link to="/search" style={{ color: "#c7d8ef" }}>
           <Text.h5>Home</Text.h5>
         </Link>
         <Link to="/how-it-works" style={{ color: "#c7d8ef" }}>

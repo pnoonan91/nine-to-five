@@ -1,3 +1,4 @@
+import * as _ from "lodash";
 import React from "react";
 import styled from "styled-components";
 
@@ -17,16 +18,30 @@ const StyledHeader = styled.header`
 `;
 
 //
+// --- Constants ---
+const CandidateRoutes = ["search", "how-it-works", "resumes", "about", "blog"];
+
+//
 // --- Header Component --
-const Header = props => (
-  <StyledHeader>
-    <HideBreakPoint xs sm md>
-      <DesktopHeader onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-    <HideBreakPoint lg>
-      <MobileHeader onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-  </StyledHeader>
-);
+const Header = props => {
+  const location = window.location.pathname.slice(1).toLowerCase();
+
+  if (!location) {
+    return null;
+  }
+
+  if (_.includes(CandidateRoutes, location)) {
+    return (
+      <StyledHeader>
+        <HideBreakPoint xs sm md>
+          <DesktopHeader onModalClick={props.onModalClick} />
+        </HideBreakPoint>
+        <HideBreakPoint lg>
+          <MobileHeader onModalClick={props.onModalClick} />
+        </HideBreakPoint>
+      </StyledHeader>
+    );
+  }
+};
 
 export default Header;

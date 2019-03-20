@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import { Flex } from "grid-styled";
 import Modal from "react-modal";
 import styled from "styled-components";
@@ -16,6 +18,8 @@ import Blog from "./components/blog";
 import Resumes from "./components/resumes";
 import HideBreakPoint from "./components/layout/HideBreakPoint";
 import history from "./history";
+import Greeting from "./components/greeting-page/Greeting";
+import { colors } from "./styles/colors";
 
 //
 // --- Styled Components ---
@@ -29,6 +33,8 @@ const StyledCalendlySection = styled.div`
   width: 40%;
   box-shadow: ${props => props.theme.shadows.boundingElementShadow};
   border: 1px solid ${props => props.theme.colors.lightGray};
+  height: fit-content;
+  padding: 16px;
 `;
 
 const StyledMobileSection = styled.div`
@@ -77,6 +83,34 @@ const StyledLoadingDiv = styled.div`
   flex-direction: column;
 `;
 
+const StyledInputField = styled.input`
+  border-radius: 4px;
+  padding: 8px;
+  border: ;
+  border: 1px solid grey;
+  width: fill-available;
+  margin-bottom: 16px;
+`;
+
+const StyledTextAreaField = styled.textarea`
+  border-radius: 4px;
+  padding: 8px;
+  border: ;
+  border: 1px solid grey;
+  width: fill-available;
+  height: 150px;
+  resize: none;
+  margin-bottom: 16px;
+`;
+
+const StyledErrorMessage = styled.div`
+  transform: translateY(-12px);
+  font-size: 12px;
+  font-weight: bold;
+  color: #d61212;
+  margin-left: 8px;
+`;
+
 //
 // --- How It Works Generators ---
 const HowItWorksStep = props => (
@@ -97,16 +131,8 @@ const HowItWorksStep = props => (
 
 class App extends Component {
   state = {
-    appLoading: true,
     modalIsOpen: false
   };
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ appLoading: false });
-      window.scrollTo(0, 0);
-    }, 2000);
-  }
 
   toggleModal = () => {
     this.setState({ modalIsOpen: !this.state.modalIsOpen });
@@ -120,10 +146,7 @@ class App extends Component {
           data-url="https://calendly.com/helloninetofive"
           style={{ maxWidth: "1px", maxHeight: "1px", display: "none" }}
         />
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={() => window.Calendly.initInlineWidgets()}
-        >
+        <Modal isOpen={this.state.modalIsOpen}>
           <HideBreakPoint xs sm md>
             <StyledModalSection>
               <div
@@ -134,10 +157,86 @@ class App extends Component {
                 }}
               >
                 <StyledCalendlySection>
-                  <div
-                    class="calendly-inline-widget"
-                    data-url="https://calendly.com/helloninetofive"
-                    style={{ minWidth: "320px", height: "580px" }}
+                  <Formik
+                    initialValues={{ name: "", email: "", message: "" }}
+                    validationSchema={Yup.object().shape({
+                      name: Yup.string().required(
+                        "Your name is a required field."
+                      ),
+                      email: Yup.string()
+                        .email("Please enter a valid email address.")
+                        .required("Email address is required."),
+                      message: Yup.string().required("Please enter a message.")
+                    })}
+                    validateOnBlur
+                    onSubmit={async (values, actions) => {
+                      console.log(values);
+                      const response = await fetch("/form-submission", {
+                        method: "POST",
+                        body: JSON.stringify(values)
+                      });
+                    }}
+                    render={props => (
+                      <Form>
+                        <Text.h1
+                          style={{ marginBottom: "16px" }}
+                          color={colors.primaryBlue}
+                        >
+                          Get In Touch
+                        </Text.h1>
+                        <Field
+                          name="name"
+                          id="name"
+                          component={StyledInputField}
+                          placeholder="Full Name"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                        />
+                        <ErrorMessage
+                          name="name"
+                          component={StyledErrorMessage}
+                        />
+                        <Field
+                          type="email"
+                          name="email"
+                          id="email"
+                          component={StyledInputField}
+                          placeholder="Email Address"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                        />
+                        <ErrorMessage
+                          name="email"
+                          component={StyledErrorMessage}
+                        />
+                        <Field
+                          name="message"
+                          id="message"
+                          component={StyledTextAreaField}
+                          placeholder="How can we help you?"
+                          onChange={props.handleChange}
+                          onBlur={props.handleBlur}
+                        />
+                        <ErrorMessage
+                          name="message"
+                          component={StyledErrorMessage}
+                        />
+                        <button
+                          disabled={
+                            props.errors.name ||
+                            props.errors.email ||
+                            props.errors.message ||
+                            !props.values.name ||
+                            !props.values.email ||
+                            !props.values.message
+                          }
+                          type="submit"
+                          className="primary"
+                        >
+                          Submit
+                        </button>
+                      </Form>
+                    )}
                   />
                 </StyledCalendlySection>
                 <StyledTextSection>
@@ -236,23 +335,12 @@ class App extends Component {
           </HideBreakPoint>
         </Modal>
         <Header onModalClick={() => this.toggleModal()} />
-        {this.state.appLoading ? (
-          <StyledLoadingDiv>
-            <ReactLoading
-              type="spin"
-              color="#1c5d99"
-              height="200px"
-              width="200px"
-            />
-            <Text.h5 lightbold style={{ marginTop: "2rem" }}>
-              App Loading...
-            </Text.h5>
-          </StyledLoadingDiv>
-        ) : (
+        {
           <Switch>
+            <Route exact path="/" component={() => <Greeting />} />
             <Route
               exact
-              path="/"
+              path="/search"
               component={() => (
                 <Landing onModalClick={() => this.toggleModal()} />
               )}
@@ -284,7 +372,7 @@ class App extends Component {
               component={() => <Blog onModalClick={() => this.toggleModal()} />}
             />
           </Switch>
-        )}
+        }
 
         <Footer />
       </div>
