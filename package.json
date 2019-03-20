@@ -1,11 +1,4 @@
 {
-  "proxy": {
-    "/form-submission": {
-      "target": "https://localhost:5000/",
-      "changeOrigin": true,
-      "secure": false
-    }
-  },
   "name": "nine-to-five-app",
   "version": "0.1.0",
   "private": true,
