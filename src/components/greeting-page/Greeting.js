@@ -9,29 +9,34 @@ import { breakpointMappings } from "../../styles";
 //
 // --- Styled Components ---
 const StyledLandingPageContainer = styled.div`
-  background-image: url("/images/landing-image-large.jpg");
-  background-position: center;
   background-size: 100%;
-  background-position-x: center;
-  background-position-y: center;
+  background-position: 50%;
   background-repeat-x: no-repeat;
   background-repeat-y: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 100vh;
+  background-image: url("/images/landing-mobile.png");
 
   ${breakpointMappings.lg} {
-    height: 100vh;
+    background-image: url("/images/landing-image-large.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-position: center;
   }
 `;
 
 const StyledLandingPageTextContainer = styled.div`
   display: flex;
   max-width: 75%;
-  margin-left: auto;
+  margin: auto;
 
   ${breakpointMappings.lg} {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
     height: 100%;
     padding-right: ${props => props.theme.space[8]}px;
+    margin-left: auto;
     max-width: 645px;
   }
 `;
@@ -57,14 +62,15 @@ const StyledLinkContainer = styled.div`
   }
 `;
 const StyledLink = styled.a`
-  width: 50%;
-  margin: none;
-  margin-top: ${props => props.theme.space[4]}px;
-  margin-left: auto;
-  margin-right: auto;
+width: fill-available
+margin: none;
+margin-top: ${props => props.theme.space[4]}px;
+margin-left: auto;
+margin-right: auto;
 
-  ${breakpointMappings.lg} {
-    margin-left: ${props => props.ml && "24px"};
+${breakpointMappings.lg} {
+  width: 50%;
+    margin-left: ${props => props.ml && "36px"};
     margin-right: undefined;
     margin-top: undefined;
   }
@@ -91,6 +97,7 @@ const StyledHeader = styled(Text.h1)`
 
 const StyledSubtitle = styled(Text.h1)`
   font-size: 18px;
+  text-shadow: 0.3px 1px 50px rgba(0, 0, 0, 1);
 
   ${breakpointMappings.lg} {
     font-size: 36px;
@@ -108,7 +115,9 @@ const Greeting = () => {
             <StyledHeader color={colors.primaryBlue}>nine to five</StyledHeader>
           </div>
           <StyledSubtitle className="shadow" color={colors.standardWhite}>
-            The future of collegiate recruiting is here.
+            The future of collegiate
+            <br />
+            recruiting is here.
           </StyledSubtitle>
           <StyledLinkContainer>
             <StyledLink className="primary">Find Talent</StyledLink>

@@ -151,18 +151,9 @@ class DesktopHeader extends Component {
           </Link>
         </div>
         <StyledRightSection style={{ borderBottom: "0.5rem" }}>
-          <Link to="/hire">
-            <StyledSecondaryLink
-              fontSize={3}
-              id="blog"
-              onClick={() => this.updateActiveLink("hire")}
-            >
-              Looking to hire talent?
-            </StyledSecondaryLink>
+          <Link className="primary" to="/hire">
+            Looking to hire talent?
           </Link>
-          <a onClick={this.props.onModalClick} className="primary">
-            Free Consultation
-          </a>
         </StyledRightSection>
       </StyledDesktopHeader>
     );

@@ -21,7 +21,8 @@ const StyledAboutBioContainer = styled.div`
 `;
 
 const StyledKyleImage = styled.img`
-  width: 250px;
+  width: 200px;
+  border-radius: 200px;
 `;
 
 const StyledText = styled(Text.p)`
@@ -56,6 +57,7 @@ const FounderContainer = styled.div`
 
 const StyledKyleSectionContainer = styled.div`
   margin-bottom: ${props => props.theme.space[4]}px;
+  text-align: center;
 
   ${breakpointMappings.lg} {
     margin-right: 4rem;
@@ -84,9 +86,7 @@ const AboutBio = () => {
           </StyledText>
         </StyledKyleSectionContainer>
         <FounderContainer>
-          <Text.h4 semibold m={0}>
-            Our Founder
-          </Text.h4>
+          <Text.h4>Our Founder</Text.h4>
           <Text.p>
             After graduating with his Masters in Human Resource Management from
             Colorado State University, Kyle began his career in recruiting. He

@@ -86,100 +86,109 @@ const StyledThumbnail = styled.div`
 
 //
 // --- Desktop Footer Component ---
-const DesktopFooter = props => (
-  <div>
-    <StyledDesktopFooter>
-      <FooterLeft>
-        <StyledFooterSectionHeader>
-          <Text.h5>Follow Us</Text.h5>
-        </StyledFooterSectionHeader>
-        <StyledFooterSectionContent>
-          <a
-            href="https://www.linkedin.com/company/hello-nine-to-five/"
-            target="_blank"
-          >
-            <i
-              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
-              class="fab fa-linkedin"
-            />
-          </a>
-          <a href="https://www.facebook.com/helloninetofive" target="_blank">
-            <i
-              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
-              class="fab fa-facebook"
-            />
-          </a>
-          <a href="https://www.instagram.com/hello_ninetofive/" target="_blank">
-            <i
-              style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
-              class="fab fa-instagram"
-            />
-          </a>
-        </StyledFooterSectionContent>
-      </FooterLeft>
-      <FooterCenter>
-        <StyledFooterSectionHeader>
-          <Text.h5>Send Us A line</Text.h5>
-        </StyledFooterSectionHeader>
-        <StyledFooterSectionContent>
-          <i class="fas fa-envelope" />{" "}
-          <a href="mailto:hellonine25@gmail.com" className="email-link">
-            hellonine25@gmail.com
-          </a>
-        </StyledFooterSectionContent>
-      </FooterCenter>
-      <FooterRight>
-        <StyledFooterSectionHeader>
-          <Text.h5>From The Blog</Text.h5>
-        </StyledFooterSectionHeader>
+const DesktopFooter = props => {
+  if (window.location.pathname === "/") {
+    return null;
+  }
 
-        <StyledBlogContainer>
-          <div>
-            <a href={props.blog.link} target="_blank">
-              <StyledThumbnail thumbnail={props.blog.image} />
+  return (
+    <div>
+      <StyledDesktopFooter>
+        <FooterLeft>
+          <StyledFooterSectionHeader>
+            <Text.h5>Follow Us</Text.h5>
+          </StyledFooterSectionHeader>
+          <StyledFooterSectionContent>
+            <a
+              href="https://www.linkedin.com/company/hello-nine-to-five/"
+              target="_blank"
+            >
+              <i
+                style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+                class="fab fa-linkedin"
+              />
             </a>
-          </div>
-          <div style={{ width: "75%" }}>
-            <a href={props.blog.link} target="_blank">
-              <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
-              <Text.small m={0}>
-                {props.blog.description.slice(
-                  props.blog.description.indexOf("</figure>") + 12,
-                  props.blog.description.indexOf("</figure>") + 172
-                )}
-                ...
-              </Text.small>
+            <a href="https://www.facebook.com/helloninetofive" target="_blank">
+              <i
+                style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+                class="fab fa-facebook"
+              />
             </a>
-          </div>
-        </StyledBlogContainer>
-      </FooterRight>
-    </StyledDesktopFooter>
-    <StyledDesktopLinks>
-      <StyledLinkSection style={{ width: "40%" }}>
-        <Link to="/search" style={{ color: "#c7d8ef" }}>
-          <Text.h5>Home</Text.h5>
-        </Link>
-        <Link to="/how-it-works" style={{ color: "#c7d8ef" }}>
-          <Text.h5>How It Works</Text.h5>
-        </Link>
-        <Link to="/resumes" style={{ color: "#c7d8ef" }}>
-          <Text.h5>Resumes</Text.h5>
-        </Link>
-        <Link to="/about" style={{ color: "#c7d8ef" }}>
-          <Text.h5>About Us</Text.h5>
-        </Link>
-        <Link to="/blog" style={{ color: "#c7d8ef" }}>
-          <Text.h5>Blog</Text.h5>
-        </Link>
-      </StyledLinkSection>
-      <StyledLinkSection>
-        <Text.h5>
-          <i class="far fa-copyright" />
-          Nine to Five, 2018
-        </Text.h5>
-      </StyledLinkSection>
-    </StyledDesktopLinks>
-  </div>
-);
+            <a
+              href="https://www.instagram.com/hello_ninetofive/"
+              target="_blank"
+            >
+              <i
+                style={{ fontSize: "25px", paddingLeft: "0.5rem" }}
+                class="fab fa-instagram"
+              />
+            </a>
+          </StyledFooterSectionContent>
+        </FooterLeft>
+        <FooterCenter>
+          <StyledFooterSectionHeader>
+            <Text.h5>Send Us A line</Text.h5>
+          </StyledFooterSectionHeader>
+          <StyledFooterSectionContent>
+            <i class="fas fa-envelope" />{" "}
+            <a href="mailto:hellonine25@gmail.com" className="email-link">
+              hellonine25@gmail.com
+            </a>
+          </StyledFooterSectionContent>
+        </FooterCenter>
+        <FooterRight>
+          <StyledFooterSectionHeader>
+            <Text.h5>From The Blog</Text.h5>
+          </StyledFooterSectionHeader>
+
+          <StyledBlogContainer>
+            <div>
+              <a href={props.blog.link} target="_blank">
+                <StyledThumbnail thumbnail={props.blog.image} />
+              </a>
+            </div>
+            <div style={{ width: "75%" }}>
+              <a href={props.blog.link} target="_blank">
+                <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
+                <Text.small m={0}>
+                  {props.blog.description.slice(
+                    props.blog.description.indexOf("</figure>") + 12,
+                    props.blog.description.indexOf("</figure>") + 172
+                  )}
+                  ...
+                </Text.small>
+              </a>
+            </div>
+          </StyledBlogContainer>
+        </FooterRight>
+      </StyledDesktopFooter>
+      <StyledDesktopLinks>
+        <StyledLinkSection style={{ width: "40%" }}>
+          <Link to="/search" style={{ color: "#c7d8ef" }}>
+            <Text.h5>Home</Text.h5>
+          </Link>
+          <Link to="/how-it-works" style={{ color: "#c7d8ef" }}>
+            <Text.h5>How It Works</Text.h5>
+          </Link>
+          <Link to="/resumes" style={{ color: "#c7d8ef" }}>
+            <Text.h5>Resumes</Text.h5>
+          </Link>
+          <Link to="/about" style={{ color: "#c7d8ef" }}>
+            <Text.h5>About Us</Text.h5>
+          </Link>
+          <Link to="/blog" style={{ color: "#c7d8ef" }}>
+            <Text.h5>Blog</Text.h5>
+          </Link>
+        </StyledLinkSection>
+        <StyledLinkSection>
+          <Text.h5>
+            <i class="far fa-copyright" />
+            Nine to Five, 2018
+          </Text.h5>
+        </StyledLinkSection>
+      </StyledDesktopLinks>
+    </div>
+  );
+};
 
 export default DesktopFooter;

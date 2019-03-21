@@ -7,7 +7,6 @@ import { breakpointMappings } from "../../styles";
 // --- Styled Components ---
 const StyledAboutAmbassadorsComponent = styled.div`
   position: relative;
-  background-color: ${props => props.theme.colors.secondaryBlue};
 `;
 
 const StyledAboutAmbassadorsContainer = styled.div`
@@ -19,11 +18,11 @@ const StyledAboutAmbassadorsContainer = styled.div`
 
 const StyledAmbassadorsSection = styled.div`
   display: flex;
-  flex-wrap: wrap;
   align-content: stretch;
   height: 100%;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
 
   ${breakpointMappings.lg} {
     flex-direction: row;
@@ -31,30 +30,30 @@ const StyledAmbassadorsSection = styled.div`
 `;
 const StyledAmbassadorItem = styled.div`
   display: flex;
+  width: 15%;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4rem;
-
-  ${breakpointMappings.lg} {
-    width: 33%;
-  }
+  text-align: center;
+  box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  border: 1px solid "#dedede";
+  padding: 1rem;
 `;
 
 const StyledAmbassadorImage = styled.img`
-  width: 200px;
-  border-radius: 200px;
+  width: 150px;
+  border-radius: 150px;
 `;
 
 const StyledText = styled(Text.p)`
   margin: 0;
-  line-height: 30px;
+  font-size: 12px;
 
   :hover {
     text-decoration: underline;
   }
 `;
 
-const StyledKyleNameText = styled(Text.h5)`
+const StyledKyleNameText = styled(Text.h6)`
   margin: 0;
   margin-bottom: 4px;
   margin-top: 8px;
@@ -63,10 +62,29 @@ const StyledKyleNameText = styled(Text.h5)`
 
 const StyledEmail = styled(Text.p)`
   margin: 0;
+  font-size: 12px;
 
   :hover {
     text-decoration: underline;
   }
+`;
+
+const StyledTestimonialContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const StyledTestimonial = styled.div`
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: ${props => props.theme.shadows.boundingElementShadow};
+  border: 1px solid "#dedede";
+  padding: 1rem;
+  margin: 2rem;
 `;
 
 //
@@ -88,9 +106,9 @@ const AboutAmbassadors = () => {
             <StyledKyleNameText semibold>
               <span style={{ fontWeight: "bold" }}>Analise Ostrowski</span>
             </StyledKyleNameText>
-            <Text.h6 style={{ margin: 0, marginBottom: "12px" }}>
+            <Text.p style={{ margin: 0, marginBottom: "12px" }}>
               Illinois State University
-            </Text.h6>
+            </Text.p>
             <StyledEmail>
               <i class="fas fa-envelope" />{" "}
               <a href="mailto:analise@ninetofive.app">analise@ninetofive.app</a>
@@ -107,9 +125,9 @@ const AboutAmbassadors = () => {
             <StyledKyleNameText semibold>
               <span style={{ fontWeight: "bold" }}>Brett Lesch</span>
             </StyledKyleNameText>
-            <Text.h6 style={{ margin: 0, marginBottom: "12px" }}>
+            <Text.p style={{ margin: 0, marginBottom: "12px" }}>
               Purdue University
-            </Text.h6>
+            </Text.p>
             <StyledEmail>
               <i class="fas fa-envelope" />{" "}
               <a href="mailto:brett@ninetofive.app">brett@ninetofive.app</a>
@@ -124,9 +142,9 @@ const AboutAmbassadors = () => {
             <StyledKyleNameText semibold>
               <span style={{ fontWeight: "bold" }}>Angela Torrey</span>
             </StyledKyleNameText>
-            <Text.h6 style={{ margin: 0, marginBottom: "12px" }}>
+            <Text.p style={{ margin: 0, marginBottom: "12px" }}>
               DePaul University
-            </Text.h6>
+            </Text.p>
             <StyledEmail>
               <i class="fas fa-envelope" />{" "}
               <a href="mailto:angela@ninetofive.app">angela@ninetofive.app</a>
@@ -141,9 +159,9 @@ const AboutAmbassadors = () => {
             <StyledKyleNameText semibold>
               <span style={{ fontWeight: "bold" }}>Maggie Podell</span>
             </StyledKyleNameText>
-            <Text.h6 style={{ margin: 0, marginBottom: "12px" }}>
+            <Text.p style={{ margin: 0, marginBottom: "12px" }}>
               University of Illinois
-            </Text.h6>
+            </Text.p>
             <StyledEmail>
               <i class="fas fa-envelope" />{" "}
               <a href="mailto:maggie@ninetofive.app">maggie@ninetofive.app</a>
@@ -158,9 +176,9 @@ const AboutAmbassadors = () => {
             <StyledKyleNameText semibold>
               <span style={{ fontWeight: "bold" }}>John Hennelly</span>
             </StyledKyleNameText>
-            <Text.h6 style={{ margin: 0, marginBottom: "12px" }}>
+            <Text.p style={{ margin: 0, marginBottom: "12px" }}>
               University of Iowa
-            </Text.h6>
+            </Text.p>
             <StyledEmail>
               <i class="fas fa-envelope" />{" "}
               <a href="mailto:john@ninetofive.app">john@ninetofive.app</a>

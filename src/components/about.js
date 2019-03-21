@@ -9,9 +9,8 @@ import AboutAmbassadors from "./about-ambassadors/AboutAmbassadors";
 const About = props => (
   <div>
     <AboutImageComponent onModalClick={props.onModalClick} />
-    <AboutMissionComponent />
-    <AboutStoryComponent onModalClick={props.onModalClick} />
     <AboutBio />
+    <AboutStoryComponent onModalClick={props.onModalClick} />
     <AboutAmbassadors />
   </div>
 );
