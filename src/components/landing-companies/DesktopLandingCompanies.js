@@ -29,16 +29,22 @@ const StyledCompaniesImage = styled.img`
 const DesktopLandingCompanies = props => (
   <StyledDesktopLandingCompaniesContainer>
     <Text.h2 id="#companies" m={0} pt={"50px"} semibold>
-      Our Clients Get Hired At Awesome Companies
+      {props.isCompanyPath
+        ? "Our customers have worked at some awesome companies."
+        : "Our Clients Get Hired At Awesome Companies"}
     </Text.h2>
     <StyledCompaniesImage
       style={{ width: "90%", height: "100%" }}
       src="/images/companies.png"
     />
     <StyledLandYourDreamJobButton>
-      {!props.hideButton && (
+      {!props.hideButton && !props.isCompanyPath ? (
         <a onClick={() => history.push("/how-it-works")} className="primary">
           See How It Works
+        </a>
+      ) : (
+        <a onClick={() => props.onModalClick()} className="primary">
+          Find Your Next Hire
         </a>
       )}
     </StyledLandYourDreamJobButton>

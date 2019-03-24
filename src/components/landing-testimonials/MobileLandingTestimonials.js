@@ -107,25 +107,46 @@ const MobileLandingTestimonials = props => (
         speed={500}
       >
         <Testimonial
-          image="/images/landing-testimonials/christine.jpeg"
-          name="Christine B."
-          testimonial="I can strongly stand behind this recommendation, as I was able to utilize Nine to Five to get into the
-Predictive Analytics Master’s Program at Northwestern. It was through this process I was able to grasp
-that not only was Kyle a skilled professional, but that he cared about the advancement of the people we
-worked with. Additionally, as he worked with me to refresh my resume and prepare for interviews, I
-recognized that his exceptional eye for detail would be an incredible asset for anyone looking to
-advance their career."
-          occupation="Consultant"
-          company="Slalom Consulting"
-          linkedIn="https://www.linkedin.com/in/christine-byron/"
+          image={`/images/landing-testimonials/${
+            props.isCompanyPath ? "cheryl.png" : "christine.jpeg"
+          }`}
+          name={props.isCompanyPath ? "Cheryl W." : "Christine B."}
+          testimonial={
+            props.isCompanyPath
+              ? "Kyle at Nine to Five is among the most talented talent acquisition professional with whom I've ever interacted. Dedicated to understanding the role and identifying the right candidates that will be successful, Kyle is a partner to both hiring manager and candidates. He moves fast too, great for both of us, working hard to make the right match! I was able to partner with Nine to Five and they were able to significantly increased the caliber of Marketing interns during my search. I recommend everyone to reach out to Kyle and Nine to Five to find more targeted, quality interns and recent graduates!"
+              : "I can strongly stand behind this recommendation, as I was able to utilize Nine to Five to get into the Predictive Analytics Master’s Program at Northwestern. It was through this process I was able to grasp that not only was Kyle a skilled professional, but that he cared about the advancement of the people we worked with. Additionally, as he worked with me to refresh my resume and prepare for interviews, I recognized that his exceptional eye for detail would be an incredible asset for anyone looking to advance their career."
+          }
+          occupation={
+            props.isCompanyPath ? "Ecommerce Marketing" : "Consultant"
+          }
+          company={props.isCompanyPath ? "ACCO Brands" : "Slalom Consulting"}
+          linkedIn={
+            props.isCompanyPath
+              ? "https://www.linkedin.com/in/cherylwittenstein/"
+              : "https://www.linkedin.com/in/christine-byron/"
+          }
         />
         <Testimonial
-          image="/images/landing-testimonials/krystyn.jpeg"
-          name="Krystyn A."
-          testimonial="I would recommend Nine to Five to anyone who is struggling to find a career that truly fits their personality and lifestyle.  Kyle is genuinely interested in helping each and every person that comes to him.  He took the time to understand all the factors that I am considering when looking for a career.  He's professional, organized, easy to talk to, and is willing to help throughout the entire process.  Never once did I feel discouraged because Kyle was always there to give me the advice I needed to succeed!"
-          occupation="Merchandiser"
-          company="Chloe and Isabel"
-          linkedIn="https://www.linkedin.com/in/krystyn-abbate-a698168b/"
+          image={`/images/landing-testimonials/${
+            props.isCompanyPath ? "chad" : "krystyn"
+          }.jpeg`}
+          name={props.isCompanyPath ? "Chad H." : "Krystyn A."}
+          testimonial={
+            props.isCompanyPath
+              ? "The best compliment you can provide someone is to express how much you learned from them, rather than the other way around. Kyle has a firm grasp of the candidate experience and will bend over backward to make a candidate feel they are valued throughout the recruitment process. Nine to Five has an excellent future ahead of them."
+              : "I would recommend Nine to Five to anyone who is struggling to find a career that truly fits their personality and lifestyle.  Kyle is genuinely interested in helping each and every person that comes to him.  He took the time to understand all the factors that I am considering when looking for a career.  He's professional, organized, easy to talk to, and is willing to help throughout the entire process.  Never once did I feel discouraged because Kyle was always there to give me the advice I needed to succeed!"
+          }
+          occupation={
+            props.isCompanyPath
+              ? "Director, Global Talent Operations & Planning"
+              : "Merchandiser"
+          }
+          company={props.isCompanyPath ? "ACCO Brands" : "Chloe and Isabel"}
+          linkedIn={
+            props.isCompanyPath
+              ? "https://www.linkedin.com/in/chadharcus/"
+              : "https://www.linkedin.com/in/krystyn-abbate-a698168b/"
+          }
         />
         <Testimonial
           image="/images/landing-testimonials/patrick.jpeg"

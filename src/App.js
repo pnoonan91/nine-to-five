@@ -132,7 +132,9 @@ const HowItWorksStep = props => (
 
 class App extends Component {
   state = {
-    modalIsOpen: false
+    modalIsOpen: false,
+    formIsSubmitting: false,
+    submissionStatus: undefined
   };
 
   toggleModal = () => {
@@ -171,11 +173,26 @@ class App extends Component {
                     })}
                     validateOnBlur
                     onSubmit={async (values, actions) => {
-                      console.log(values);
+                      this.setState({ formIsSubmitting: true });
                       const response = await fetch("/form-submission", {
                         method: "POST",
+                        headers: {
+                          "Content-Type": "application/json"
+                        },
                         body: JSON.stringify(values)
                       });
+                      const successful = response.status === 200;
+                      if (!successful) {
+                        this.setState({
+                          formIsSubmitting: false,
+                          submissionStatus: "ERROR"
+                        });
+                      } else {
+                        this.setState({
+                          formIsSubmitting: false,
+                          submissionStatus: "SUCCESS"
+                        });
+                      }
                     }}
                     render={props => (
                       <Form>
@@ -385,7 +402,13 @@ class App extends Component {
               component={() => <Blog onModalClick={() => this.toggleModal()} />}
             />
 
-            <Route exact path="/hire" component={() => <CompanyLanding />} />
+            <Route
+              exact
+              path="/hire"
+              component={() => (
+                <CompanyLanding onModalClick={() => this.toggleModal()} />
+              )}
+            />
           </Switch>
         }
 

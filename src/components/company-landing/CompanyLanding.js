@@ -17,11 +17,22 @@ class CompanyLanding extends Component {
           isCompanyPath={location.indexOf("hire") > -1}
           onModalClick={this.props.onModalClick}
         />
-        <LandingOverviewIcons />
-        <LandingHowItWorksComponent onModalClick={this.props.onModalClick} />
-        <LandingTestimonialsComponent />
-        <LandingSubscriptionComponent onModalClick={this.props.onModalClick} />
-        <LandingCompaniesComponent />
+        <LandingOverviewIcons isCompanyPath={location.indexOf("hire") > -1} />
+        <LandingHowItWorksComponent
+          isCompanyPath={location.indexOf("hire") > -1}
+          onModalClick={this.props.onModalClick}
+        />
+        <LandingTestimonialsComponent
+          isCompanyPath={location.indexOf("hire") > -1}
+        />
+        <LandingSubscriptionComponent
+          isCompanyPath={location.indexOf("hire") > -1}
+          onModalClick={this.props.onModalClick}
+        />
+        <LandingCompaniesComponent
+          isCompanyPath={location.indexOf("hire") > -1}
+          onModalClick={this.props.onModalClick}
+        />
       </div>
     );
   }

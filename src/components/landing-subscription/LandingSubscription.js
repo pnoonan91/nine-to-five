@@ -16,12 +16,14 @@ const LandingSubscriptionComponent = props => (
       <DesktopLandingSubscription
         isResumePage={props.isResumePage}
         onModalClick={props.onModalClick}
+        isCompanyPath={props.isCompanyPath}
       />
     </HideBreakPoint>
     <HideBreakPoint lg>
       <MobileLandingSubscription
         isResumePage={props.isResumePage}
         onModalClick={props.onModalClick}
+        isCompanyPath={props.isCompanyPath}
       />
     </HideBreakPoint>
   </StyledLandingSubscriptionComponent>

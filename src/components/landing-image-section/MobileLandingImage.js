@@ -4,7 +4,7 @@ import { Flex, Box } from "grid-styled";
 
 import { colors } from "../../styles/colors";
 import Text from "../text/Text";
-import { verbs } from "./DesktopLandingImage";
+import { verbs, companyVerbs } from "./DesktopLandingImage";
 
 //
 // --- Styled Components ---
@@ -53,9 +53,14 @@ class MobileLandingImage extends Component {
 
   rotateVerb = () => {
     this.setState({
-      activeVerb: verbs[this.state.activeIndex],
+      activeVerb: this.props.isCompanyPath
+        ? companyVerbs[this.state.activeIndex]
+        : verbs[this.state.activeIndex],
       activeIndex:
-        this.state.activeIndex < verbs.length - 1 ? ++this.state.activeIndex : 0
+        this.state.activeIndex <
+        (this.props.isCompanyPath ? companyVerbs.length - 1 : verbs.length - 1)
+          ? ++this.state.activeIndex
+          : 0
     });
   };
 

@@ -14,10 +14,10 @@ const StyledLandingTestimonialsComponent = styled.div``;
 const LandingTestimonialsComponent = props => (
   <StyledLandingTestimonialsComponent>
     <HideBreakPoint xs sm md>
-      <DesktopLandingTestimonials />
+      <DesktopLandingTestimonials isCompanyPath={props.isCompanyPath} />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileLandingTestimonials />
+      <MobileLandingTestimonials isCompanyPath={props.isCompanyPath} />
     </HideBreakPoint>
   </StyledLandingTestimonialsComponent>
 );

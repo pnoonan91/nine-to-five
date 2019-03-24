@@ -93,29 +93,46 @@ class DesktopLandingHowItWorks extends React.Component {
       <StyledDesktopLandingHowItWorks>
         <StyledHowItWorksHeader>
           <Text.h2 m={0} pt={"50px"} semibold>
-            Leave The Job Searching To The Professionals
+            {this.props.isCompanyPath
+              ? "Leave The recruiting to the professionals"
+              : "Leave The Job Searching To The Professionals"}
           </Text.h2>
           <Text.p m={0}>
-            We work with you to understand your career goals and make them a
-            reality.
+            {this.props.isCompanyPath
+              ? "We work with you to bring you the most qualified candidates that fit your company’s culture."
+              : "We work with you to understand your career goals and make them a reality."}
           </Text.p>
         </StyledHowItWorksHeader>
         <StyledHowItWorksSectionContainer>
           <StyledHowItWorksTextContainer>
             <div style={{ width: "100%" }}>
-              <Text.h4 semibold>Build Your Brand</Text.h4>
+              <Text.h4 semibold>
+                {this.props.isCompanyPath
+                  ? "Unique Approach"
+                  : "Build Your Brand"}
+              </Text.h4>
               <Text.p>
-                You benefit from a professionally built resume and a fine-tuned
-                social media presence which help to open doors to new
-                opportunities.
+                {this.props.isCompanyPath
+                  ? "Our unique approach of executive recruiting strategies and on-campus ambassadors focuses on quality versus quantity. We handle the recruiting process from start to finish, saving you time, money and energy."
+                  : "You benefit from a professionally built resume and a fine-tuned social media presence which help to open doors to new opportunities."}
               </Text.p>
-              <Link to="/how-it-works" className="secondary">
-                How It Works >
-              </Link>
+              {this.props.isCompanyPath ? (
+                <a onClick={this.props.onModalClick} className="secondary">
+                  Learn More >
+                </a>
+              ) : (
+                <Link to="/how-it-works" className="secondary">
+                  How It Works >
+                </Link>
+              )}
             </div>
           </StyledHowItWorksTextContainer>
           <img
-            src="/images/landing-about-us/patrick-linkedin-header.png"
+            src={`/images/landing-about-us/${
+              this.props.isCompanyPath
+                ? "landing-fgcu.png"
+                : "patrick-linkedin-header.png"
+            }`}
             height="400px"
             className="about-image"
           />
@@ -127,25 +144,31 @@ class DesktopLandingHowItWorks extends React.Component {
         <StyledHowItWorksSectionContainer style={{ height: "650px" }}>
           <StyledIphoneMock
             className="about-mock"
-            src="/images/landing-about-us/mockup.png"
+            src={`/images/landing-about-us/${
+              this.props.isCompanyPath ? "alabama.jpg" : "mockup.png"
+            }`}
           />
 
           <StyledHowItWorksTextContainer>
             <div style={{ width: "100%" }}>
               <Text.h4 semibold>
-                The Whole Package, Right From Your Phone
+                {this.props.isCompanyPath
+                  ? "Recruiting for the modern world"
+                  : "The Whole Package, Right From Your Phone"}
               </Text.h4>
               <Text.p>
-                We help you with the entire job search process. From finding the
-                right jobs to submitting the applications to creating
-                connections, we’ve got you covered.
+                {this.props.isCompanyPath
+                  ? "Career fairs are outdated and costly. By focusing our agency solely on collegiate interns and recent graduates, we save companies thousands of dollars or more on their early career recruiting efforts."
+                  : "We help you with the entire job search process. From finding the right jobs to submitting the applications to creating connections, we’ve got you covered."}
               </Text.p>
               <a
                 onClick={scrollOnClick}
                 href="#companies"
                 className="secondary"
               >
-                Where Our Clients Get Hired >
+                {this.props.isCompanyPath
+                  ? "Our Customers >"
+                  : "Where Our Clients Get Hired >"}
               </a>
             </div>
           </StyledHowItWorksTextContainer>
@@ -153,11 +176,15 @@ class DesktopLandingHowItWorks extends React.Component {
         <StyledHowItWorksSectionContainer>
           <StyledHowItWorksTextContainer>
             <div style={{ width: "100%" }}>
-              <Text.h4 semibold>Stay In The Know</Text.h4>
+              <Text.h4 semibold>
+                {this.props.isCompanyPath
+                  ? "AVOID COSTLY SOURCING TOOLS"
+                  : "Stay In The Know"}
+              </Text.h4>
               <Text.p>
-                Each week, your coach will provide you a summary of where
-                applications have been sent and who wants to schedule an
-                interview with you.
+                {this.props.isCompanyPath
+                  ? "Sourcing tools are expensive and claim to bring you the best candidates at a quicker pace. However, this is primarily a “quantity over quality” approach with every sourcing platform. We go beyond algorithms and truly tailor our approach for every client to bring the perfect candidate, instead of the most candidates."
+                  : "Each week, your coach will provide you a summary of where applications have been sent and who wants to schedule an interview with you."}
               </Text.p>
               <Link to="/about" className="secondary">
                 Learn About Our Professionals >
@@ -166,14 +193,20 @@ class DesktopLandingHowItWorks extends React.Component {
           </StyledHowItWorksTextContainer>
 
           <img
-            src="/images/landing-about-us/weekly-updates.jpg"
+            src={`/images/landing-about-us/${
+              this.props.isCompanyPath
+                ? "company-get-started"
+                : "weekly-updates"
+            }.jpg`}
             className="about-image"
             height="350px"
           />
         </StyledHowItWorksSectionContainer>
         <StyledCenterDiv>
           <a onClick={this.props.onModalClick} className="primary">
-            Schedule Your Free Consultation
+            {this.props.isCompanyPath
+              ? "Let's Get Started!"
+              : "Schedule Your Free Consultation"}
           </a>
         </StyledCenterDiv>
       </StyledDesktopLandingHowItWorks>

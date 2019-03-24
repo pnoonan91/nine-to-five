@@ -19,19 +19,28 @@ const MobileLandingSubscription = props => (
   <StyledMobileLandingSubscriptionContainer>
     {!props.isResumePage ? (
       <div>
-        <Text.h2 m={1} fontSize={6} color="white" className="shadow">
-          $99/month
-        </Text.h2>
+        {!props.isCompanyPath && (
+          <div>
+            <Text.h2 fontSize={8} color="white" className="shadow">
+              $99/month
+            </Text.h2>
+            <br />
+          </div>
+        )}
         <Text.h6 m={0} lightbold color="white" className="shadow">
-          we work hard so that
+          {props.isCompanyPath
+            ? "Our goal is to change the way in which"
+            : "we work hard so that"}
         </Text.h6>
         <Text.h6 m={1} lightbold color="white" className="shadow">
-          you find the job you love
+          {props.isCompanyPath
+            ? "companies hire interns & recent graduates."
+            : "you find the job you love"}
         </Text.h6>
         <a
           onClick={props.onModalClick}
           className="primary white"
-          style={{ width: "200px", padding: "0.5rem;" }}
+          style={{ width: "200px", padding: "0.5rem;", margin: "auto" }}
         >
           Let's Chat
         </a>
@@ -47,7 +56,7 @@ const MobileLandingSubscription = props => (
         <a
           onClick={props.onModalClick}
           className="primary white"
-          style={{ width: "200px", padding: "0.5rem;" }}
+          style={{ width: "200px", padding: "0.5rem;", margin: "auto" }}
         >
           Let's Chat
         </a>

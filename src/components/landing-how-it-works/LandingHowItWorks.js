@@ -14,10 +14,16 @@ const StyledLandingHowItWorksContainer = styled.div``;
 const LandingHowItWorksComponent = props => (
   <StyledLandingHowItWorksContainer>
     <HideBreakPoint xs sm md>
-      <DesktopLandingHowItWorks onModalClick={props.onModalClick} />
+      <DesktopLandingHowItWorks
+        isCompanyPath={props.isCompanyPath}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
     <HideBreakPoint lg>
-      <MobileLandingHowItWorks onModalClick={props.onModalClick} />
+      <MobileLandingHowItWorks
+        isCompanyPath={props.isCompanyPath}
+        onModalClick={props.onModalClick}
+      />
     </HideBreakPoint>
   </StyledLandingHowItWorksContainer>
 );

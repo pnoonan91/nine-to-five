@@ -19,15 +19,23 @@ const DesktopLandingSubscription = props => (
   <StyledDesktopLandingSubscriptionContainer>
     {!props.isResumePage ? (
       <div style={{ textAlign: "center" }}>
-        <Text.h1 fontSize={8} color="white" className="shadow">
-          $99/month
-        </Text.h1>
-        <br />
+        {!props.isCompanyPath && (
+          <div>
+            <Text.h1 fontSize={8} color="white" className="shadow">
+              $99/month
+            </Text.h1>
+            <br />
+          </div>
+        )}
         <Text.h4 m={0} lightbold color="white" className="shadow">
-          we work hard so that
+          {props.isCompanyPath
+            ? "Our goal is to change the way in which"
+            : "we work hard so that"}
         </Text.h4>
         <Text.h4 m={0} lightbold color="white" className="shadow">
-          you find the job you love
+          {props.isCompanyPath
+            ? "companies hire interns & recent graduates."
+            : "you find the job you love"}
         </Text.h4>
         <br />
         <a

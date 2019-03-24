@@ -28,38 +28,78 @@ const LandingOverviewIcons = props => {
       <HideBreakPoint xs sm md>
         <StyledLandingOverviewIcons>
           <DesktopOverviewIcon
-            imageSource="/icons/coach.png"
-            title="Career Consulting"
-            description="Our experienced consultants will help you figure out where you want to go in your career and how to get there."
+            imageSource={`/icons/${props.isCompanyPath ? "foam" : "coach"}.png`}
+            title={
+              props.isCompanyPath
+                ? "QUALITY OVER QUANTITY"
+                : "Career Consulting"
+            }
+            description={
+              props.isCompanyPath
+                ? "Our unique mix of executive recruiting strategies and on-campus ambassadors brings you the perfect candidate."
+                : "Our experienced consultants will help you figure out where you want to go in your career and how to get there."
+            }
           />
           <DesktopOverviewIcon
-            imageSource="/icons/search.png"
-            title="Job Searching"
-            description="Nine to Five controls the job searching process for our customers so they can spend less time searching."
+            imageSource={`/icons/${
+              props.isCompanyPath ? "save-money" : "search"
+            }.png`}
+            title={props.isCompanyPath ? "COST REDUCTION" : "Job Searching"}
+            description={
+              props.isCompanyPath
+                ? "Collegiate recruiting is costly and time consuming. Career fairs lack a true ROI. We pride ourselves on redefining how college recruiting is done, while saving companies thousands."
+                : "Nine to Five controls the job searching process for our customers so they can spend less time searching."
+            }
           />
           <DesktopOverviewIcon
-            imageSource="/icons/resume.png"
-            title="Resume Building"
-            description="You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
+            imageSource={`/icons/${
+              props.isCompanyPath ? "speedometer" : "resume"
+            }.png`}
+            title={props.isCompanyPath ? "Time Saving" : "Resume Building"}
+            description={
+              props.isCompanyPath
+                ? "Since we tailor our recruiting efforts for each individual client, you can rest assured knowing our team will bring you better, more qualified candidates, faster."
+                : "You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
+            }
           />
         </StyledLandingOverviewIcons>
       </HideBreakPoint>
       <HideBreakPoint lg>
         <StyledLandingOverviewIcons>
           <MobileOverviewIcon
-            imageSource="/icons/search.png"
-            title="Job Searching"
-            description="Nine to Five controls the job searching process for our customers so they can spend less time searching."
+            imageSource={`/icons/${props.isCompanyPath ? "foam" : "coach"}.png`}
+            title={
+              props.isCompanyPath
+                ? "QUALITY OVER QUANTITY"
+                : "Career Consulting"
+            }
+            description={
+              props.isCompanyPath
+                ? "Our unique mix of executive recruiting strategies and on-campus ambassadors brings you the perfect candidate."
+                : "Our experienced consultants will help you figure out where you want to go in your career and how to get there."
+            }
           />
           <MobileOverviewIcon
-            imageSource="/icons/coach.png"
-            title="Career Consulting"
-            description="Our experienced consultants will help you figure out where you want to go in your career and how to get there."
+            imageSource={`/icons/${
+              props.isCompanyPath ? "save-money" : "search"
+            }.png`}
+            title={props.isCompanyPath ? "COST REDUCTION" : "Job Searching"}
+            description={
+              props.isCompanyPath
+                ? "Collegiate recruiting is costly and time consuming. Career fairs lack a true ROI. We pride ourselves on redefining how college recruiting is done, while saving companies thousands."
+                : "Nine to Five controls the job searching process for our customers so they can spend less time searching."
+            }
           />
           <MobileOverviewIcon
-            imageSource="/icons/resume.png"
-            title="Resume Building"
-            description="You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
+            imageSource={`/icons/${
+              props.isCompanyPath ? "speedometer" : "resume"
+            }.png`}
+            title={props.isCompanyPath ? "Time Saving" : "Resume Building"}
+            description={
+              props.isCompanyPath
+                ? "Since we tailor our recruiting efforts for each individual client, you can rest assured knowing our team will bring you better, more qualified candidates, faster."
+                : "You'll receive an actionable resume that will stand out and get you noticed. Your resume is your first impression, let's make it a good one."
+            }
           />
         </StyledLandingOverviewIcons>
       </HideBreakPoint>
