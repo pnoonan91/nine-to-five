@@ -44,11 +44,19 @@ export const verbs = [
   "living"
 ];
 
+export const companyVerbs = [
+  "selling",
+  "marketing",
+  "networking",
+  "working",
+  "living"
+];
+
 //
 // --- Desktop Landing Image Component ---
 class DesktopLandingImage extends Component {
   state = {
-    activeVerb: "living",
+    activeVerb: this.props.isCompanyPath ? "selling" : "living",
     activeIndex: 0
   };
 
@@ -58,9 +66,14 @@ class DesktopLandingImage extends Component {
 
   rotateVerb = () => {
     this.setState({
-      activeVerb: verbs[this.state.activeIndex],
+      activeVerb: this.props.isCompanyPath
+        ? companyVerbs[this.state.activeIndex]
+        : verbs[this.state.activeIndex],
       activeIndex:
-        this.state.activeIndex < verbs.length - 1 ? ++this.state.activeIndex : 0
+        this.state.activeIndex <
+        (this.props.isCompanyPath ? companyVerbs.length - 1 : verbs.length - 1)
+          ? ++this.state.activeIndex
+          : 0
     });
   };
 

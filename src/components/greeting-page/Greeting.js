@@ -120,7 +120,12 @@ const Greeting = () => {
             recruiting is here.
           </StyledSubtitle>
           <StyledLinkContainer>
-            <StyledLink className="primary">Find Talent</StyledLink>
+            <StyledLink
+              className="primary"
+              onClick={() => history.push("/hire")}
+            >
+              Find Talent
+            </StyledLink>
             <StyledLink
               ml
               className="primary"

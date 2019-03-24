@@ -30,18 +30,24 @@ const Header = props => {
     return null;
   }
 
-  if (_.includes(CandidateRoutes, location)) {
-    return (
-      <StyledHeader>
-        <HideBreakPoint xs sm md>
-          <DesktopHeader onModalClick={props.onModalClick} />
-        </HideBreakPoint>
-        <HideBreakPoint lg>
-          <MobileHeader onModalClick={props.onModalClick} />
-        </HideBreakPoint>
-      </StyledHeader>
-    );
-  }
+  console.log(location);
+
+  return (
+    <StyledHeader>
+      <HideBreakPoint xs sm md>
+        <DesktopHeader
+          onModalClick={props.onModalClick}
+          isCompanyRoute={location.indexOf("hire") > -1}
+        />
+      </HideBreakPoint>
+      <HideBreakPoint lg>
+        <MobileHeader
+          onModalClick={props.onModalClick}
+          isCompanyRoute={location.indexOf("hire") > -1}
+        />
+      </HideBreakPoint>
+    </StyledHeader>
+  );
 };
 
 export default Header;

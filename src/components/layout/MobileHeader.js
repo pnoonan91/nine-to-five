@@ -69,29 +69,51 @@ class MobileHeader extends Component {
               <i class="fas fa-chevron-up" /> Close
             </Text.p>
           </StyledMenuLinkCloseButton>
-          <StyledMenuLink onClick={() => this.handleNavigation("/")}>
+          <StyledMenuLink
+            onClick={() =>
+              this.handleNavigation(
+                this.props.isCompanyRoute ? "/hire" : "/search"
+              )
+            }
+          >
             <Text.h4 style={{ margin: 0 }} color="#1c5d99">
               Home
             </Text.h4>
           </StyledMenuLink>
+          {!this.props.isCompanyRoute && (
+            <StyledMenuLink
+              onClick={() => this.handleNavigation("/how-it-works")}
+            >
+              <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+                How It Works
+              </Text.h4>
+            </StyledMenuLink>
+          )}
+          {!this.props.isCompanyRoute && (
+            <StyledMenuLink onClick={() => this.handleNavigation("/resumes")}>
+              <Text.h4 style={{ margin: 0 }} color="#1c5d99">
+                Resumes
+              </Text.h4>
+            </StyledMenuLink>
+          )}
           <StyledMenuLink
-            onClick={() => this.handleNavigation("/how-it-works")}
+            onClick={() =>
+              this.handleNavigation(
+                `${this.props.isCompanyRoute ? "/hire" : ""}/about`
+              )
+            }
           >
-            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
-              How It Works
-            </Text.h4>
-          </StyledMenuLink>
-          <StyledMenuLink onClick={() => this.handleNavigation("/resumes")}>
-            <Text.h4 style={{ margin: 0 }} color="#1c5d99">
-              Resumes
-            </Text.h4>
-          </StyledMenuLink>
-          <StyledMenuLink onClick={() => this.handleNavigation("/about")}>
             <Text.h4 style={{ margin: 0 }} color="#1c5d99">
               About Us
             </Text.h4>
           </StyledMenuLink>
-          <StyledMenuLink onClick={() => this.handleNavigation("/blog")}>
+          <StyledMenuLink
+            onClick={() =>
+              this.handleNavigation(
+                `${this.props.isCompanyRoute ? "/hire" : ""}/blog`
+              )
+            }
+          >
             <Text.h4 style={{ margin: 0 }} color="#1c5d99">
               Blog
             </Text.h4>
@@ -100,8 +122,8 @@ class MobileHeader extends Component {
         <StyledMobileHeader>
           <Flex alignItems="center">
             <StyledMobileLogoContainer>
-              <Link to="/">
-                <img style={{ width: "40px" }} src="/icons/clock.jpg" />
+              <Link to={this.props.isCompanyRoute ? "/hire" : "/search"}>
+                <img style={{ width: "40px" }} src="/icons/new_logo.png" />
               </Link>
             </StyledMobileLogoContainer>
             <Text.h5 ml={1} onClick={this.toggleMenu}>
@@ -109,8 +131,15 @@ class MobileHeader extends Component {
             </Text.h5>
           </Flex>
           <Box>
-            <a onClick={this.props.onModalClick} className="primary">
-              Free Consultation
+            <a
+              onClick={() =>
+                history.push(this.props.isCompanyRoute ? "/search" : "/hire")
+              }
+              className="primary"
+            >
+              {this.props.isCompanyRoute
+                ? "Looking to find a job?"
+                : "Looking to hire talent?"}
             </a>
           </Box>
         </StyledMobileHeader>

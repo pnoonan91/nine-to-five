@@ -68,12 +68,19 @@ class DesktopHeader extends Component {
   };
 
   componentDidMount() {
-    this.updateActiveLink(window.location.pathname.slice(1));
+    this.updateActiveLink(
+      window.location.pathname.slice(this.props.isCompanyRoute ? 6 : 1)
+    );
   }
 
   componentDidUpdate() {
-    if (this.state.activeLink !== window.location.pathname.slice(1)) {
-      this.updateActiveLink(window.location.pathname.slice(1));
+    if (
+      this.state.activeLink !==
+      window.location.pathname.slice(this.props.isCompanyRoute ? 6 : 1)
+    ) {
+      this.updateActiveLink(
+        window.location.pathname.slice(this.props.isCompanyRoute ? 6 : 1)
+      );
     }
   }
 
@@ -108,30 +115,39 @@ class DesktopHeader extends Component {
               src="/icons/new_logo.png"
             />
           </Link>
-          <Link to="/" onClick={() => this.updateActiveLink()}>
+          <Link
+            to={this.props.isCompanyRoute ? "/hire" : "/search"}
+            onClick={() => this.updateActiveLink()}
+          >
             <Text.h1 ml={3} color={colors.primaryBlue}>
               nine to five
             </Text.h1>
           </Link>
-          <Link to="/how-it-works">
-            <StyledNavItem
-              fontSize={3}
-              id="how-it-works"
-              onClick={() => this.updateActiveLink("how-it-works")}
-            >
-              How It Works
-            </StyledNavItem>
-          </Link>
-          <Link to="/resumes">
-            <StyledNavItem
-              fontSize={3}
-              id="resumes"
-              onClick={() => this.updateActiveLink("resumes")}
-            >
-              Resumes
-            </StyledNavItem>
-          </Link>
-          <Link to="/about">
+
+          {!this.props.isCompanyRoute && (
+            <Link to="/how-it-works">
+              <StyledNavItem
+                fontSize={3}
+                id="how-it-works"
+                onClick={() => this.updateActiveLink("how-it-works")}
+              >
+                How It Works
+              </StyledNavItem>
+            </Link>
+          )}
+          {!this.props.isCompanyRoute && (
+            <Link to="/resumes">
+              <StyledNavItem
+                fontSize={3}
+                id="resumes"
+                onClick={() => this.updateActiveLink("resumes")}
+              >
+                Resumes
+              </StyledNavItem>
+            </Link>
+          )}
+
+          <Link to={`${this.props.isCompanyRoute ? "/hire" : ""}/about`}>
             <StyledNavItem
               fontSize={3}
               id="about"
@@ -140,7 +156,7 @@ class DesktopHeader extends Component {
               About Us
             </StyledNavItem>
           </Link>
-          <Link to="/blog">
+          <Link to={`${this.props.isCompanyRoute ? "/hire" : ""}/blog`}>
             <StyledNavItem
               fontSize={3}
               id="blog"
@@ -151,8 +167,13 @@ class DesktopHeader extends Component {
           </Link>
         </div>
         <StyledRightSection style={{ borderBottom: "0.5rem" }}>
-          <Link className="primary" to="/hire">
-            Looking to hire talent?
+          <Link
+            className="primary"
+            to={this.props.isCompanyRoute ? "/search" : "/hire"}
+          >
+            {this.props.isCompanyRoute
+              ? "Looking to find a job?"
+              : "Looking to hire talent?"}
           </Link>
         </StyledRightSection>
       </StyledDesktopHeader>

@@ -20,6 +20,7 @@ import HideBreakPoint from "./components/layout/HideBreakPoint";
 import history from "./history";
 import Greeting from "./components/greeting-page/Greeting";
 import { colors } from "./styles/colors";
+import CompanyLanding from "./components/company-landing/CompanyLanding";
 
 //
 // --- Styled Components ---
@@ -368,9 +369,23 @@ class App extends Component {
             />
             <Route
               exact
+              path="/hire/about"
+              component={() => (
+                <About onModalClick={() => this.toggleModal()} />
+              )}
+            />
+            <Route
+              exact
               path="/blog"
               component={() => <Blog onModalClick={() => this.toggleModal()} />}
             />
+            <Route
+              exact
+              path="/hire/blog"
+              component={() => <Blog onModalClick={() => this.toggleModal()} />}
+            />
+
+            <Route exact path="/hire" component={() => <CompanyLanding />} />
           </Switch>
         }
 
