@@ -22,7 +22,7 @@ app.post("/form-submission", (req, res, err) => {
   transporter.sendMail(
     {
       from: "hellonine25@gmail.com",
-      to: "kyle@ninetofive.app",
+      to: "pnoonan91@gmail.com",
       subject: "Nine to Five Contact Form Submission",
       text: `NAME: ${req.body.name || ""} | EMAIL: ${req.body.email ||
         ""} | MESSAGE: ${req.body.message || ""}`
