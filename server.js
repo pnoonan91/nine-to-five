@@ -24,6 +24,7 @@ app.get("/", function(req, res) {
 
 // post request to send emails
 app.post("/form-submission", (req, res, err) => {
+  console.log("wut");
   transporter.sendMail(
     {
       from: "hellonine25@gmail.com",

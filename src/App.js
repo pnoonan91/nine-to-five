@@ -160,102 +160,110 @@ class App extends Component {
                 }}
               >
                 <StyledCalendlySection>
-                  <Formik
-                    initialValues={{ name: "", email: "", message: "" }}
-                    validationSchema={Yup.object().shape({
-                      name: Yup.string().required(
-                        "Your name is a required field."
-                      ),
-                      email: Yup.string()
-                        .email("Please enter a valid email address.")
-                        .required("Email address is required."),
-                      message: Yup.string().required("Please enter a message.")
-                    })}
-                    validateOnBlur
-                    onSubmit={async (values, actions) => {
-                      this.setState({ formIsSubmitting: true });
-                      const response = await fetch("/form-submission", {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(values)
-                      });
-                      const successful = response.status === 200;
-                      if (!successful) {
-                        this.setState({
-                          formIsSubmitting: false,
-                          submissionStatus: "ERROR"
-                        });
-                      } else {
-                        this.setState({
-                          formIsSubmitting: false,
-                          submissionStatus: "SUCCESS"
-                        });
-                      }
-                    }}
-                    render={props => (
-                      <Form>
-                        <Text.h1
-                          style={{ marginBottom: "16px" }}
-                          color={colors.primaryBlue}
-                        >
-                          Get In Touch
-                        </Text.h1>
-                        <Field
-                          name="name"
-                          id="name"
-                          component={StyledInputField}
-                          placeholder="Full Name"
-                          onChange={props.handleChange}
-                          onBlur={props.handleBlur}
-                        />
-                        <ErrorMessage
-                          name="name"
-                          component={StyledErrorMessage}
-                        />
-                        <Field
-                          type="email"
-                          name="email"
-                          id="email"
-                          component={StyledInputField}
-                          placeholder="Email Address"
-                          onChange={props.handleChange}
-                          onBlur={props.handleBlur}
-                        />
-                        <ErrorMessage
-                          name="email"
-                          component={StyledErrorMessage}
-                        />
-                        <Field
-                          name="message"
-                          id="message"
-                          component={StyledTextAreaField}
-                          placeholder="How can we help you?"
-                          onChange={props.handleChange}
-                          onBlur={props.handleBlur}
-                        />
-                        <ErrorMessage
-                          name="message"
-                          component={StyledErrorMessage}
-                        />
-                        <button
-                          disabled={
-                            props.errors.name ||
-                            props.errors.email ||
-                            props.errors.message ||
-                            !props.values.name ||
-                            !props.values.email ||
-                            !props.values.message
-                          }
-                          type="submit"
-                          className="primary"
-                        >
-                          Submit
-                        </button>
-                      </Form>
-                    )}
-                  />
+                  <Text.h1
+                    style={{ marginBottom: "16px" }}
+                    color={colors.primaryBlue}
+                  >
+                    Get In Touch
+                  </Text.h1>
+                  {!this.state.formIsSubmitting ? (
+                    <Formik
+                      initialValues={{ name: "", email: "", message: "" }}
+                      validationSchema={Yup.object().shape({
+                        name: Yup.string().required(
+                          "Your name is a required field."
+                        ),
+                        email: Yup.string()
+                          .email("Please enter a valid email address.")
+                          .required("Email address is required."),
+                        message: Yup.string().required(
+                          "Please enter a message."
+                        )
+                      })}
+                      validateOnBlur
+                      onSubmit={async (values, actions) => {
+                        this.setState({ formIsSubmitting: true });
+
+                        var template_params = {
+                          name: values.name,
+                          email: values.email,
+                          message: values.message
+                        };
+
+                        var service_id = "default_service";
+                        var template_id = "contact_submission";
+
+                        window.emailjs.send(
+                          service_id,
+                          template_id,
+                          template_params
+                        );
+                      }}
+                      render={props => (
+                        <Form>
+                          <Field
+                            name="name"
+                            id="name"
+                            component={StyledInputField}
+                            placeholder="Full Name"
+                            onChange={props.handleChange}
+                            onBlur={props.handleBlur}
+                          />
+                          <ErrorMessage
+                            name="name"
+                            component={StyledErrorMessage}
+                          />
+                          <Field
+                            type="email"
+                            name="email"
+                            id="email"
+                            component={StyledInputField}
+                            placeholder="Email Address"
+                            onChange={props.handleChange}
+                            onBlur={props.handleBlur}
+                          />
+                          <ErrorMessage
+                            name="email"
+                            component={StyledErrorMessage}
+                          />
+                          <Field
+                            name="message"
+                            id="message"
+                            component={StyledTextAreaField}
+                            placeholder="How can we help you?"
+                            onChange={props.handleChange}
+                            onBlur={props.handleBlur}
+                          />
+                          <ErrorMessage
+                            name="message"
+                            component={StyledErrorMessage}
+                          />
+                          <button
+                            disabled={
+                              props.errors.name ||
+                              props.errors.email ||
+                              props.errors.message ||
+                              !props.values.name ||
+                              !props.values.email ||
+                              !props.values.message
+                            }
+                            type="submit"
+                            className="primary"
+                          >
+                            Submit
+                          </button>
+                        </Form>
+                      )}
+                    />
+                  ) : (
+                    <div>
+                      Thanks for reaching out!
+                      <br />
+                      <br />
+                      We will get back to you as soon as we can (typically
+                      within 1 business day).
+                    </div>
+                  )}
                 </StyledCalendlySection>
                 <StyledTextSection>
                   <div
