@@ -26,7 +26,10 @@ class Footer extends Component {
         this.setState({
           story: {
             title: articles.items[0].title,
-            description: articles.items[0].description,
+            description: articles.items[0].description.replace(
+              /<(.|\n)*?>/g,
+              ""
+            ),
             image: articles.items[0].thumbnail,
             link: articles.items[0].link
           },
@@ -36,6 +39,8 @@ class Footer extends Component {
   }
 
   render() {
+    const location = window.location.pathname.slice(1).toLowerCase();
+
     return (
       <StyledFooter>
         {this.state.isLoading ? (
@@ -43,10 +48,16 @@ class Footer extends Component {
         ) : (
           <div>
             <HideBreakPoint xs sm md>
-              <DesktopFooter blog={this.state.story} />
+              <DesktopFooter
+                blog={this.state.story}
+                isCompanyRoute={location.indexOf("hire") > -1}
+              />
             </HideBreakPoint>
             <HideBreakPoint lg>
-              <MobileFooter blog={this.state.story} />
+              <MobileFooter
+                blog={this.state.story}
+                isCompanyRoute={location.indexOf("hire") > -1}
+              />
             </HideBreakPoint>
           </div>
         )}

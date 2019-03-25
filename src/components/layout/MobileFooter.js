@@ -160,18 +160,25 @@ const MobileFooter = props => {
       </StyledMobileFooter>
       <StyledMobileLinks>
         <StyledLinkSection>
-          <Link to="/search" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
-            <Text.h6>Home</Text.h6>
-          </Link>
           <Link
-            to="/how-it-works"
+            to={props.isCompanyRoute ? "/hire" : "/search"}
             style={{ color: "#c7d8ef", padding: "0.2rem" }}
           >
-            <Text.h6>How It Works</Text.h6>
+            <Text.h6>Home</Text.h6>
           </Link>
-          <Link to="/resumes" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
-            <Text.h6>Resumes</Text.h6>
-          </Link>
+          {!props.isCompanyRoute && (
+            <Link
+              to="/how-it-works"
+              style={{ color: "#c7d8ef", padding: "0.2rem" }}
+            >
+              <Text.h6>How It Works</Text.h6>
+            </Link>
+          )}
+          {!props.isCompanyRoute && (
+            <Link to="/resumes" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+              <Text.h6>Resumes</Text.h6>
+            </Link>
+          )}
           <Link to="/about" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
             <Text.h6>About Us</Text.h6>
           </Link>
