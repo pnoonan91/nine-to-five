@@ -24,13 +24,17 @@ class BlogEntries extends Component {
   componentDidMount() {
     window
       .fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fnine-to-five"
+        "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fnine-to-five&api_key=eyjhpuljxnboeccgmp3znduua3gp47du3mtqrbpc&count=100"
       )
       .then(result => result.json())
       .then(articles => {
         this.setState({
           feed: articles.feed,
-          stories: articles.items,
+          stories: articles.items.map(item => ({
+            ...item,
+            description: item.description.replace(/<(.|\n)*?>/g, ""),
+            content: item.content.replace(/<(.|\n)*?>/g, "")
+          })),
           isLoading: false
         });
       });

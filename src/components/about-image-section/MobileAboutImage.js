@@ -6,7 +6,7 @@ import Text from "../text/Text";
 //
 // --- Styled Components ---
 const StyledMobileAboutImageComponent = styled(Flex)`
-  background-image: url("/images/about-us/about-us-header.jpg");
+  background-image: url("/images/about-us/about-us-header.png");
   background-size: 150%;
   background-position: center;
   margin-top: 52px;

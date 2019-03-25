@@ -17,9 +17,9 @@ const StyledMobileAboutContainer = styled(Flex)`
 const MobileAboutStory = props => (
   <StyledMobileAboutContainer>
     <Box style={{ marginTop: "auto", marginBottom: "auto" }}>
-      <Text.h5 semibold m={0} style={{ margin: "auto" }}>
+      <Text.h2 m={0} pt={"50px"} semibold style={{ textAlign: "center" }}>
         Our Story
-      </Text.h5>
+      </Text.h2>
       <Text.p>
         <span style={{ fontWeight: "bold" }}>Our story begins with Gaby. </span>
         In 2016, Gaby was a college sophomore studying in Florida and struggling
@@ -32,11 +32,21 @@ const MobileAboutStory = props => (
         Weekly, I sent her opportunities that I thought fit her interests.
         Throughout the process, Gaby came to me with interview advice, cover
         letter writing, email follow-up advice, salary negotiation advice, and
-        general career advice. Since then, Gaby has held 3 internships found by
-        Nine to Five staff and we are working to land her dream job after
-        graduation in 2020. I quickly became flooded with requests to the effect
-        of “Can you help me like you helped her?” And that is how Nine to Five
-        was born.
+        general career advice.
+        <br />
+        <br />
+        Since then, Gaby has held 3 internships found by Nine to Five staff and
+        we are working to land her dream job after graduation in 2020. I quickly
+        became flooded with requests to the effect of “Can you help me like you
+        helped her?” And that is how Nine to Five was born. Since then, Gaby has
+        held 3 internships found by Nine to Five staff and has landed her dream
+        job in Miami beginning in the summer of 2019. After helping Gaby, I
+        quickly became flooded with requests to the effect of “Can you help me
+        like you helped her?” And that is how Nine to Five was born. Fast
+        forward 2 years, Nine to Five now has ambassadors across 5 campuses,
+        partners with companies big and small to hire their entry level talent,
+        and travels the country teaching all things job searching and resume
+        building.
       </Text.p>
       <a onClick={props.onModalClick} className="primary">
         Let us help you find your dream job!

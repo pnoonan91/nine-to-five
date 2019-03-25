@@ -7,7 +7,7 @@ import Text from "../text/Text";
 const StyledDesktopAboutImageComponent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-image: url("/images/about-us/about-us-header.jpg");
+  background-image: url("/images/about-us/about-us-header.png");
   background-size: 100%;
   background-position: center;
   margin-top: 64px;

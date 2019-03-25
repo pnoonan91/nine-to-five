@@ -24,9 +24,10 @@ const DesktopBlogCaption = props => (
     </Text.h3>
     <div style={{ width: "100%" }}>
       <Text.p lightbold>
-        Every Saturday, we’ll share nightmare interview stories (because we have
-        a lot), offer up some advice, customer success stories, and talk about
-        anything else job searching related.
+        Our blog is all about educating & entertaining, we’ll share nightmare
+        interview stories (because we have a lot), offer up some advice,
+        customer success stories, and talk about anything else job searching
+        related.
       </Text.p>
     </div>
   </StyledDesktopBlogCaptionContainer>

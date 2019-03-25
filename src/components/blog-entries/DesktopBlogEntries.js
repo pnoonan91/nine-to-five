@@ -64,10 +64,7 @@ const Article = props => {
           </Text.h5>
         </a>
         <Text.p m={0} style={{ flexWrap: "wrap" }}>
-          {props.description.slice(
-            props.description.indexOf("</figure>") + 12,
-            props.description.indexOf("</figure>") + 212
-          )}
+          {props.description.slice(0, 350)}
           ...
         </Text.p>
         <Text.p m={0}>

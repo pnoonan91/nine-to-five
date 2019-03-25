@@ -7,6 +7,7 @@ import AboutBio from "./about-bio/AboutBio";
 import AboutAmbassadors from "./about-ambassadors/AboutAmbassadors";
 import HideBreakPoint from "./layout/HideBreakPoint";
 import MobileAboutAmbassadors from "./about-ambassadors/MobileAboutAmbassadors";
+import LandingSubscriptionComponent from "./landing-subscription/LandingSubscription";
 
 const About = props => (
   <div>
@@ -19,6 +20,9 @@ const About = props => (
     <HideBreakPoint lg>
       <MobileAboutAmbassadors />
     </HideBreakPoint>
+    <LandingSubscriptionComponent
+      isCompanyPath={window.location.pathname.indexOf("hire") > -1}
+    />
   </div>
 );
 

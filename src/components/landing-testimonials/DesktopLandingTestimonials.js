@@ -127,12 +127,22 @@ const DesktopLandingTestimonials = props => (
         }
       />
       <Testimonial
-        image="/images/landing-testimonials/patrick.jpeg"
-        name="Patrick N."
-        testimonial="I loved working with Nine to Five. Every form of contact and communication was professional and punctual. You get to work with some very smart people who think outside of the box to help you accomplish your goals. I'd highly reccomend working with them!"
-        occupation="Web Developer"
-        company="HS2 Solutions"
-        linkedIn="https://www.linkedin.com/in/pnoonan/"
+        image={`/images/landing-testimonials/${
+          props.isCompanyPath ? "amber" : "patrick"
+        }.jpeg`}
+        name={props.isCompanyPath ? "Amber F." : "Patrick N."}
+        testimonial={
+          props.isCompanyPath
+            ? "We recently partnered with Nine to Five to help fill one of our open Sales Intern positions. Within a day, Kyle already had a quality candidate for us to speak with. Nine to Five creates a no pressure environment with easy collaboration. I felt they really listened to our needs and provided a candidate that was spot on for what we were looking for!"
+            : "I loved working with Nine to Five. Every form of contact and communication was professional and punctual. You get to work with some very smart people who think outside of the box to help you accomplish your goals. I'd highly reccomend working with them!"
+        }
+        occupation={props.isCompanyPath ? "Recruiter" : "Web Developer"}
+        company={props.isCompanyPath ? "Club Automation" : "Bounteous"}
+        linkedIn={
+          props.isCompanyPath
+            ? "https://www.linkedin.com/in/amberfeldkamp/"
+            : "https://www.linkedin.com/in/pnoonan/"
+        }
       />
       <Testimonial
         image="/images/landing-testimonials/gabby.jpeg"

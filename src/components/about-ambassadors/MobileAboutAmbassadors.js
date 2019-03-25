@@ -119,8 +119,20 @@ const Testimonial = props => (
 const MobileAboutAmbassadors = props => (
   <StyledMobileAboutAmbassadorsContainer>
     <Text.h2 m={0} pt={"2rem"} semibold>
-      Ambassador Spotlight
+      Meet Our On Campus Ambassadors
     </Text.h2>
+    <Text.p m={0} style={{ textAlign: "center", margin: "0" }}>
+      Interested in having Nine to Five come to your campus?
+    </Text.p>
+    <Text.p
+      m={0}
+      style={{ textAlign: "center", margin: "0", marginBottom: "2rem" }}
+    >
+      Email us at{" "}
+      <a href="mailto:kyle@ninetofive.app" className="email-link">
+        kyle@ninetofive.app
+      </a>
+    </Text.p>
     <Flex
       justifyContent="space-between"
       style={{
@@ -165,6 +177,14 @@ const MobileAboutAmbassadors = props => (
               LinkedIn
             </a>
           </StyledText>
+          <Text.p>
+            I was immediately hooked on everything Nine to Five does and I am
+            glad to be the ambassador at Illinois State University. I see so
+            many college students that are so unsure of where to start
+            professionally, whether it be searching for internships or
+            perfecting their resumes. I love being able to connect with students
+            across campus and share what Nine to Five can do.
+          </Text.p>
         </StyledAmbassadorItem>
         <StyledAmbassadorItem>
           <StyledAmbassadorImage src="/images/ambassadors/brett.jpeg" />
@@ -182,6 +202,12 @@ const MobileAboutAmbassadors = props => (
             <i class="fab fa-linkedin" />{" "}
             <a href="https://www.linkedin.com/in/brett-lesch/">LinkedIn</a>
           </StyledText>
+          <Text.p>
+            Nine to Five has given me the opportunity to gain experience while
+            in school and connect with fellow students. I have been able to gain
+            valuable marketing & leadership experience through on-campus events
+            and public speaking engagements across campus.
+          </Text.p>
         </StyledAmbassadorItem>
         <StyledAmbassadorItem>
           <StyledAmbassadorImage src="/images/ambassadors/angela.jpeg" />
@@ -199,6 +225,13 @@ const MobileAboutAmbassadors = props => (
             <i class="fab fa-linkedin" />{" "}
             <a href="https://www.linkedin.com/in/angelatorrey/">LinkedIn</a>
           </StyledText>
+          <Text.p>
+            I love being able to partner with local companies helping them find
+            better quality interns while saving their organizations thousands of
+            dollars. As a college student, I witness how outdated the collegiate
+            recruiting model is and Nine to Five is fixing a broken (and
+            overpriced) system.
+          </Text.p>
         </StyledAmbassadorItem>
         <StyledAmbassadorItem>
           <StyledAmbassadorImage src="/images/ambassadors/maggie.jpeg" />
@@ -216,6 +249,13 @@ const MobileAboutAmbassadors = props => (
             <i class="fab fa-linkedin" />{" "}
             <a href="https://www.linkedin.com/in/maggie-podell/">LinkedIn</a>
           </StyledText>
+          <Text.p>
+            I think it is so important that one’s first impression with a
+            company or potential employer is spot on and impressive. No one is
+            taught how to make an impressive resume, cover letter, and how to
+            create a LinkedIn account that is useful for a potential job
+            opportunity.
+          </Text.p>
         </StyledAmbassadorItem>
         <StyledAmbassadorItem>
           <StyledAmbassadorImage src="/images/ambassadors/john.jpeg" />
@@ -235,6 +275,14 @@ const MobileAboutAmbassadors = props => (
               LinkedIn
             </a>
           </StyledText>
+          <Text.p>
+            As much as college prepares you to join the working world, students
+            still come out of school without jobs or the job searching &
+            interviewing skills needed to succeed. Nine to Five helps students
+            gain these incredibly valuable skills. Personally, being an
+            ambassador allows me to improve my public speaking & leadership
+            experience across a variety of different groups on campus.
+          </Text.p>
         </StyledAmbassadorItem>
       </Slider>
     </div>

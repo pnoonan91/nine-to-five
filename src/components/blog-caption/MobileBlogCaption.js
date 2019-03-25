@@ -20,9 +20,9 @@ const MobileBlogCaption = props => (
   <StyledMobileBlogCaptionContainer>
     <Text.h4 lightbold>Blog</Text.h4>
     <Text.p lightbold>
-      Every Saturday, we’ll share nightmare interview stories (because we have a
-      lot), offer up some advice, customer success stories, and talk about
-      anything else job searching related.
+      Our blog is all about educating & entertaining, we’ll share nightmare
+      interview stories (because we have a lot), offer up some advice, customer
+      success stories, and talk about anything else job searching related.
     </Text.p>
   </StyledMobileBlogCaptionContainer>
 );
