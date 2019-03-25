@@ -13,9 +13,13 @@ var app = express();
 app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.json());
 
-var port = 8080;
+var port = process.env.PORT || 8080;
 app.listen(port, function(req, res) {
   console.log("Server is running at port: ", port);
+});
+
+app.get("/", function(req, res) {
+  res.render("index");
 });
 
 // post request to send emails
