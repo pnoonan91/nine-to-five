@@ -68,7 +68,7 @@ const DesktopAboutStory = props => (
             style={{
               display: "flex",
               flexDirection: "column",
-              transform: "translateY(1.5rem)"
+              transform: "translateX(10rem) translateY(-1rem)"
             }}
           >
             <Text.primaryHeader

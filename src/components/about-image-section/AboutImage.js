@@ -12,15 +12,24 @@ const StyledAboutImageComponent = styled.div`
 
 //
 // --- About Us Image Component ---
-const AboutImageComponent = props => (
-  <StyledAboutImageComponent>
-    <HideBreakPoint xs sm md>
-      <DesktopAboutImage onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-    <HideBreakPoint lg>
-      <MobileAboutImage onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-  </StyledAboutImageComponent>
-);
+const AboutImageComponent = props => {
+  const isCompanyPath = window.location.pathname.indexOf("hire") > -1;
+  return (
+    <StyledAboutImageComponent>
+      <HideBreakPoint xs sm md>
+        <DesktopAboutImage
+          onModalClick={props.onModalClick}
+          isCompanyPath={isCompanyPath}
+        />
+      </HideBreakPoint>
+      <HideBreakPoint lg>
+        <MobileAboutImage
+          onModalClick={props.onModalClick}
+          isCompanyPath={isCompanyPath}
+        />
+      </HideBreakPoint>
+    </StyledAboutImageComponent>
+  );
+};
 
 export default AboutImageComponent;

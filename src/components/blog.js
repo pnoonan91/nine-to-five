@@ -10,7 +10,10 @@ const Blog = props => (
     <BlogImageComponent />
     <BlogCaptionComponent />
     <BlogEntries />
-    <LandingSubscriptionComponent onModalClick={props.onModalClick} />
+    <LandingSubscriptionComponent
+      onModalClick={props.onModalClick}
+      isCompanyPath={window.location.pathname.indexOf("hire") > -1}
+    />
   </div>
 );
 

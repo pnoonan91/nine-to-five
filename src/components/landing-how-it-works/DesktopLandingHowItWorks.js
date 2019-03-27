@@ -147,6 +147,7 @@ class DesktopLandingHowItWorks extends React.Component {
             src={`/images/landing-about-us/${
               this.props.isCompanyPath ? "alabama.jpg" : "mockup.png"
             }`}
+            style={{ height: this.props.isCompanyPath && "450px" }}
           />
 
           <StyledHowItWorksTextContainer>
@@ -199,7 +200,7 @@ class DesktopLandingHowItWorks extends React.Component {
                 : "weekly-updates"
             }.jpg`}
             className="about-image"
-            height="350px"
+            height="300px"
           />
         </StyledHowItWorksSectionContainer>
         <StyledCenterDiv>

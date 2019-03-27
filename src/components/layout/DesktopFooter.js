@@ -20,9 +20,9 @@ const StyledDesktopFooter = styled.div`
 const StyledDesktopLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: ${props => props.theme.colors.primaryBlue};
-  color: ${props => props.theme.colors.secondaryBlue};
-  padding: 2rem;
+  background-color: ${props => props.theme.colors.secondaryBlue};
+  color: ${props => props.theme.colors.tunaGray};
+  padding: 1rem;
   justify-content: space-between;
   align-items: center;
 `;
@@ -65,7 +65,7 @@ const FooterRight = styled(StyledDesktopFooterSection)`
 
 const StyledBlogContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   text-align: left;
 `;
 
@@ -131,8 +131,8 @@ const DesktopFooter = props => {
           </StyledFooterSectionHeader>
           <StyledFooterSectionContent>
             <i class="fas fa-envelope" />{" "}
-            <a href="mailto:hellonine25@gmail.com" className="email-link">
-              hellonine25@gmail.com
+            <a href="mailto:kyle@ninetofive.app" className="email-link">
+              kyle@ninetofive.app
             </a>
           </StyledFooterSectionContent>
         </FooterCenter>
@@ -151,10 +151,7 @@ const DesktopFooter = props => {
               <a href={props.blog.link} target="_blank">
                 <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
                 <Text.small m={0}>
-                  {props.blog.description.slice(
-                    props.blog.description.indexOf("</figure>") + 12,
-                    props.blog.description.indexOf("</figure>") + 172
-                  )}
+                  {props.blog.description.slice(0, 50)}
                   ...
                 </Text.small>
               </a>
@@ -166,14 +163,14 @@ const DesktopFooter = props => {
         <StyledLinkSection style={{ width: "fit-content" }}>
           <Link
             to={props.isCompanyRoute ? "/hire" : "/search"}
-            style={{ color: "#c7d8ef", marginRight: "0.5rem" }}
+            style={{ color: "#343840", marginRight: "0.5rem" }}
           >
             <Text.h5>Home</Text.h5>
           </Link>
           {!props.isCompanyRoute && (
             <Link
               to="/how-it-works"
-              style={{ color: "#c7d8ef", marginRight: "0.5rem" }}
+              style={{ color: "#343840", marginRight: "0.5rem" }}
             >
               <Text.h5>How It Works</Text.h5>
             </Link>
@@ -181,15 +178,15 @@ const DesktopFooter = props => {
           {!props.isCompanyRoute && (
             <Link
               to="/resumes"
-              style={{ color: "#c7d8ef", marginRight: "0.5rem" }}
+              style={{ color: "#343840", marginRight: "0.5rem" }}
             >
               <Text.h5>Resumes</Text.h5>
             </Link>
           )}
-          <Link to="/about" style={{ color: "#c7d8ef", marginRight: "0.5rem" }}>
+          <Link to="/about" style={{ color: "#343840", marginRight: "0.5rem" }}>
             <Text.h5>About Us</Text.h5>
           </Link>
-          <Link to="/blog" style={{ color: "#c7d8ef", marginRight: "0.5rem" }}>
+          <Link to="/blog" style={{ color: "#343840", marginRight: "0.5rem" }}>
             <Text.h5>Blog</Text.h5>
           </Link>
         </StyledLinkSection>

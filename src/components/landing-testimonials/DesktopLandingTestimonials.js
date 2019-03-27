@@ -68,8 +68,9 @@ const Testimonial = props => (
         </StyledTestimonialTextContainer>
       </div>
       <div style={{ width: "100%" }}>
-        <Text.h5 lightbold>{props.occupation}</Text.h5>
-        <Text.small>{props.company}</Text.small>
+        <Text.h5 lightbold style={{ marginBottom: "1rem" }}>
+          {props.occupation}
+        </Text.h5>
         <StyledLinkedInLink className="secondary" href={props.linkedIn}>
           LinkedIn
         </StyledLinkedInLink>

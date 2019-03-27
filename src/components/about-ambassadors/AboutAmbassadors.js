@@ -93,9 +93,9 @@ const AboutAmbassadors = () => {
   return (
     <StyledAboutAmbassadorsComponent>
       <StyledAboutAmbassadorsContainer>
-        <Text.h4 semibold m={0} style={{ textAlign: "center" }}>
+        <Text.h2 semibold m={0} style={{ textAlign: "center" }}>
           Meet Our On-Campus Ambassadors
-        </Text.h4>
+        </Text.h2>
         <Text.p m={0} style={{ textAlign: "center", margin: "0" }}>
           Interested in having Nine to Five come to your campus?
         </Text.p>

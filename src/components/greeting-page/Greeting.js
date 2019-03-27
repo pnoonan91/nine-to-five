@@ -15,10 +15,10 @@ const StyledLandingPageContainer = styled.div`
   background-repeat-y: no-repeat;
   background-size: cover;
   height: 100vh;
-  background-image: url("/images/landing-mobile.png");
+  background-image: url("/images/greeting-mobile.png");
 
   ${breakpointMappings.lg} {
-    background-image: url("/images/landing-image-large.jpg");
+    background-image: url("/images/greeting-image.png");
     background-position-x: center;
     background-position-y: center;
     background-position: center;

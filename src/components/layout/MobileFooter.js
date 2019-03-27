@@ -19,8 +19,8 @@ const StyledMobileFooter = styled(Flex)`
 `;
 
 const StyledMobileLinks = styled(Flex)`
-  background-color: ${props => props.theme.colors.primaryBlue};
-  color: ${props => props.theme.colors.secondaryBlue};
+  background-color: ${props => props.theme.colors.secondaryBlue};
+  color: ${props => props.theme.colors.tunaGray};
   padding: 1rem;
   justify-content: space-between;
   align-items: center;
@@ -135,10 +135,7 @@ const MobileFooter = props => {
                 <a href={props.blog.link} target="_blank">
                   <Text.p style={{ margin: "0" }}>{props.blog.title}</Text.p>
                   <Text.small m={0}>
-                    {props.blog.description.slice(
-                      props.blog.description.indexOf("</figure>") + 12,
-                      props.blog.description.indexOf("</figure>") + 172
-                    )}
+                    {props.blog.description.slice(0, 50)}
                     ...
                   </Text.small>
                 </a>
@@ -152,8 +149,8 @@ const MobileFooter = props => {
           </StyledFooterSectionHeader>
           <StyledFooterSectionContent>
             <i class="fas fa-envelope" />{" "}
-            <a href="mailto:hellonine25@gmail.com" className="email-link">
-              hellonine25@gmail.com
+            <a href="mailto:kyle@ninetofive.app" className="email-link">
+              kyle@ninetofive.app
             </a>
           </StyledFooterSectionContent>
         </FooterCenter>
@@ -162,27 +159,27 @@ const MobileFooter = props => {
         <StyledLinkSection>
           <Link
             to={props.isCompanyRoute ? "/hire" : "/search"}
-            style={{ color: "#c7d8ef", padding: "0.2rem" }}
+            style={{ color: "#343840", padding: "0.2rem" }}
           >
             <Text.h6>Home</Text.h6>
           </Link>
           {!props.isCompanyRoute && (
             <Link
               to="/how-it-works"
-              style={{ color: "#c7d8ef", padding: "0.2rem" }}
+              style={{ color: "#343840", padding: "0.2rem" }}
             >
               <Text.h6>How It Works</Text.h6>
             </Link>
           )}
           {!props.isCompanyRoute && (
-            <Link to="/resumes" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+            <Link to="/resumes" style={{ color: "#343840", padding: "0.2rem" }}>
               <Text.h6>Resumes</Text.h6>
             </Link>
           )}
-          <Link to="/about" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+          <Link to="/about" style={{ color: "#343840", padding: "0.2rem" }}>
             <Text.h6>About Us</Text.h6>
           </Link>
-          <Link to="/blog" style={{ color: "#c7d8ef", padding: "0.2rem" }}>
+          <Link to="/blog" style={{ color: "#343840", padding: "0.2rem" }}>
             <Text.h6>Blog</Text.h6>
           </Link>
         </StyledLinkSection>

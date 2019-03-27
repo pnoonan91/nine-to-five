@@ -97,8 +97,14 @@ class DesktopLandingImage extends Component {
               </Text.h1>
             </div>
             <div style={{ marginTop: "2rem", width: "80%" }}>
-              <a onClick={this.props.onModalClick} className="primary">
-                Schedule Your Free Consultation Now!
+              <a
+                onClick={this.props.onModalClick}
+                className="primary"
+                style={{ width: "max-content" }}
+              >
+                {this.props.isCompanyPath
+                  ? "A College & Entry Level Focused Recruiting Agency"
+                  : "Schedule Your Free Consultation Now!"}
               </a>
             </div>
           </div>

@@ -62,7 +62,6 @@ const Testimonial = props => (
       </Text.p>
     </StyledTestimonialTextContainer>
     <Text.h5 lightbold>{props.occupation}</Text.h5>
-    <Text.small>{props.company}</Text.small>
     <StyledLinkedInLink
       style={{ paddingTop: "1rem" }}
       className="secondary"

@@ -6,15 +6,15 @@ import Text from "../text/Text";
 //
 // --- Styled Components ---
 const StyledMobileAboutImageComponent = styled(Flex)`
-  background-image: url("/images/about-us/about-us-header.png");
+  background-image: url("/images/about-us/about-us-header.jpg");
   background-size: 150%;
-  background-position: center;
+  background-position: top;
   margin-top: 52px;
   height: 250px;
   text-align: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: bottom;
+  justify-content: end;
 `;
 
 //
@@ -25,9 +25,11 @@ const MobileAboutImage = props => (
       <Text.h3
         lightbold
         className="shadow"
-        style={{ margin: "auto", color: "#1c5d99" }}
+        style={{ margin: "auto", color: "#1c5d99", marginTop: "0.5rem" }}
       >
-        At Nine to Five, we believe there is a better way to job search.
+        {props.isCompanyPath
+          ? "At Nine to Five, we believe there is a better way to better way to hire college & entry level talent"
+          : "At Nine to Five, we believe there is a better way to job search."}
       </Text.h3>
     </Box>
     <Box m={"1rem"} style={{ transform: "translateY(20px)" }}>
