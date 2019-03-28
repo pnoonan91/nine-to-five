@@ -30,8 +30,6 @@ const Header = props => {
     return null;
   }
 
-  console.log(location);
-
   return (
     <StyledHeader>
       <HideBreakPoint xs sm md>

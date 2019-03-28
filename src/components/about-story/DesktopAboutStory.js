@@ -62,7 +62,9 @@ const DesktopAboutStory = props => (
             style={{ width: "50%", marginTop: "2rem", height: "15px" }}
             className="primary"
           >
-            Let us help you find your dream job!
+            {props.isCompanyPath
+              ? "Learn more about our story"
+              : " Let us help you find your dream job!"}
           </a>
           <div
             style={{

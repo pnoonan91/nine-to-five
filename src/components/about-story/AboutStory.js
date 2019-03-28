@@ -12,15 +12,24 @@ const StyledAboutStoryComponent = styled.div`
 
 //
 // -- About Us Story Component ---
-const AboutStoryComponent = props => (
-  <StyledAboutStoryComponent>
-    <HideBreakPoint xs sm md>
-      <DesktopAboutStory onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-    <HideBreakPoint lg>
-      <MobileAboutStory onModalClick={props.onModalClick} />
-    </HideBreakPoint>
-  </StyledAboutStoryComponent>
-);
+const AboutStoryComponent = props => {
+  const isCompanyPath = window.location.pathname.indexOf("hire") > -1;
+  return (
+    <StyledAboutStoryComponent>
+      <HideBreakPoint xs sm md>
+        <DesktopAboutStory
+          onModalClick={props.onModalClick}
+          isCompanyPath={isCompanyPath}
+        />
+      </HideBreakPoint>
+      <HideBreakPoint lg>
+        <MobileAboutStory
+          onModalClick={props.onModalClick}
+          isCompanyPath={isCompanyPath}
+        />
+      </HideBreakPoint>
+    </StyledAboutStoryComponent>
+  );
+};
 
 export default AboutStoryComponent;

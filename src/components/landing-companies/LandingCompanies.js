@@ -11,23 +11,26 @@ const StyledLandingCompaniesContainer = styled.div``;
 
 //
 // --- Landing Companies Component ---
-const LandingCompaniesComponent = props => (
-  <StyledLandingCompaniesContainer>
-    <HideBreakPoint xs sm md>
-      <DesktopLandingCompanies
-        isCompanyPath={props.isCompanyPath}
-        hideButton={props.hideButton}
-        onModalClick={props.onModalClick}
-      />
-    </HideBreakPoint>
-    <HideBreakPoint lg>
-      <MobileLandingCompanies
-        isCompanyPath={props.isCompanyPath}
-        hideButton={props.hideButton}
-        onModalClick={props.onModalClick}
-      />
-    </HideBreakPoint>
-  </StyledLandingCompaniesContainer>
-);
+const LandingCompaniesComponent = props => {
+  const isCompanyPath = window.location.pathname.indexOf("hire") > -1;
+  return (
+    <StyledLandingCompaniesContainer>
+      <HideBreakPoint xs sm md>
+        <DesktopLandingCompanies
+          isCompanyPath={isCompanyPath}
+          hideButton={props.hideButton}
+          onModalClick={props.onModalClick}
+        />
+      </HideBreakPoint>
+      <HideBreakPoint lg>
+        <MobileLandingCompanies
+          isCompanyPath={isCompanyPath}
+          hideButton={props.hideButton}
+          onModalClick={props.onModalClick}
+        />
+      </HideBreakPoint>
+    </StyledLandingCompaniesContainer>
+  );
+};
 
 export default LandingCompaniesComponent;

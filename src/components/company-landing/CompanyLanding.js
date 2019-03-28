@@ -10,7 +10,6 @@ import LandingCompaniesComponent from "../landing-companies/LandingCompanies";
 class CompanyLanding extends Component {
   render() {
     const location = window.location.pathname;
-    console.log(location);
     return (
       <div style={{ width: "100%" }}>
         <LandingImageComponent

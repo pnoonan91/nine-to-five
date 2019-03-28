@@ -28,7 +28,7 @@ const MobileAboutImage = props => (
         style={{ margin: "auto", color: "#1c5d99", marginTop: "0.5rem" }}
       >
         {props.isCompanyPath
-          ? "At Nine to Five, we believe there is a better way to better way to hire college & entry level talent"
+          ? "The future of collegiate recruiting is here."
           : "At Nine to Five, we believe there is a better way to job search."}
       </Text.h3>
     </Box>

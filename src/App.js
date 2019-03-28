@@ -142,6 +142,7 @@ class App extends Component {
   };
 
   render() {
+    const isCompanyPath = window.location.pathname.indexOf("hire") > -1;
     return (
       <div>
         <div
@@ -285,43 +286,62 @@ class App extends Component {
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <Text.p>
                       Use the form to your left to find a date and time that
-                      works for you. We can't wait to help you find the job of
-                      your dreams!
+                      works for you. We can't wait to help you find the{" "}
+                      {isCompanyPath
+                        ? "perfect candidate"
+                        : "job ofyour dreams"}
+                      !
                     </Text.p>
                     <HowItWorksStep
                       stepNumber={1}
                       stepTitle="Sign up for free consultation"
-                      stepContent="During this introductory call, we will discuss how Nine to Five can personalize the
-                    process to fit your needs. We will discuss your career interests, your resume, cover
-                    letter, and the potential challenges you are facing during your job/internship search."
+                      stepContent={
+                        isCompanyPath
+                          ? "During this introductory call, we will discuss how Nine to Five can personalize the process to fit your needs. We will discuss your current openings, your organizational culture, and potential challenges you are facing during your recruiting process."
+                          : "During this introductory call, we will discuss how Nine to Five can personalize the process to fit your needs. We will discuss your career interests, your resume, cover letter, and the potential challenges you are facing during your job/internship search."
+                      }
                     />
                     <HowItWorksStep
                       stepNumber={2}
-                      stepTitle="Build your brand"
-                      stepContent="The first step in our process involves building your job searching brand. This includes
-                    resume building, cover letter writing, and LinkedIn profile development all from actual
-                    talent acquisition consultants. Additionally, you will have access to our Interview
-                    Coaching Guide crafted by HR industry professionals."
+                      stepTitle={
+                        isCompanyPath
+                          ? "Let the recruiting begin!"
+                          : "Build your brand"
+                      }
+                      stepContent={
+                        isCompanyPath
+                          ? "Let Nine to Five do what we do best, bring you the best candidates for your openings. Our unique mix of on-campus ambassadors to promote your roles throughout campus and our executive recruiting methods will bring you qualified candidates, faster!"
+                          : "The first step in our process involves building your job searching brand. This includes resume building, cover letter writing, and LinkedIn profile development all from actual talent acquisition consultants. Additionally, you will have access to our Interview Coaching Guide crafted by HR industry professionals."
+                      }
                     />
                     <HowItWorksStep
                       stepNumber={3}
-                      stepTitle="Job Searching"
-                      stepContent="Sit back and let the jobs roll in, right to your phone. Nine to Five will send new
-                    opportunities every week for you to review and apply. If preferred, Nine to Five will
-                    apply for you! Additionally, we will provide updates on past applications &amp; interviews
-                    that you have scheduled."
+                      stepTitle={
+                        isCompanyPath
+                          ? "Land the perfect new hire!"
+                          : "Job Searching"
+                      }
+                      stepContent={
+                        isCompanyPath
+                          ? "Just do us a favor and act surprised when you hire the perfect candidate!"
+                          : "Sit back and let the jobs roll in, right to your phone. Nine to Five will send new opportunities every week for you to review and apply. If preferred, Nine to Five will apply for you! Additionally, we will provide updates on past applications &amp; interviews that you have scheduled."
+                      }
                     />
-                    <HowItWorksStep
-                      stepNumber={4}
-                      stepTitle="Weekly Touchpoints & Continued Support"
-                      stepContent="Every week, Nine to Five will schedule a call with you to discuss opportunities and offer
-                    ongoing coaching/support/interview advice to keep your job searching on track!"
-                    />
-                    <HowItWorksStep
-                      stepNumber={5}
-                      stepTitle="Land the job!"
-                      stepContent="Just do us a favor and act surprised when you get the offer."
-                    />
+                    {!isCompanyPath && (
+                      <div>
+                        <HowItWorksStep
+                          stepNumber={4}
+                          stepTitle="Weekly Touchpoints & Continued Support"
+                          stepContent="Every week, Nine to Five will schedule a call with you to discuss opportunities and offer
+                      ongoing coaching/support/interview advice to keep your job searching on track!"
+                        />
+                        <HowItWorksStep
+                          stepNumber={5}
+                          stepTitle="Land the job!"
+                          stepContent="Just do us a favor and act surprised when you get the offer."
+                        />
+                      </div>
+                    )}
                   </div>
                 </StyledTextSection>
               </div>

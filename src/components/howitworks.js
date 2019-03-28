@@ -7,7 +7,6 @@ import LandingSubscriptionComponent from "./landing-subscription/LandingSubscrip
 import LandingCompaniesComponent from "./landing-companies/LandingCompanies";
 
 export const scrollOnClick = element => {
-  console.log("element", element.target.hash);
   let startingY = window.pageYOffset;
   let elementY =
     window.pageYOffset +

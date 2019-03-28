@@ -47,7 +47,6 @@ const StyledArticleInfo = styled.div`
 //
 // --- Article Generator ---
 const Article = props => {
-  console.log(props.description);
   return (
     <StyledArticleContainer>
       <a

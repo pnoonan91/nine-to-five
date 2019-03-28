@@ -30,17 +30,19 @@ const MobileLandingCompanies = props => (
         : "Our Clients Get Hired At Awesome Companies"}
     </Text.h5>
     <StyledCompaniesImage width="90%" src="/images/companies-mobile.png" />
-    <StyledLandYourDreamJobButton>
-      {!props.hideButton && !props.isCompanyPath ? (
-        <a onClick={() => history.push("/how-it-works")} className="primary">
-          See How It Works
-        </a>
-      ) : (
-        <a onClick={() => props.onModalClick()} className="primary">
-          Find Your Next Hire
-        </a>
-      )}
-    </StyledLandYourDreamJobButton>
+    {!props.hideButton && (
+      <StyledLandYourDreamJobButton>
+        {!props.isCompanyPath ? (
+          <a onClick={() => history.push("/how-it-works")} className="primary">
+            See How It Works
+          </a>
+        ) : (
+          <a onClick={() => props.onModalClick()} className="primary">
+            Find Your Next Hire
+          </a>
+        )}
+      </StyledLandYourDreamJobButton>
+    )}
   </StyledMobileLandingCompaniesContainer>
 );
 

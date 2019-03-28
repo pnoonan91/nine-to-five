@@ -49,7 +49,9 @@ const MobileAboutStory = props => (
         building.
       </Text.p>
       <a onClick={props.onModalClick} className="primary">
-        Let us help you find your dream job!
+        {props.isCompanyPath
+          ? "Learn more about our story"
+          : " Let us help you find your dream job!"}
       </a>
       <Flex justifyContent="space-between">
         <Flex

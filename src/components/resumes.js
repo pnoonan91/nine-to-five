@@ -14,7 +14,7 @@ const Resumes = props => (
       isResumePage
       onModalClick={props.onModalClick}
     />
-    <LandingCompaniesComponent />
+    <LandingCompaniesComponent hideButton />
   </div>
 );
 

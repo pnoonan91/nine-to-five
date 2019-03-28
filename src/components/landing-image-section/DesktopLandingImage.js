@@ -103,7 +103,7 @@ class DesktopLandingImage extends Component {
                 style={{ width: "max-content" }}
               >
                 {this.props.isCompanyPath
-                  ? "A College & Entry Level Focused Recruiting Agency"
+                  ? "A College & Entry-Level Focused Recruiting Agency"
                   : "Schedule Your Free Consultation Now!"}
               </a>
             </div>

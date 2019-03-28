@@ -14,9 +14,7 @@ app.use(express.static(path.join(__dirname, "build")));
 app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
-app.listen(port, function(req, res) {
-  console.log("Server is running at port: ", port);
-});
+app.listen(port, function(req, res) {});
 
 app.get("/", function(req, res) {
   res.render("index");
@@ -24,7 +22,6 @@ app.get("/", function(req, res) {
 
 // post request to send emails
 app.post("/form-submission", (req, res, err) => {
-  console.log("wut");
   transporter.sendMail(
     {
       from: "hellonine25@gmail.com",

@@ -85,7 +85,9 @@ class MobileLandingImage extends Component {
             onClick={() => this.props.onModalClick()}
             className="primary"
           >
-            Schedule Your Free Consultation Now!
+            {this.props.isCompanyPath
+              ? "A College & Entry-Level Focused Recruiting Agency"
+              : "Schedule Your Free Consultation Now!"}
           </StyledMobileConsultationButton>
         </Box>
       </StyledMobileLandingImageContainer>
