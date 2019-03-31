@@ -36,17 +36,13 @@ const MobileAboutStory = props => (
         <br />
         <br />
         Since then, Gaby has held 3 internships found by Nine to Five staff and
-        we are working to land her dream job after graduation in 2020. I quickly
-        became flooded with requests to the effect of “Can you help me like you
-        helped her?” And that is how Nine to Five was born. Since then, Gaby has
-        held 3 internships found by Nine to Five staff and has landed her dream
-        job in Miami beginning in the summer of 2019. After helping Gaby, I
-        quickly became flooded with requests to the effect of “Can you help me
-        like you helped her?” And that is how Nine to Five was born. Fast
-        forward 2 years, Nine to Five now has ambassadors across 5 campuses,
-        partners with companies big and small to hire their entry level talent,
-        and travels the country teaching all things job searching and resume
-        building.
+        has landed her dream job in Miami beginning in the summer of 2019. After
+        helping Gaby, I quickly became flooded with requests to the effect of
+        “Can you help me like you helped her?” And that is how Nine to Five was
+        born. Fast forward 2 years, Nine to Five now has ambassadors across 5
+        campuses, partners with companies big and small to hire their entry
+        level talent, and travels the country teaching all things job searching
+        and resume building.
       </Text.p>
       <a onClick={props.onModalClick} className="primary">
         {props.isCompanyPath
