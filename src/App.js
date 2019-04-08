@@ -14,6 +14,7 @@ import Landing from "./components/landing";
 import Text from "./components/text/Text";
 import HowItWorks from "./components/howitworks";
 import About from "./components/about";
+import Privacy from "./components/privacy/Privacy";
 import Blog from "./components/blog";
 import Resumes from "./components/resumes";
 import HideBreakPoint from "./components/layout/HideBreakPoint";
@@ -435,6 +436,14 @@ class App extends Component {
               path="/hire"
               component={() => (
                 <CompanyLanding onModalClick={() => this.toggleModal()} />
+              )}
+            />
+
+            <Route
+              exact
+              path="/privacy"
+              component={() => (
+                <Privacy />
               )}
             />
           </Switch>

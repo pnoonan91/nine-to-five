@@ -184,12 +184,15 @@ const MobileFooter = props => {
           </Link>
         </StyledLinkSection>
         <StyledLinkSection
-          style={{ justifyContent: "center", marginTop: "1rem" }}
+          style={{ justifyContent: "center", marginTop: "1rem", flexDirection: 'column' }}
         >
           <Text.h6>
             <i class="far fa-copyright" />
             Nine to Five, 2018
           </Text.h6>
+          <Link to="/privacy" style={{ color: "#343840", padding: "0.2rem" }}>
+            <Text.h6>Privacy</Text.h6>
+          </Link>
         </StyledLinkSection>
       </StyledMobileLinks>
     </div>
